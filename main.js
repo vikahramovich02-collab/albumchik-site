@@ -233,7 +233,6 @@
       soloImgs.forEach((img, i) => img.classList.toggle('is-cur', i === idx));
       vNum.textContent = String(idx + 1).padStart(2, '0');
       vPrev.disabled = idx === 0;
-      vNext.disabled = idx === soloImgs.length - 1;
       loadAround();
       return;
     }
@@ -246,16 +245,18 @@
     });
     const shift = idx === 0 ? -.25 : idx === n ? .25 : 0;
     vBook.style.setProperty('--shift', shift);
+    viewer.classList.toggle('is-closed', idx === 0 || idx === n);
     vNum.textContent = String(idx).padStart(2, '0');
     vPrev.disabled = idx === 0;
-    vNext.disabled = idx === n;
     loadAround();
   };
 
   const go = (dir) => {
     if (cur && ALBUMS[cur]?.blank) return;
     if (solo) {
-      const next = clamp(idx + dir, 0, soloImgs.length - 1);
+      const last = soloImgs.length - 1;
+      // с последней страницы «вперёд» — снова обложка
+      const next = dir > 0 && idx === last ? 0 : clamp(idx + dir, 0, last);
       if (next === idx) return;
       soloImgs[next].style.setProperty('--from', dir > 0 ? '28px' : '-28px');
       idx = next;
@@ -264,6 +265,13 @@
       return;
     }
     const n = leafEls.length;
+    // журнал дочитан: «вперёд» закрывает его обратно на обложку
+    if (dir > 0 && idx === n) {
+      idx = 0;
+      render();
+      track('album_flip');
+      return;
+    }
     const next = clamp(idx + dir, 0, n);
     if (next === idx) return;
     const leaf = leafEls[dir > 0 ? idx : idx - 1];
@@ -278,6 +286,7 @@
     const a = ALBUMS[key];
     vBook.innerHTML = '';
     vBook.style.setProperty('--ratio', a.ratio);
+    vBook.parentElement.style.setProperty('--ratio', a.ratio);
     solo = isSolo();
     vBook.classList.toggle('is-solo', solo);
     leafEls = []; soloImgs = [];

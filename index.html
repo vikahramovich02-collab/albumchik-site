@@ -30,7 +30,7 @@
   <meta name="twitter:image" content="https://albumchik.by/img/og.jpg">
 
   <link rel="preload" as="image" href="img/hero-photo-720.webp" imagesrcset="img/hero-photo-720.webp 720w, img/hero-photo-1440.webp 1440w" imagesizes="50vw">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=10041654">
 
   <script type="application/ld+json">
   {
@@ -416,10 +416,13 @@
     <div class="viewer__top">
       <p class="label"><span id="viewer-title">PAKEERSH</span><br><span class="muted" data-viewer-meta></span></p>
       <p class="viewer__counter"><span data-viewer-num>00</span> / <span data-viewer-total>00</span></p>
-      <button type="button" class="viewer__close u" data-viewer-close>Закрыть ✕</button>
+      <button type="button" class="viewer__close" data-viewer-close>Закрыть ✕</button>
     </div>
     <div class="viewer__stage">
+      <!-- стрелки по бокам журнала; после последней страницы «вперёд» ведёт на обложку -->
+      <button type="button" class="viewer__side viewer__side--prev" data-viewer-prev aria-label="Предыдущая страница"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6 8.5 12l6 6"/></svg></button>
       <div class="book__body viewer__book" data-viewer-book></div>
+      <button type="button" class="viewer__side viewer__side--next" data-viewer-next aria-label="Следующая страница"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 6l6 6-6 6"/></svg></button>
       <div class="viewer__blank" data-viewer-blank hidden>
         <p class="viewer__blank-title">ваш альбом</p>
         <p class="viewer__blank-text">Здесь будет ваша обложка: фотосессия, путешествие, год жизни или человек, которому хочется сказать главное.</p>
@@ -427,9 +430,7 @@
       </div>
     </div>
     <div class="viewer__bottom">
-      <button type="button" class="u" data-viewer-prev>← Назад</button>
-      <p class="caption"><span class="only-fine">Листайте кликом по странице, стрелками или свайпом</span><span class="only-touch">Свайп или кнопки</span></p>
-      <button type="button" class="u" data-viewer-next>Дальше →</button>
+      <p class="caption"><span class="only-fine">Листайте кликом по странице, стрелками или свайпом</span><span class="only-touch">Листайте свайпом или стрелками</span></p>
     </div>
   </div>
   <div class="toast" role="status" aria-live="polite"></div>
@@ -443,6 +444,6 @@
     </div>
   </div>
 
-  <script src="main.js" defer></script>
+  <script src="main.js?v=10041654" defer></script>
 </body>
 </html>
