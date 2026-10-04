@@ -890,3 +890,6 @@ a:hover > .arrow path, a:focus-visible > .arrow path { stroke: var(--paper); }
   .step__text { grid-row: 3; grid-column: 1; }
   .step__pic { grid-row: 1 / span 3; grid-column: 2; align-self: start; }
 }
+
+/* видео встык к краям экрана, без подписи */
+.video { padding: 0; }
