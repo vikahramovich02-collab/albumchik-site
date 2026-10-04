@@ -947,3 +947,12 @@ a:hover > .arrow path, a:focus-visible > .arrow path { stroke: var(--paper); }
   box-shadow: inset -1px 0 0 rgba(0,0,0,.18);
 }
 .album__spine span { font-size: 10px; }
+
+/* корешок стоит слева ОТ обложки, а не внутри неё: обложка остаётся целой */
+.shelf__stage { --t: calc(var(--w) * .085); }
+.album__cover { left: 0; width: 100%; }
+.album__spine {
+  left: calc(var(--t) * -1); width: var(--t);
+  box-shadow: inset -2px 0 4px rgba(0,0,0,.22);
+}
+.album__spine span { font-size: 9px; letter-spacing: .06em; }
