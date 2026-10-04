@@ -865,31 +865,30 @@ a:hover > .arrow path, a:focus-visible > .arrow path { stroke: var(--paper); }
 .steps { display: block; margin-top: 56px; }
 .step {
   display: grid;
-  grid-template-columns: minmax(90px, 140px) minmax(180px, 280px) 1fr 132px;
+  grid-template-columns: minmax(90px, 140px) minmax(180px, 320px) 1fr;
   gap: var(--gap); align-items: start;
   padding: 26px 0; position: relative;
 }
 .step__num { color: var(--ash); }
 .step__title { font-size: 26px; line-height: 1.1; letter-spacing: -0.012em; }
 .step__text { color: var(--ash); max-width: 520px; }
-.step__pic { justify-self: end; width: 100%; aspect-ratio: 4 / 5; overflow: hidden; }
-.step__pic img { width: 100%; height: 100%; object-fit: cover; }
 
 @media (max-width: 1100px) {
-  .step { grid-template-columns: 90px 1fr 120px; }
-  .step__text { grid-column: 2; }
-  .step__title { grid-column: 2; }
+  .step { grid-template-columns: 90px 1fr; }
   .step__num { grid-row: 1 / span 2; }
-  .step__pic { grid-row: 1 / span 2; grid-column: 3; }
+  .step__title, .step__text { grid-column: 2; }
 }
 @media (max-width: 700px) {
   .steps { margin-top: 32px; }
-  .step { grid-template-columns: 1fr 84px; gap: 16px; padding: 18px 0; }
-  .step__num { grid-row: 1; grid-column: 1; }
-  .step__title { grid-row: 2; grid-column: 1; font-size: 21px; }
-  .step__text { grid-row: 3; grid-column: 1; }
-  .step__pic { grid-row: 1 / span 3; grid-column: 2; align-self: start; }
+  .step { grid-template-columns: 1fr; gap: 6px; padding: 18px 0; }
+  .step__num, .step__title, .step__text { grid-column: 1; }
+  .step__title { font-size: 21px; }
 }
 
 /* видео встык к краям экрана, без подписи */
 .video { padding: 0; }
+
+/* строка процесса ведёт себя как услуга: подпись едет, превью летит за курсором */
+.step { cursor: default; }
+.step .step__title { transition: transform .6s var(--ease); }
+.step:hover .step__title { transform: translateX(20px); }

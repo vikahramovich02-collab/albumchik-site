@@ -446,7 +446,7 @@
   /* ---------- Превью услуги летит за курсором ---------- */
   const preview = $('.preview');
   let px = 0, py = 0;
-  $$('.service').forEach((row) => {
+  $$('[data-preview]').forEach((row) => {
     row.addEventListener('mouseenter', () => { preview.src = row.dataset.preview; preview.classList.add('is-on'); });
     row.addEventListener('mouseleave', () => preview.classList.remove('is-on'));
   });
