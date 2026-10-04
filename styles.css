@@ -924,3 +924,29 @@ a:hover > .arrow path, a:focus-visible > .arrow path { stroke: var(--paper); }
   .shelf__stage { padding-bottom: 80px; }
   .album { --step: 18px; }
 }
+
+/* ============================================================
+   СТРАНИЦА ДОКУМЕНТОВ
+   ============================================================ */
+.nav--docs { position: static; mix-blend-mode: normal; color: var(--ink); grid-template-columns: auto 1fr; }
+.nav--docs .nav__mark { fill: var(--ink); }
+.nav--docs .nav__word { position: static; translate: none; transform: none; clip-path: none; padding-left: 10px; }
+.nav--docs .nav__brand { gap: 0; justify-self: start; }
+.docs__back { justify-self: end; font-size: 14px; }
+
+.docs { padding: 56px var(--pad) 96px; max-width: 820px; }
+.docs__title { margin-bottom: 26px; }
+.docs__toc { display: grid; gap: 8px; justify-items: start; padding-bottom: 41px; border-bottom: 1px solid var(--fog); }
+.docs__section { padding-top: 56px; }
+.docs__section .h2 { margin-bottom: 8px; }
+.docs__date { color: var(--ash); display: block; margin-bottom: 26px; }
+.docs h3 { font-size: 19px; letter-spacing: -0.01em; margin-top: 32px; margin-bottom: 8px; }
+.docs p { font-size: 17px; line-height: 1.45; color: var(--ink); margin-bottom: 13px; max-width: 70ch; }
+.docs p.muted { color: var(--ash); }
+.docs b { font-weight: 400; border-bottom: 1px solid var(--ink); }
+
+@media (max-width: 700px) {
+  .docs { padding: 32px var(--pad) 64px; }
+  .docs__section { padding-top: 40px; }
+  .docs p { font-size: 16px; }
+}
