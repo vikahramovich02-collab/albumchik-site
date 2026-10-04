@@ -924,3 +924,26 @@ a:hover > .arrow path, a:focus-visible > .arrow path { stroke: var(--paper); }
   .shelf__stage { padding-bottom: 80px; }
   .album { --step: 18px; }
 }
+
+/* ---------- Объём книг: перспектива у каждой, а не у ряда ----------
+   Safari не применяет perspective родителя к flex-детям: поворот
+   срабатывает, но книга остаётся плоской. Своя перспектива в самом
+   transform работает одинаково везде. */
+.album { transform:
+  perspective(1600px)
+  translateY(calc(var(--n) * var(--step)))
+  translateY(var(--drop, 0px))
+  translateY(calc(var(--lift, 0px) + var(--bob, 0px)))
+  translateZ(var(--pop, 0px))
+  rotateY(var(--ry, 38deg)); }
+
+/* ---------- Корешок без вложенного 3D ----------
+   Safari не рендерит грань, повёрнутую внутри уже повёрнутой книги:
+   корешок схлопывается в линию. Поэтому торец — обычный блок слева
+   от обложки: при наклоне книги он читается так же, но рисуется везде. */
+.album__cover { left: var(--t); width: calc(100% - var(--t)); transform: none; }
+.album__spine {
+  left: 0; width: var(--t); transform: none; transform-origin: center;
+  box-shadow: inset -1px 0 0 rgba(0,0,0,.18);
+}
+.album__spine span { font-size: 10px; }
