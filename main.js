@@ -100,10 +100,10 @@
   const bookBody = $('[data-book]');
   const leaves = $$('.leaf');
   const bookNum = $('[data-book-num]');
-  const track2 = $('.marquee__track');
+  const tracks = $$('.marquee__track');
 
-  // дублируем ленту, чтобы она шла бесконечно
-  if (track2) track2.innerHTML += track2.innerHTML;
+  // дублируем каждую ленту, чтобы она шла бесконечно
+  tracks.forEach((t) => (t.innerHTML += t.innerHTML));
 
   let lastY = scrollY, velocity = 0, marqueeX = 0, ticking = false;
 
@@ -154,16 +154,25 @@
   addEventListener('resize', onScroll);
   onScroll();
 
-  // лента кадров: постоянный ход + ускорение от скорости прокрутки
-  if (track2 && !reduce) {
-    let boost = 0;
+  // ленты кадров: постоянный ход + ускорение от скорости прокрутки.
+  // вторая лента идёт навстречу первой — так ряды не выглядят одинаково
+  if (tracks.length && !reduce) {
+    const state = tracks.map((t, i) => ({
+      el: t,
+      x: 0,
+      dir: t.closest('.marquee--back') ? 1 : -1,
+      boost: 0,
+    }));
     const loop = () => {
-      boost += (Math.abs(velocity) * .6 - boost) * .08;
+      state.forEach((s) => {
+        s.boost += (Math.abs(velocity) * .6 - s.boost) * .08;
+        s.x += s.dir * (.5 + s.boost);
+        const half = s.el.scrollWidth / 2;
+        if (s.dir < 0 && -s.x >= half) s.x += half;
+        if (s.dir > 0 && s.x >= 0) s.x -= half;
+        s.el.style.transform = `translate3d(${s.x}px,0,0)`;
+      });
       velocity *= .9;
-      marqueeX -= .5 + boost;
-      const half = track2.scrollWidth / 2;
-      if (-marqueeX >= half) marqueeX += half;
-      track2.style.transform = `translate3d(${marqueeX}px,0,0)`;
       requestAnimationFrame(loop);
     };
     requestAnimationFrame(loop);

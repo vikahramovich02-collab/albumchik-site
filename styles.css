@@ -755,3 +755,11 @@ a:hover > .arrow path, a:focus-visible > .arrow path { stroke: var(--paper); }
 /* блок про ИИ-фото живёт по тем же правилам, что лента кадров */
 .strip--ai .strip__main { gap: 26px; }
 .strip--ai .lead { max-width: 560px; }
+
+/* ---------- Заглушка под будущий кадр ---------- */
+.ph {
+  flex: none; height: clamp(220px, 26vw, 380px); aspect-ratio: 2 / 3;
+  background: var(--fog);
+}
+@media (max-width: 700px) { .ph { height: 200px; } }
+@media (max-width: 480px) { .ph { height: 168px; } }
