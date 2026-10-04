@@ -152,8 +152,8 @@ html.no-loader .loader { display: none; }
 .strip__head { margin-bottom: 80px; }
 .marquee { overflow: hidden; }
 .marquee__track { display: flex; gap: 13px; width: max-content; will-change: transform; }
-.marquee__track img { height: clamp(220px, 26vw, 380px); width: auto; filter: grayscale(1); transition: filter .6s var(--ease), transform .6s var(--ease); }
-.marquee__track img:hover { filter: none; transform: translateY(-10px); }
+.marquee__track img { height: clamp(220px, 26vw, 380px); width: auto; transition: transform .6s var(--ease); }
+.marquee__track img:hover { transform: translateY(-10px); }
 @media (max-width: 700px) { .strip__head, .opener { grid-template-columns: 1fr; } }
 
 /* ---------- Книга ---------- */
