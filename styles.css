@@ -847,3 +847,46 @@ a:hover > .arrow path, a:focus-visible > .arrow path { stroke: var(--paper); }
 .gallery img { display: block; width: 100%; height: auto; margin-bottom: 13px; break-inside: avoid; }
 @media (max-width: 1100px) { .gallery { columns: 3; } }
 @media (max-width: 700px) { .gallery { columns: 2; column-gap: 8px; margin-top: 36px; } .gallery img { margin-bottom: 8px; } }
+
+/* ---------- Видео во всю ширину ---------- */
+.reel { margin: 0; line-height: 0; margin-top: 56px; }
+.reel__video { width: 100%; height: auto; display: block; }
+@media (max-width: 700px) { .reel { margin-top: 32px; } }
+
+/* ============================================================
+   ВИДЕО ПРОЦЕССА — настоящий ролик вместо заглушки
+   ============================================================ */
+.video__el { width: 100%; height: auto; display: block; }
+.video__ph { display: none; }
+
+/* ============================================================
+   ПРОЦЕСС: строки во всю ширину, в каждой — кадр
+   ============================================================ */
+.steps { display: block; margin-top: 56px; }
+.step {
+  display: grid;
+  grid-template-columns: minmax(90px, 140px) minmax(180px, 280px) 1fr 132px;
+  gap: var(--gap); align-items: start;
+  padding: 26px 0; position: relative;
+}
+.step__num { color: var(--ash); }
+.step__title { font-size: 26px; line-height: 1.1; letter-spacing: -0.012em; }
+.step__text { color: var(--ash); max-width: 520px; }
+.step__pic { justify-self: end; width: 100%; aspect-ratio: 4 / 5; overflow: hidden; }
+.step__pic img { width: 100%; height: 100%; object-fit: cover; }
+
+@media (max-width: 1100px) {
+  .step { grid-template-columns: 90px 1fr 120px; }
+  .step__text { grid-column: 2; }
+  .step__title { grid-column: 2; }
+  .step__num { grid-row: 1 / span 2; }
+  .step__pic { grid-row: 1 / span 2; grid-column: 3; }
+}
+@media (max-width: 700px) {
+  .steps { margin-top: 32px; }
+  .step { grid-template-columns: 1fr 84px; gap: 16px; padding: 18px 0; }
+  .step__num { grid-row: 1; grid-column: 1; }
+  .step__title { grid-row: 2; grid-column: 1; font-size: 21px; }
+  .step__text { grid-row: 3; grid-column: 1; }
+  .step__pic { grid-row: 1 / span 3; grid-column: 2; align-self: start; }
+}

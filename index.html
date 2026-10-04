@@ -157,15 +157,13 @@
       </div>
     </section>
 
-    <!-- ВИДЕО ПРОЦЕССА. Пока заглушка: когда будет ролик, кладём img/process.mp4
-         и постер img/process-poster.webp, заглушку .video__ph убираем -->
+    <!-- ВИДЕО ПРОЦЕССА -->
     <section class="video" aria-label="Видео процесса">
       <div class="video__frame" data-reveal>
-        <!-- <video src="img/process.mp4" poster="img/process-poster.webp" autoplay muted loop playsinline></video> -->
-        <div class="video__ph">
-          <span class="video__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 7l8 5-8 5z"/></svg></span>
-          <span>Видео процесса скоро</span>
-        </div>
+        <video class="video__el" autoplay muted loop playsinline preload="metadata" poster="video/album-poster.jpg" aria-label="Альбом листают в руках">
+          <source src="video/album.webm" type="video/webm">
+          <source src="video/album.mp4" type="video/mp4">
+        </video>
       </div>
       <p class="caption video__cap">Процесс. От папки с фото до готового разворота</p>
     </section>
@@ -433,17 +431,15 @@
     <section class="section" id="process">
       <div class="opener">
         <p class="label" data-reveal>ПРОЦЕСС<br>(05)<br>Как работаем</p>
-        <div class="opener__main">
-          <h2 class="h2" data-reveal>От папки с фото до книги в руках — четыре шага и пятый по желанию.</h2>
-          <ol class="steps">
-            <li class="step" data-reveal style="--d:0"><span>01</span><h3>Бриф</h3><p>Созваниваемся на 20 минут: для кого альбом, какое настроение, какой формат и срок.</p></li>
-            <li class="step" data-reveal style="--d:1"><span>02</span><h3>Фото и истории</h3><p>Присылаете фото архивом и пару историй голосом или текстом — отбор беру на себя.</p></li>
-            <li class="step" data-reveal style="--d:2"><span>03</span><h3>Макет и правки</h3><p>Через 7–10 дней показываю развороты. Два круга правок входят в цену.</p></li>
-            <li class="step" data-reveal style="--d:3"><span>04</span><h3>Печать</h3><p>Отдаю файлы, готовые к печати, или печатаю сама и отправляю готовую книгу.</p></li>
-            <li class="step step--extra" data-reveal style="--d:4"><span>05 · по желанию</span><h3>Фотосессия</h3><p>Снимаю фотосет специально под развороты альбома. Или вместе с готовым альбомом в кадре, если это подарок.</p></li>
-          </ol>
-        </div>
+        <h2 class="h2 opener__main" data-reveal>От папки с фото до книги в руках — четыре шага и пятый по желанию.</h2>
       </div>
+      <ol class="steps">
+        <li class="step" data-reveal style="--d:0"><span class="step__num">01</span><h3 class="step__title">Бриф</h3><p class="step__text">Созваниваемся на 20 минут: для кого альбом, какое настроение, какой формат и срок.</p><span class="step__pic clip" data-clip><img loading="lazy" src="img/gallery/g09-640.webp" width="640" height="428" alt=""></span></li>
+        <li class="step" data-reveal style="--d:1"><span class="step__num">02</span><h3 class="step__title">Фото и истории</h3><p class="step__text">Присылаете фото архивом и пару историй голосом или текстом — отбор беру на себя.</p><span class="step__pic clip" data-clip><img loading="lazy" src="img/strip/014-440.webp" width="440" height="660" alt=""></span></li>
+        <li class="step" data-reveal style="--d:2"><span class="step__num">03</span><h3 class="step__title">Макет и правки</h3><p class="step__text">Через 7–10 дней показываю развороты. Два круга правок входят в цену.</p><span class="step__pic clip" data-clip><img loading="lazy" src="img/book-02-560.webp" width="560" height="783" alt=""></span></li>
+        <li class="step" data-reveal style="--d:3"><span class="step__num">04</span><h3 class="step__title">Печать</h3><p class="step__text">Отдаю файлы, готовые к печати, или печатаю сама и отправляю готовую книгу.</p><span class="step__pic clip" data-clip><img loading="lazy" src="img/life-1-720.webp" width="720" height="1080" alt=""></span></li>
+        <li class="step step--extra" data-reveal style="--d:4"><span class="step__num">05 · по желанию</span><h3 class="step__title">Фотосессия</h3><p class="step__text">Снимаю фотосет специально под развороты альбома. Или вместе с готовым альбомом в кадре, если это подарок.</p><span class="step__pic clip" data-clip><img loading="lazy" src="img/life-2-720.webp" width="720" height="1080" alt=""></span></li>
+      </ol>
     </section>
 
     <!-- FAQ -->
