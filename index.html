@@ -30,7 +30,7 @@
   <meta name="twitter:image" content="https://albumchik.by/img/og.jpg">
 
   <link rel="preload" as="image" href="img/hero-photo-720.webp" imagesrcset="img/hero-photo-720.webp 720w, img/hero-photo-1440.webp 1440w" imagesizes="50vw">
-  <link rel="stylesheet" href="styles.css?v=10041709">
+  <link rel="stylesheet" href="styles.css?v=10041710">
 
   <script type="application/ld+json">
   {
@@ -157,15 +157,17 @@
       </div>
     </section>
 
-    <section class="pair" aria-label="Съёмка и альбом">
-      <figure class="pair__item" data-cursor="Альбом">
-        <div class="clip" data-clip><img data-parallax src="img/polina-cover-720.webp" srcset="img/polina-cover-720.webp 720w, img/polina-cover-1434.webp 1434w" sizes="(max-width: 700px) 100vw, 50vw" width="720" height="1054" alt="Обложка альбома POLINA. MY 23’S — Super Girl"></div>
-        <figcaption class="caption">Альбом. «POLINA. MY 23’S», обложка Super Girl</figcaption>
-      </figure>
-      <figure class="pair__item" data-cursor="Альбом">
-        <div class="clip" data-clip><img data-parallax src="img/hero-cover-720.webp" srcset="img/hero-cover-720.webp 720w, img/hero-cover-1280.webp 1280w" sizes="(max-width: 700px) 100vw, 50vw" width="720" height="1007" alt="Обложка альбома PAKEERSH в стиле журнала VOGUE"></div>
-        <figcaption class="caption">Альбом. «PAKEERSH», обложка в духе VOGUE</figcaption>
-      </figure>
+    <!-- ВИДЕО ПРОЦЕССА. Пока заглушка: когда будет ролик, кладём img/process.mp4
+         и постер img/process-poster.webp, заглушку .video__ph убираем -->
+    <section class="video" aria-label="Видео процесса">
+      <div class="video__frame" data-reveal>
+        <!-- <video src="img/process.mp4" poster="img/process-poster.webp" autoplay muted loop playsinline></video> -->
+        <div class="video__ph">
+          <span class="video__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 7l8 5-8 5z"/></svg></span>
+          <span>Видео процесса скоро</span>
+        </div>
+      </div>
+      <p class="caption video__cap">Процесс. От папки с фото до готового разворота</p>
     </section>
 
     <!-- ЛЕНТА КАДРОВ -->
@@ -501,6 +503,6 @@
     </div>
   </div>
 
-  <script src="main.js?v=10041709" defer></script>
+  <script src="main.js?v=10041710" defer></script>
 </body>
 </html>
