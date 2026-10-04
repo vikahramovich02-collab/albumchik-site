@@ -751,3 +751,7 @@ a:hover > .arrow path, a:focus-visible > .arrow path { stroke: var(--paper); }
   .nav__word--l { padding: 0 8px 0 0; }
   .nav__word--r { padding: 0 0 0 8px; }
 }
+
+/* блок про ИИ-фото живёт по тем же правилам, что лента кадров */
+.strip--ai .strip__main { gap: 26px; }
+.strip--ai .lead { max-width: 560px; }
