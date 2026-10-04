@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vikahramovich02-collab.github.io/albumchik-site/sitemap.xml

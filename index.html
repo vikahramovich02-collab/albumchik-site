@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ALBUMCHIK — дизайн фотоальбомов и альбомов-журналов на заказ</title>
+  <meta name="description" content="Собираю ваши фото в альбом-журнал: отбор, сюжет, тексты и вёрстка как в глянце. Альбом после фотосессии, журнал о себе, альбом в подарок, альбом путешествия.">
+  <link rel="canonical" href="https://vikahramovich02-collab.github.io/albumchik-site/">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:site_name" content="ALBUMCHIK">
+  <meta property="og:title" content="ALBUMCHIK — альбомы, которые листают">
+  <meta property="og:description" content="Фотоальбомы и альбомы-журналы на заказ: отбор, сюжет, тексты и вёрстка как в глянце.">
+  <meta property="og:url" content="https://vikahramovich02-collab.github.io/albumchik-site/">
+  <meta property="og:image" content="https://vikahramovich02-collab.github.io/albumchik-site/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ALBUMCHIK — альбомы, которые листают">
+  <meta name="twitter:description" content="Фотоальбомы и альбомы-журналы на заказ.">
+  <meta name="twitter:image" content="https://vikahramovich02-collab.github.io/albumchik-site/img/og.jpg">
+
+  <link rel="preload" as="image" href="img/hero-photo-720.webp" imagesrcset="img/hero-photo-720.webp 720w, img/hero-photo-1440.webp 1440w" imagesizes="50vw">
+  <link rel="stylesheet" href="styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://vikahramovich02-collab.github.io/albumchik-site/#org",
+        "name": "ALBUMCHIK",
+        "url": "https://vikahramovich02-collab.github.io/albumchik-site/",
+        "logo": "https://vikahramovich02-collab.github.io/albumchik-site/favicon.svg",
+        "email": "hello@albumchik.by"
+      },
+      {
+        "@type": "Service",
+        "serviceType": "Дизайн фотоальбомов",
+        "provider": {"@id": "https://vikahramovich02-collab.github.io/albumchik-site/#org"},
+        "areaServed": "Worldwide",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Форматы альбомов",
+          "itemListElement": [
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Альбом после фотосессии"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 150, "priceCurrency": "BYN"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Журнал о себе"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 220, "priceCurrency": "BYN"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Альбом в подарок"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 300, "priceCurrency": "BYN"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Альбом путешествия"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 180, "priceCurrency": "BYN"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Фотосет под альбом"}},
+            {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "ИИ-генерация кадров для альбома"}}
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {"@type": "Question", "name": "Сколько времени занимает альбом?", "acceptedAnswer": {"@type": "Answer", "text": "Первые развороты показываю через 7–10 дней после того, как получу фото и истории. Весь альбом с правками — обычно 2–3 недели."}},
+          {"@type": "Question", "name": "Входит ли печать в цену?", "acceptedAnswer": {"@type": "Answer", "text": "Нет, печать считается отдельно: цена зависит от формата, бумаги и тиража. Помогу выбрать типографию или напечатаю сама."}},
+          {"@type": "Question", "name": "А если фото нет или их мало?", "acceptedAnswer": {"@type": "Answer", "text": "Можно снять фотосет сразу под развороты альбома или догенерировать с помощью ИИ образы и сцены, которых не было. Это доп. услуги, считаем вместе с альбомом. Журнал о себе и альбом в подарок часто собираются из фото с телефона и семейного архива."}},
+          {"@type": "Question", "name": "Можно ли заказать альбом из другого города?", "acceptedAnswer": {"@type": "Answer", "text": "Да, работаю онлайн: бриф — по видеосвязи, фото — архивом, макет — ссылкой. Готовые файлы или книгу отправлю куда нужно."}}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">К содержанию</a>
+
+  <!-- Прелоадер: знак «А» собирается и открывает страницу -->
+  <div class="loader" aria-hidden="true">
+    <svg class="loader__mark" viewBox="0 0 100 100"><path d="M0 0H100V100H62V72H38V100H0Z M40 40V58H60V40Z" fill-rule="evenodd"/></svg>
+    <span class="loader__word"><span>ALBUM</span><span>CHIK</span></span>
+  </div>
+
+  <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+
+  <header class="nav" data-nav>
+    <a class="nav__brand" href="#top" aria-label="ALBUMCHIK — наверх">ALBUMCHIK</a>
+    <nav class="nav__links" aria-label="Разделы">
+      <a href="#works" class="u">Работы</a>
+      <a href="#services" class="u">Услуги и цены</a>
+      <a href="#process" class="u">Как работаем</a>
+      <a href="#contact" class="u">Контакты</a>
+    </nav>
+    <a class="nav__cta u" href="https://t.me/albumchik" target="_blank" rel="noopener" data-goal="cta_nav">Заказать альбом ↗</a>
+    <button class="nav__burger" type="button" data-menu-open aria-expanded="false" aria-controls="menu">Меню</button>
+  </header>
+
+  <!-- Меню на телефоне -->
+  <nav class="menu" id="menu" aria-label="Разделы" hidden>
+    <button class="menu__close" type="button" data-menu-close aria-label="Закрыть меню">Закрыть ✕</button>
+    <ul class="menu__list">
+      <li><a href="#works">Работы</a></li>
+      <li><a href="#services">Услуги и цены</a></li>
+      <li><a href="#process">Как работаем</a></li>
+      <li><a href="#faq">Вопросы</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+    <a class="menu__cta" href="https://t.me/albumchik" target="_blank" rel="noopener" data-goal="cta_menu">Заказать альбом ↗</a>
+  </nav>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <h1 class="display hero__title" data-split>
+        <span class="line"><span>Альбомы,</span></span>
+        <span class="line"><span>которые листают</span></span>
+      </h1>
+      <div class="hero__meta">
+        <span class="hero__arrow" aria-hidden="true">↓</span>
+        <p class="lead" data-reveal>Собираю ваши фото в альбом-журнал: с сюжетом, текстами и вёрсткой как в глянце. Фотосессия, путешествие, человек, которому хочется сказать главное — всё становится книгой.</p>
+      </div>
+    </section>
+
+    <!-- ПОЛКА: альбомы стоят в ряд, по клику выпадает журнал и листается -->
+    <section class="shelf" id="shelf" aria-label="Альбомы — полистать">
+      <div class="shelf__stage" data-shelf>
+        <button class="album" type="button" data-album="pakeersh" style="--n:0" aria-label="Полистать альбом PAKEERSH">
+          <span class="album__spine"><span>PAKEERSH · 2026</span></span>
+          <span class="album__cover"><img src="img/albums/pakeersh/01-s.webp" width="280" height="394" alt="Обложка альбома PAKEERSH"></span>
+        </button>
+        <button class="album" type="button" data-album="polina" style="--n:1" aria-label="Полистать альбом POLINA">
+          <span class="album__spine"><span>POLINA · MY 23’S</span></span>
+          <span class="album__cover"><img src="img/albums/polina/01-s.webp" width="280" height="387" alt="Обложка альбома POLINA — MY 23’S"></span>
+        </button>
+        <button class="album" type="button" data-album="mary" style="--n:2" aria-label="Полистать журнал про Александра">
+          <span class="album__spine"><span>АЛЕКСАНДР · СПЕЦВЫПУСК</span></span>
+          <span class="album__cover"><img src="img/albums/mary/01-s.webp" width="280" height="396" alt="Обложка журнала-подарка про Александра Лукашевича"></span>
+        </button>
+        <button class="album album--soon" type="button" data-album="evgenij" style="--n:3" aria-label="Альбом Евгения — в работе">
+          <span class="album__spine"><span>ЕВГЕНИЙ · В РАБОТЕ</span></span>
+          <span class="album__cover"><img src="img/albums/evgenij/01-s.webp" width="280" height="394" alt="Альбом Евгения — в работе"><span class="album__tag">в работе</span></span>
+        </button>
+      </div>
+      <div class="shelf__chips" role="list">
+        <button type="button" class="chip" data-chip="pakeersh" role="listitem">PAKEERSH</button>
+        <button type="button" class="chip" data-chip="polina" role="listitem">POLINA</button>
+        <button type="button" class="chip" data-chip="mary" role="listitem">Александр</button>
+        <button type="button" class="chip chip--soon" data-chip="evgenij" role="listitem">Евгений · в работе</button>
+      </div>
+      <p class="caption shelf__hint"><span class="only-fine">Нажмите на альбом, чтобы полистать</span><span class="only-touch">Листайте вбок, нажмите на альбом — он откроется</span></p>
+    </section>
+
+    <section class="pair" aria-label="Съёмка и альбом">
+      <figure class="pair__item" data-cursor="Съёмка">
+        <div class="clip" data-clip><img data-parallax src="img/hero-photo-720.webp" srcset="img/hero-photo-720.webp 720w, img/hero-photo-1440.webp 1440w" sizes="(max-width: 700px) 100vw, 50vw" width="720" height="1008" alt="Евгений в белой майке и джинсах, солнечный свет — кадр со съёмки"></div>
+        <figcaption class="caption">Съёмка. Евгений, 2026</figcaption>
+      </figure>
+      <figure class="pair__item" data-cursor="Альбом">
+        <div class="clip" data-clip><img data-parallax src="img/hero-cover-720.webp" srcset="img/hero-cover-720.webp 720w, img/hero-cover-1280.webp 1280w" sizes="(max-width: 700px) 100vw, 50vw" width="720" height="1007" alt="Обложка альбома PAKEERSH в стиле журнала VOGUE"></div>
+        <figcaption class="caption">Альбом. «PAKEERSH», обложка в духе VOGUE</figcaption>
+      </figure>
+    </section>
+
+    <!-- ЛЕНТА КАДРОВ -->
+    <section class="strip" aria-label="Кадры из одной съёмки">
+      <div class="strip__head">
+        <p class="label" data-reveal>ИЗ ОДНОЙ СЪЁМКИ<br>(95)<br>кадров</p>
+        <h2 class="h2" data-reveal>Из сотни кадров остаются те, что складываются в историю.</h2>
+      </div>
+      <div class="marquee" data-marquee>
+        <div class="marquee__track">
+          <img loading="lazy" src="img/strip/004-440.webp" width="440" height="660" alt="">
+          <img loading="lazy" src="img/strip/014-440.webp" width="440" height="660" alt="">
+          <img loading="lazy" src="img/strip/022-440.webp" width="440" height="660" alt="">
+          <img loading="lazy" src="img/strip/018-440.webp" width="440" height="660" alt="">
+          <img loading="lazy" src="img/strip/025-440.webp" width="440" height="660" alt="">
+          <img loading="lazy" src="img/strip/029-440.webp" width="440" height="660" alt="">
+          <img loading="lazy" src="img/strip/035-440.webp" width="440" height="660" alt="">
+          <img loading="lazy" src="img/strip/045-440.webp" width="440" height="660" alt="">
+          <img loading="lazy" src="img/strip/050-440.webp" width="440" height="660" alt="">
+          <img loading="lazy" src="img/strip/053-440.webp" width="440" height="660" alt="">
+          <img loading="lazy" src="img/strip/060-440.webp" width="440" height="660" alt="">
+          <img loading="lazy" src="img/strip/066-440.webp" width="440" height="660" alt="">
+          <img loading="lazy" src="img/strip/078-440.webp" width="440" height="660" alt="">
+          <img loading="lazy" src="img/strip/083-440.webp" width="440" height="660" alt="">
+          <img loading="lazy" src="img/strip/088-440.webp" width="440" height="660" alt="">
+          <img loading="lazy" src="img/strip/095-440.webp" width="440" height="660" alt="">
+        </div>
+      </div>
+    </section>
+
+    <!-- КНИГА, КОТОРАЯ ЛИСТАЕТСЯ СКРОЛЛОМ -->
+    <section class="book" id="book" aria-label="Альбом PAKEERSH — развороты">
+      <div class="book__sticky">
+        <div class="book__top">
+          <p class="label">ЛИСТАЙТЕ<br>(04)<br>разворота</p>
+          <p class="book__counter"><span data-book-num>00</span> / 04</p>
+        </div>
+        <div class="book__stage">
+          <div class="book__body" data-book>
+            <div class="leaf" style="--i:0">
+              <div class="leaf__face leaf__front"><img loading="lazy" src="img/hero-cover-720.webp" srcset="img/hero-cover-720.webp 720w, img/hero-cover-1280.webp 1280w" sizes="(max-width: 700px) 46vw, 560px" width="560" height="783" alt="PAKEERSH — обложка"></div>
+              <div class="leaf__face leaf__back"><img loading="lazy" src="img/book-01-560.webp" srcset="img/book-01-560.webp 560w, img/book-01-1000.webp 1000w" sizes="(max-width: 700px) 46vw, 560px" width="560" height="783" alt="Разворот: I describe myself like this"></div>
+            </div>
+            <div class="leaf" style="--i:1">
+              <div class="leaf__face leaf__front"><img loading="lazy" src="img/book-02-560.webp" srcset="img/book-02-560.webp 560w, img/book-02-1000.webp 1000w" sizes="(max-width: 700px) 46vw, 560px" width="560" height="783" alt="Разворот: портрет с подписью"></div>
+              <div class="leaf__face leaf__back"><img loading="lazy" src="img/book-03-560.webp" srcset="img/book-03-560.webp 560w, img/book-03-1000.webp 1000w" sizes="(max-width: 700px) 46vw, 560px" width="560" height="783" alt="Разворот: утро и маска для сна"></div>
+            </div>
+            <div class="leaf" style="--i:2">
+              <div class="leaf__face leaf__front"><img loading="lazy" src="img/book-04-560.webp" srcset="img/book-04-560.webp 560w, img/book-04-1000.webp 1000w" sizes="(max-width: 700px) 46vw, 560px" width="560" height="783" alt="Разворот: чашка кофе"></div>
+              <div class="leaf__face leaf__back"><img loading="lazy" src="img/book-05-560.webp" srcset="img/book-05-560.webp 560w, img/book-05-1000.webp 1000w" sizes="(max-width: 700px) 46vw, 560px" width="560" height="783" alt="Разворот: this is art"></div>
+            </div>
+            <div class="leaf" style="--i:3">
+              <div class="leaf__face leaf__front"><img loading="lazy" src="img/book-06-560.webp" srcset="img/book-06-560.webp 560w, img/book-06-1000.webp 1000w" sizes="(max-width: 700px) 46vw, 560px" width="560" height="783" alt="Разворот: у клуба CBGB"></div>
+              <div class="leaf__face leaf__back"><img loading="lazy" src="img/book-back-560.webp" srcset="img/book-back-560.webp 560w, img/book-back-1000.webp 1000w" sizes="(max-width: 700px) 46vw, 560px" width="560" height="783" alt="Задняя обложка PAKEERSH"></div>
+            </div>
+          </div>
+        </div>
+        <p class="caption book__caption">«PAKEERSH». Журнал о себе, 2026</p>
+      </div>
+    </section>
+
+    <!-- УСЛУГИ -->
+    <section class="section" id="services">
+      <div class="opener">
+        <p class="label" data-reveal>УСЛУГИ<br>(04)<br>Форматы и цены</p>
+        <div class="opener__main">
+          <h2 class="h2" data-reveal>Каждый альбом — отдельный журнал со своим сюжетом.</h2>
+          <p class="lead" data-reveal>Беру отбор, сюжет, тексты и вёрстку. Вы присылаете фото и пару историй — получаете макет, готовый к печати, или сразу книгу.</p>
+        </div>
+      </div>
+
+      <ol class="services">
+        <li class="service" data-reveal data-preview="img/evg-2-480.webp">
+          <span class="service__num">01</span>
+          <div class="service__main">
+            <h3 class="service__title">Альбом после фотосессии</h3>
+            <p class="service__text">Отбор лучших кадров, раскладка по разворотам, обложка. Для портфолио, модели, пары.</p>
+          </div>
+          <span class="service__price">от 150 BYN</span>
+        </li>
+        <li class="service" data-reveal data-preview="img/hero-cover-720.webp">
+          <span class="service__num">02</span>
+          <div class="service__main">
+            <h3 class="service__title">Журнал о себе</h3>
+            <p class="service__text">Альбом-обложка «как в глянце»: ваши фото, цитаты, плейлисты, мелочи, которые делают вас вами.</p>
+          </div>
+          <span class="service__price">от 220 BYN</span>
+        </li>
+        <li class="service" data-reveal data-preview="img/albums/polina/01-s.webp">
+          <span class="service__num">03</span>
+          <div class="service__main">
+            <h3 class="service__title">Альбом в подарок</h3>
+            <p class="service__text">История человека: интервью с близкими, тексты, даты, фото из архива. Лучший подарок на юбилей.</p>
+          </div>
+          <span class="service__price">от 300 BYN</span>
+        </li>
+        <li class="service" data-reveal data-preview="img/book-06-560.webp">
+          <span class="service__num">04</span>
+          <div class="service__main">
+            <h3 class="service__title">Альбом путешествия</h3>
+            <p class="service__text">Маршрут, места, билеты и заметки — поездка, которую можно снова пролистать.</p>
+          </div>
+          <span class="service__price">от 180 BYN</span>
+        </li>
+      </ol>
+      <p class="note" data-reveal>Нет фото? Есть доп. услуги: фотосет под альбом и ИИ-генерация кадров, которых не было. Печать считается отдельно — зависит от формата, бумаги и тиража.</p>
+      <img class="preview" alt="" aria-hidden="true">
+    </section>
+
+    <!-- РАБОТЫ -->
+    <section class="section section--flush" id="works">
+      <div class="opener pad">
+        <p class="label" data-reveal>РАБОТЫ<br>(04)<br>Альбомы 2026</p>
+        <h2 class="h2 h2--lg opener__main" data-reveal>Три готовых альбома и четвёртый — на столе.</h2>
+      </div>
+
+      <article class="work">
+        <div class="work__row work__row--fog">
+          <div class="clip" data-clip data-cursor="PAKEERSH"><img loading="lazy" src="img/book-01-560.webp" srcset="img/book-01-560.webp 560w, img/book-01-1000.webp 1000w" sizes="(max-width: 700px) 50vw, 45vw" width="560" height="783" alt="PAKEERSH — разворот I describe myself like this"></div>
+          <div class="clip" data-clip data-cursor="PAKEERSH"><img loading="lazy" src="img/book-02-560.webp" srcset="img/book-02-560.webp 560w, img/book-02-1000.webp 1000w" sizes="(max-width: 700px) 50vw, 45vw" width="560" height="783" alt="PAKEERSH — разворот с портретом"></div>
+        </div>
+        <div class="work__cap pad" data-reveal><h3>PAKEERSH</h3><span class="caption">Журнал о себе · 26 страниц · 2026</span></div>
+      </article>
+
+      <article class="work">
+        <div class="work__row work__row--fog">
+          <div class="clip" data-clip data-cursor="POLINA"><img loading="lazy" src="img/albums/polina/04.webp" width="840" height="1162" sizes="(max-width: 700px) 50vw, 45vw" alt="POLINA — разворот GIRL OR STAR"></div>
+          <div class="clip" data-clip data-cursor="POLINA"><img loading="lazy" src="img/albums/polina/09.webp" width="840" height="1162" sizes="(max-width: 700px) 50vw, 45vw" alt="POLINA — разворот The mysterious Polinara"></div>
+        </div>
+        <div class="work__cap pad" data-reveal><h3>POLINA. MY 23’S</h3><span class="caption">Альбом в подарок на день рождения · 42 страницы · 2026</span></div>
+      </article>
+
+      <article class="work">
+        <div class="work__row work__row--fog work__row--trio">
+          <div class="clip" data-clip data-cursor="Обложка"><img loading="lazy" src="img/albums/mary/01.webp" width="840" height="1189" alt="Обложка журнала-подарка про Александра Лукашевича"></div>
+          <div class="clip" data-clip data-cursor="Александр"><img loading="lazy" src="img/mary-1-480.webp" srcset="img/mary-1-480.webp 480w, img/mary-1-900.webp 900w" sizes="(max-width: 700px) 50vw, 45vw" width="480" height="679" alt="Журнал про фаундера Mary — страница с цитатой"></div>
+          <div class="clip" data-clip data-cursor="Александр"><img loading="lazy" src="img/mary-2-480.webp" srcset="img/mary-2-480.webp 480w, img/mary-2-900.webp 900w" sizes="(max-width: 700px) 50vw, 45vw" width="480" height="679" alt="Журнал про фаундера Mary — страница с фото команды"></div>
+        </div>
+        <div class="work__cap pad" data-reveal><h3>Александр. Спецвыпуск</h3><span class="caption">Журнал в подарок · единственный экземпляр · 2026</span></div>
+      </article>
+
+      <article class="work">
+        <div class="work__row work__row--three">
+          <div class="clip" data-clip data-cursor="Евгений"><img data-parallax loading="lazy" src="img/evg-1-480.webp" srcset="img/evg-1-480.webp 480w, img/evg-1-960.webp 960w" sizes="(max-width: 700px) 100vw, 33vw" width="480" height="720" alt="Евгений в белой рубашке и галстуке на красном стуле"></div>
+          <div class="clip" data-clip data-cursor="Евгений"><img data-parallax loading="lazy" src="img/evg-2-480.webp" srcset="img/evg-2-480.webp 480w, img/evg-2-960.webp 960w" sizes="(max-width: 700px) 100vw, 33vw" width="480" height="720" alt="Евгений в полосатой рубашке на белом фоне"></div>
+          <div class="clip" data-clip data-cursor="Евгений"><img data-parallax loading="lazy" src="img/evg-3-480.webp" srcset="img/evg-3-480.webp 480w, img/evg-3-960.webp 960w" sizes="(max-width: 700px) 100vw, 33vw" width="480" height="720" alt="Евгений на барном стуле в светлой студии"></div>
+        </div>
+        <div class="work__cap pad" data-reveal><h3>Евгений</h3><span class="caption">Альбом после фотосессии · в работе</span></div>
+      </article>
+    </section>
+
+    <!-- ПРОЦЕСС -->
+    <section class="section" id="process">
+      <div class="opener">
+        <p class="label" data-reveal>ПРОЦЕСС<br>(04)<br>Как работаем</p>
+        <h2 class="h2 opener__main" data-reveal>От папки с фото до книги в руках — четыре шага.</h2>
+      </div>
+      <ol class="steps">
+        <li class="step" data-reveal style="--d:0"><span>01</span><h3>Бриф</h3><p>Созваниваемся на 20 минут: для кого альбом, какое настроение, какой формат и срок.</p></li>
+        <li class="step" data-reveal style="--d:1"><span>02</span><h3>Фото и истории</h3><p>Присылаете фото архивом и пару историй голосом или текстом — отбор беру на себя.</p></li>
+        <li class="step" data-reveal style="--d:2"><span>03</span><h3>Макет и правки</h3><p>Через 7–10 дней показываю развороты. Два круга правок входят в цену.</p></li>
+        <li class="step" data-reveal style="--d:3"><span>04</span><h3>Печать</h3><p>Отдаю файлы, готовые к печати, или печатаю сама и отправляю готовую книгу.</p></li>
+      </ol>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="opener">
+        <p class="label" data-reveal>ВОПРОСЫ<br>(04)<br>Коротко</p>
+        <div class="opener__main faq">
+          <details data-reveal><summary data-goal="faq_open">Сколько времени занимает альбом?</summary><p>Первые развороты показываю через 7–10 дней после того, как получу фото и истории. Весь альбом с правками — обычно 2–3 недели.</p></details>
+          <details data-reveal><summary data-goal="faq_open">Входит ли печать в цену?</summary><p>Нет, печать считается отдельно: цена зависит от формата, бумаги и тиража. Помогу выбрать типографию или напечатаю сама.</p></details>
+          <details data-reveal><summary data-goal="faq_open">А если фото нет или их мало?</summary><p>Не проблема: можно снять фотосет сразу под развороты альбома или догенерировать с помощью ИИ образы и сцены, которых не было. Это доп. услуги, считаем вместе с альбомом. А журнал о себе и альбом в подарок часто отлично собираются из фото с телефона и семейного архива.</p></details>
+          <details data-reveal><summary data-goal="faq_open">Можно ли заказать альбом из другого города?</summary><p>Да, работаю онлайн: бриф — по видеосвязи, фото — архивом, макет — ссылкой. Готовые файлы или книгу отправлю куда нужно.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ЗАЯВКА -->
+    <section class="cta" id="contact">
+      <h2 class="display" data-split data-reveal>
+        <span class="line"><span>Соберём</span></span>
+        <span class="line"><span>ваш альбом</span></span>
+      </h2>
+      <div class="cta__meta">
+        <div class="cta__links">
+          <a class="big-link magnet" href="https://t.me/albumchik" target="_blank" rel="noopener" data-goal="cta_telegram">Telegram ↗</a>
+          <a class="big-link magnet" href="https://instagram.com/albumchik" target="_blank" rel="noopener" data-goal="cta_instagram">Instagram ↗</a>
+        </div>
+        <p class="lead" data-reveal>Напишите, что за альбом задумали и к какой дате он нужен — отвечу в тот же день и пришлю примеры в похожем формате.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© ALBUMCHIK 2026</span>
+    <span class="muted">Работаю онлайн по всему миру</span>
+    <a class="u" href="mailto:hello@albumchik.by" data-goal="cta_email">hello@albumchik.by</a>
+  </footer>
+
+  <!-- Просмотрщик альбома -->
+  <div class="viewer" role="dialog" aria-modal="true" aria-labelledby="viewer-title" hidden>
+    <div class="viewer__top">
+      <p class="label"><span id="viewer-title">PAKEERSH</span><br><span class="muted" data-viewer-meta></span></p>
+      <p class="viewer__counter"><span data-viewer-num>00</span> / <span data-viewer-total>00</span></p>
+      <button type="button" class="viewer__close u" data-viewer-close>Закрыть ✕</button>
+    </div>
+    <div class="viewer__stage">
+      <div class="book__body viewer__book" data-viewer-book></div>
+    </div>
+    <div class="viewer__bottom">
+      <button type="button" class="u" data-viewer-prev>← Назад</button>
+      <p class="caption"><span class="only-fine">Листайте кликом по странице, стрелками или свайпом</span><span class="only-touch">Свайп или кнопки</span></p>
+      <button type="button" class="u" data-viewer-next>Дальше →</button>
+    </div>
+  </div>
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Согласие на cookie: счётчики грузятся только после «Принять» -->
+  <div class="consent" role="dialog" aria-label="Cookie" hidden>
+    <p>Сайт использует cookie и счётчики аналитики, чтобы понимать, насколько им удобно пользоваться.</p>
+    <div class="consent__actions">
+      <button type="button" class="u" data-consent="yes">Принять</button>
+      <button type="button" class="u muted" data-consent="no">Только необходимые</button>
+    </div>
+  </div>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
