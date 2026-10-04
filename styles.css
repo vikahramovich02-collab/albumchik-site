@@ -731,3 +731,23 @@ a:hover > .arrow path, a:focus-visible > .arrow path { stroke: var(--paper); }
   .nav__brand { justify-self: start; }
   .nav__cta { display: none; }
 }
+
+/* ---------- Название раскрывается в обе стороны от знака ---------- */
+.nav__word {
+  position: absolute; top: 50%; translate: 0 -50%;
+  white-space: nowrap; font-size: 16px; letter-spacing: -0.004em;
+  transition: clip-path .6s var(--ease);
+}
+/* левая половина уезжает под знак вправо, правая — влево */
+.nav__word--l { right: 100%; left: auto; padding: 0 10px 0 0; clip-path: inset(0 0 0 100%); }
+.nav__word--r { left: 100%; right: auto; padding: 0 0 0 10px; clip-path: inset(0 100% 0 0); }
+.nav__brand:hover .nav__word--l, .nav__brand:focus-visible .nav__word--l,
+.nav__brand:hover .nav__word--r, .nav__brand:focus-visible .nav__word--r { clip-path: inset(0 0 0 0); }
+
+/* на телефоне ховера нет — обе половины стоят открыто, знак работает разделителем */
+@media (max-width: 800px) {
+  .nav__brand { gap: 0; }
+  .nav__word { position: static; translate: none; clip-path: none; }
+  .nav__word--l { padding: 0 8px 0 0; }
+  .nav__word--r { padding: 0 0 0 8px; }
+}

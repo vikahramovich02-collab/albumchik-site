@@ -192,7 +192,7 @@
 
   // чипы подсвечивают альбом и наоборот
   const hot = (key, on) => {
-    $$(`[data-album="${key}"], [data-chip="${key}"]`).forEach((el) => el.classList.toggle('is-hot', on));
+    $$(`[data-album="${key}"]`).forEach((el) => el.classList.toggle('is-hot', on));
     shelf.classList.toggle('has-focus', on);
   };
   $$('[data-chip]').forEach((c) => {
@@ -201,8 +201,6 @@
     c.addEventListener('click', () => openAlbum(c.dataset.chip, $(`[data-album="${c.dataset.chip}"]`)));
   });
   $$('[data-album]').forEach((a) => {
-    a.addEventListener('mouseenter', () => $(`[data-chip="${a.dataset.album}"]`).classList.add('is-hot'));
-    a.addEventListener('mouseleave', () => $(`[data-chip="${a.dataset.album}"]`).classList.remove('is-hot'));
     a.addEventListener('click', () => openAlbum(a.dataset.album, a));
   });
 
