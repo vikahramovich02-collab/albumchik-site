@@ -585,7 +585,7 @@ a:hover > .arrow path, a:focus-visible > .arrow path { stroke: var(--paper); }
 }
 .album {
   --ry: 38deg;
-  margin-right: calc(var(--w) * -.34);     /* перекрытие — ряд читается как корешки на полке */
+  margin-right: calc(var(--w) * -.08);     /* лёгкое перекрытие: корешок соседа виден, обложка не закрыта */
 }
 .album:last-child { margin-right: 0; }
 /* ближние книги перекрывают дальние: первая сверху */
@@ -635,7 +635,7 @@ a:hover > .arrow path, a:focus-visible > .arrow path { stroke: var(--paper); }
 
 @media (max-width: 700px) {
   .shelf__stage { --w: 46vw; gap: 0; padding-left: 16vw; padding-right: 30vw; }
-  .album { --ry: 24deg; margin-right: calc(var(--w) * -.26); }
+  .album { --ry: 24deg; margin-right: calc(var(--w) * -.04); }
   .viewer__blank-title { font-size: 34px; }
 }
 
@@ -695,3 +695,21 @@ a:hover > .arrow path, a:focus-visible > .arrow path { stroke: var(--paper); }
   .nav__cta { display: none; }
   .nav__links { justify-self: end; }
 }
+
+/* ============================================================
+   ШАПКА БЕЗ ПОДЛОЖКИ
+   Режим наложения difference: всё в шапке белое, поэтому на белой
+   странице оно читается чёрным, а поверх тёмного фото — белым.
+   Подложка и блюр больше не нужны.
+   ============================================================ */
+.nav {
+  mix-blend-mode: difference;
+  color: #fff;
+  background: transparent;
+}
+.nav.is-solid { background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
+.nav__mark { fill: #fff; }
+/* квадрат стрелки и подчёркивания берут цвет текста — инвертируются вместе с ним */
+.nav .arrow { border-color: currentColor; }
+.nav a:hover > .arrow { background: currentColor; }
+.nav a:hover > .arrow path { stroke: #000; }
