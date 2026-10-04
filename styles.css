@@ -892,3 +892,21 @@ a:hover > .arrow path, a:focus-visible > .arrow path { stroke: var(--paper); }
 .step { cursor: default; }
 .step .step__title { transition: transform .6s var(--ease); }
 .step:hover .step__title { transform: translateX(20px); }
+
+/* видео приглушено, чтобы шапка и текст поверх читались */
+.video__frame::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: rgba(0, 0, 0, .3);
+}
+
+/* названия шагов стоят по той же линии, что и заголовок блока */
+.step { grid-template-columns: minmax(200px, 454px) minmax(180px, 320px) 1fr; }
+@media (max-width: 1100px) {
+  .step { grid-template-columns: minmax(140px, 240px) 1fr; }
+  .step__num { grid-row: 1 / span 2; }
+  .step__title, .step__text { grid-column: 2; }
+}
+@media (max-width: 700px) {
+  .step { grid-template-columns: 1fr; }
+  .step__num, .step__title, .step__text { grid-column: 1; }
+}
