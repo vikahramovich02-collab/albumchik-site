@@ -713,3 +713,21 @@ a:hover > .arrow path, a:focus-visible > .arrow path { stroke: var(--paper); }
 .nav .arrow { border-color: currentColor; }
 .nav a:hover > .arrow { background: currentColor; }
 .nav a:hover > .arrow path { stroke: #000; }
+
+/* ---------- Разделы слева, знак по центру, действия справа ---------- */
+.nav__links { justify-self: start; }
+.nav__actions { justify-self: end; display: flex; align-items: center; gap: 20px; font-size: 14px; }
+.nav__cta { margin-left: 0; }
+.nav__edge { display: none; }
+
+@media (max-width: 1300px) {
+  /* прячем сами ссылки, но колонку оставляем — иначе знак съедет с центра */
+  .nav__links > a { display: none; }
+  .nav__burger { display: block; }
+}
+@media (max-width: 800px) {
+  .nav { grid-template-columns: auto 1fr auto; }
+  .nav__links { display: none; }
+  .nav__brand { justify-self: start; }
+  .nav__cta { display: none; }
+}
