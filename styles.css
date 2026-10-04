@@ -763,3 +763,36 @@ a:hover > .arrow path, a:focus-visible > .arrow path { stroke: var(--paper); }
 }
 @media (max-width: 700px) { .ph { height: 200px; } }
 @media (max-width: 480px) { .ph { height: 168px; } }
+
+/* ============================================================
+   ЗНАК И НАЗВАНИЕ
+   В покое по центру стоит только знак. При наведении он отъезжает
+   влево, а название раскрывается вправо — вместе они остаются
+   отцентрованными. Сдвиг равен половине ширины названия.
+   ============================================================ */
+.nav__brand { --shift: 54px; }
+.nav__mark { transition: transform .6s var(--ease); }
+.nav__word {
+  position: absolute; left: 100%; right: auto; top: 50%;
+  translate: 0 -50%; padding: 0 0 0 10px;
+  white-space: nowrap; font-size: 16px; letter-spacing: -0.004em;
+  transform: translateX(calc(var(--shift) * -1));
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path .6s var(--ease), transform .6s var(--ease);
+}
+.nav__brand:hover .nav__mark, .nav__brand:focus-visible .nav__mark {
+  transform: translateX(calc(var(--shift) * -1));
+}
+.nav__brand:hover .nav__word, .nav__brand:focus-visible .nav__word {
+  clip-path: inset(0 0 0 0);
+}
+
+/* на телефоне ховера нет: знак и название просто стоят слева */
+@media (max-width: 800px) {
+  .nav__brand { gap: 10px; }
+  .nav__mark { transform: none !important; }
+  .nav__word {
+    position: static; translate: none; transform: none;
+    clip-path: none; padding: 0;
+  }
+}
