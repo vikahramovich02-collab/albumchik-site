@@ -30,7 +30,7 @@
   <meta name="twitter:image" content="https://albumchik.by/img/og.jpg">
 
   <link rel="preload" as="image" href="img/hero-photo-720.webp" imagesrcset="img/hero-photo-720.webp 720w, img/hero-photo-1440.webp 1440w" imagesizes="50vw">
-  <link rel="stylesheet" href="styles.css?v=10041711">
+  <link rel="stylesheet" href="styles.css?v=10041714">
 
   <script type="application/ld+json">
   {
@@ -90,7 +90,7 @@
     <nav class="nav__links" aria-label="Разделы">
       <a href="#works" class="u">Работы</a>
       <a href="#services" class="u">Услуги и цены</a>
-      <a href="#ai" class="u">ИИ-фото</a>
+      <a href="#gallery" class="u">Галерея</a>
       <a href="#process" class="u">Как работаем</a>
       <a href="#contact" class="u">Контакты</a>
     </nav>
@@ -110,7 +110,7 @@
     <ul class="menu__list">
       <li><a href="#works">Работы</a></li>
       <li><a href="#services">Услуги и цены</a></li>
-      <li><a href="#ai">ИИ-фото</a></li>
+      <li><a href="#gallery">Галерея</a></li>
       <li><a href="#process">Как работаем</a></li>
       <li><a href="#faq">Вопросы</a></li>
       <li><a href="#contact">Контакты</a></li>
@@ -392,30 +392,40 @@
       -->
     </section>
 
-    <!-- ИИ-ФОТО -->
-    <section class="strip strip--ai" id="ai" aria-label="ИИ-фото">
-      <div class="strip__head">
-        <p class="label" data-reveal>ИИ-ФОТО<br>(05)<br>Отдельная услуга</p>
-        <div class="strip__main">
-          <h2 class="h2" data-reveal>Кадра не было — а теперь есть.</h2>
-          <p class="lead" data-reveal>Работала с фешен-брендами и собирала им кампейны нейросетью: образы, локации и свет, которых не было ни на одной съёмке. Тот же инструмент работает и для альбома — если фото мало, они разного качества или их нет совсем.</p>
-          <a class="btn" href="https://t.me/viksaaaaaa_a" target="_blank" rel="noopener" data-reveal data-goal="cta_ai">Обсудить ИИ-съёмку <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 15.5L15.5 8.5M15.5 8.5H9.8M15.5 8.5V14.2"/></svg></span></a>
+    <!-- ГАЛЕРЕЯ (вместо блока ИИ-фото, 04.10) -->
+    <section class="section gallery-sec" id="gallery" aria-label="Галерея">
+      <div class="opener">
+        <p class="label" data-reveal>ГАЛЕРЕЯ<br>(24)<br>Кадры со съёмок</p>
+        <div class="opener__main">
+          <h2 class="h2" data-reveal>Кадры, из которых потом собираются альбомы.</h2>
+          <p data-reveal><a class="btn" href="https://t.me/viksaaaaaa_a" target="_blank" rel="noopener" data-goal="cta_gallery">Заказать фотосессию <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 15.5L15.5 8.5M15.5 8.5H9.8M15.5 8.5V14.2"/></svg></span></a></p>
         </div>
       </div>
-      <!-- Заглушки: как появятся ИИ-кадры, меняем .ph на <img> -->
-      <div class="marquee marquee--back">
-        <div class="marquee__track">
-          <div class="ph"></div>
-          <div class="ph"></div>
-          <div class="ph"></div>
-          <div class="ph"></div>
-          <div class="ph"></div>
-          <div class="ph"></div>
-          <div class="ph"></div>
-          <div class="ph"></div>
-          <div class="ph"></div>
-          <div class="ph"></div>
-        </div>
+      <div class="gallery" data-reveal>
+        <img loading="lazy" decoding="async" src="img/gallery/g01-640.webp" width="640" height="960" alt="">
+        <img loading="lazy" decoding="async" src="img/gallery/g09-640.webp" width="640" height="428" alt="">
+        <img loading="lazy" decoding="async" src="img/strip/014-440.webp" width="440" height="660" alt="">
+        <img loading="lazy" decoding="async" src="img/gallery/g02-640.webp" width="640" height="960" alt="">
+        <img loading="lazy" decoding="async" src="img/strip/p1-440.webp" width="440" height="660" alt="">
+        <img loading="lazy" decoding="async" src="img/gallery/g10-640.webp" width="640" height="428" alt="">
+        <img loading="lazy" decoding="async" src="img/gallery/g03-640.webp" width="640" height="960" alt="">
+        <img loading="lazy" decoding="async" src="img/strip/029-440.webp" width="440" height="660" alt="">
+        <img loading="lazy" decoding="async" src="img/strip/p2-440.webp" width="440" height="660" alt="">
+        <img loading="lazy" decoding="async" src="img/gallery/g04-640.webp" width="640" height="960" alt="">
+        <img loading="lazy" decoding="async" src="img/gallery/g11-640.webp" width="640" height="428" alt="">
+        <img loading="lazy" decoding="async" src="img/strip/p3-440.webp" width="440" height="660" alt="">
+        <img loading="lazy" decoding="async" src="img/strip/053-440.webp" width="440" height="660" alt="">
+        <img loading="lazy" decoding="async" src="img/gallery/g05-640.webp" width="640" height="960" alt="">
+        <img loading="lazy" decoding="async" src="img/gallery/g06-640.webp" width="640" height="960" alt="">
+        <img loading="lazy" decoding="async" src="img/strip/p4-440.webp" width="440" height="660" alt="">
+        <img loading="lazy" decoding="async" src="img/gallery/g12-640.webp" width="640" height="428" alt="">
+        <img loading="lazy" decoding="async" src="img/gallery/g07-640.webp" width="640" height="960" alt="">
+        <img loading="lazy" decoding="async" src="img/strip/078-440.webp" width="440" height="660" alt="">
+        <img loading="lazy" decoding="async" src="img/strip/p5-440.webp" width="440" height="660" alt="">
+        <img loading="lazy" decoding="async" src="img/gallery/g08-640.webp" width="640" height="960" alt="">
+        <img loading="lazy" decoding="async" src="img/strip/p6-440.webp" width="440" height="660" alt="">
+        <img loading="lazy" decoding="async" src="img/strip/p7-440.webp" width="440" height="660" alt="">
+        <img loading="lazy" decoding="async" src="img/strip/p8-440.webp" width="440" height="660" alt="">
       </div>
     </section>
 
@@ -503,6 +513,6 @@
     </div>
   </div>
 
-  <script src="main.js?v=10041710" defer></script>
+  <script src="main.js?v=10041714" defer></script>
 </body>
 </html>
