@@ -49,7 +49,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .h2--lg { font-size: var(--h2-lg); letter-spacing: -0.013em; }
 .lead { font-size: var(--lead); line-height: 1.2; letter-spacing: -0.01em; max-width: 520px; }
 .label { font-size: 16px; line-height: 1.2; }
-.caption { font: 400 13px/1.2 var(--serif); letter-spacing: 0; }
+.caption { font: 400 13px/1.2 var(--sans); letter-spacing: 0; }
 .muted { color: var(--ash); }
 
 /* подчёркивание, которое «прочерчивается» на ховере */
@@ -216,32 +216,44 @@ html.no-loader .loader { display: none; }
 .work__row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); }
 .work__row--fog { background: var(--fog); padding: 80px 60px; }
 .work__row--three { grid-template-columns: repeat(3, 1fr); gap: 0; }
+/* бегущие страницы журнала: лента во всю ширину серой подложки */
+.work__row--run { display: block; padding-inline: 0; cursor: pointer; }
+.work__run .marquee__track { gap: var(--gap); }
+.work__run .marquee__track img { height: clamp(300px, 36vw, 540px); filter: none; box-shadow: 0 1px 2px rgba(0,0,0,.06); }
+.work__run .marquee__track img:hover { transform: none; }
 .work__cap { display: flex; justify-content: space-between; align-items: baseline; margin-top: 13px; gap: var(--gap); }
 .work__cap h3 { font-size: 21px; letter-spacing: -0.01em; }
 @media (max-width: 700px) {
   .work__row--fog { padding: 26px; gap: 13px; }
+  .work__row--run { padding-inline: 0; }
+  .work__run .marquee__track img { height: 300px; }
   .work__row--three { grid-template-columns: 1fr; }
   .work__cap { flex-direction: column; gap: 6px; }
 }
 
 /* процесс */
-.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gap); margin-top: 80px; }
+.steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--gap); margin-top: 80px; }
 .step { position: relative; padding-top: 26px; display: grid; gap: 13px; align-content: start; }
 .step::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 1px; background: var(--ink); transform: scaleX(0); transform-origin: left; transition: transform 1s var(--ease-in-out); transition-delay: calc(var(--d, 0) * 150ms + 150ms); }
 .step.is-in::before { transform: none; }
 .step h3 { font-size: 21px; letter-spacing: -0.01em; }
 .step p { color: var(--ash); }
+@media (max-width: 1100px) { .steps { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 900px) { .steps { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
 
 /* FAQ */
-.faq details { border-top: 1px solid var(--fog); padding: 26px 0; }
+/* высоту строки задаёт вопрос, а не details: Safari оставлял под закрытым
+   ответом лишнее место, и строки выходили разной высоты */
+.faq { gap: 0; }
+.faq details { border-top: 1px solid var(--fog); padding: 0; }
+.faq details:not([open]) > p { display: none; }
 .faq details:last-child { border-bottom: 1px solid var(--fog); }
-.faq summary { font-size: var(--lead); letter-spacing: -0.01em; list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: var(--gap); }
+.faq summary { padding: 26px 0; font-size: var(--lead); letter-spacing: -0.01em; list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: var(--gap); }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::after { content: "+"; transition: transform .5s var(--ease); }
 .faq details[open] summary::after { transform: rotate(45deg); }
-.faq details p { color: var(--ash); max-width: 620px; margin-top: 13px; animation: faq-in .6s var(--ease); }
+.faq details p { color: var(--ash); max-width: 620px; margin: -13px 0 26px; animation: faq-in .6s var(--ease); }
 @keyframes faq-in { from { opacity: 0; transform: translateY(-8px); } }
 
 /* заявка */
@@ -353,8 +365,8 @@ html.no-loader .loader { display: none; }
 .viewer__book .leaf__front::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 18px; background: linear-gradient(90deg, rgba(0,0,0,.12), transparent); z-index: 1; }
 .viewer__book .leaf__back::before { content: ""; position: absolute; inset: 0 0 0 auto; width: 18px; background: linear-gradient(270deg, rgba(0,0,0,.12), transparent); z-index: 1; }
 .viewer__bottom { display: flex; justify-content: center; align-items: center; gap: var(--gap); }
-/* подпись — тем же гротеском, что и весь сайт */
-.viewer__bottom .caption { font-family: var(--sans); color: var(--ash); }
+
+.viewer__bottom .caption { color: var(--ash); }
 /* стрелки по бокам журнала */
 /* --pw — ширина страницы, та же формула, что у .viewer__book: стрелки
    встают в 32px от края журнала. Разворот — ±2 страницы от центра,
@@ -457,6 +469,7 @@ html.no-loader .loader { display: none; }
   /* развороты в одну колонку — иначе страница журнала уходит в 160px */
   .work__row { grid-template-columns: 1fr; gap: 13px; }
   .work__row--fog { padding: 20px; }
+  .work__row--run { padding-inline: 0; }
   .work__row--trio { grid-template-columns: 1fr; }
   .work__row--trio > :first-child { grid-column: auto; }
 
@@ -472,7 +485,7 @@ html.no-loader .loader { display: none; }
   .chip { padding: 11px 16px; }
   .shelf__chips { gap: 8px; }
   .shelf__hint { margin-top: 20px; }
-  .faq summary { padding: 4px 0; }
+  .faq summary { padding: 30px 0; }
   .footer { gap: 8px; padding: var(--pad) var(--pad) 32px; }
 
   /* cookie — не упирается в правый край */

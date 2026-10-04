@@ -211,6 +211,10 @@
   });
   $$('[data-album]').forEach((a) => {
     a.addEventListener('click', () => openAlbum(a.dataset.album, a));
+    // ленты в «Работах» — div с role="button": Enter и пробел как у кнопки
+    if (a.tagName !== 'BUTTON') a.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openAlbum(a.dataset.album, a); }
+    });
   });
 
   let cur = null, idx = 0, leafEls = [], opener = null;
