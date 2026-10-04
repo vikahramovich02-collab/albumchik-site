@@ -677,3 +677,21 @@ a:hover > .arrow path, a:focus-visible > .arrow path { stroke: var(--paper); }
 /* книга в конце прокрутки уезжает вбок — обрезаем, иначе страница едет по горизонтали.
    clip (а не hidden) не создаёт скролл-контейнер и не ломает sticky внутри */
 .book { overflow-x: clip; }
+
+/* ============================================================
+   ШАПКА: что показываем на какой ширине
+   широкое окно — все разделы; среднее — только кнопка и «Меню»;
+   телефон — знак слева и «Меню». Так разделы никогда не наезжают на знак.
+   ============================================================ */
+.nav__links { display: flex; }
+.nav__burger { display: none; }
+
+@media (max-width: 1300px) {
+  .nav__links > a:not(.nav__cta) { display: none; }
+  .nav__burger { display: block; }
+}
+@media (max-width: 800px) {
+  .nav { grid-template-columns: auto 1fr auto; }
+  .nav__cta { display: none; }
+  .nav__links { justify-self: end; }
+}
