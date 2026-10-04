@@ -175,6 +175,7 @@
     polina:   { title: 'POLINA. MY 23’S', meta: 'Альбом в подарок · 2026', pages: 42, ratio: 840 / 1162 },
     mary:     { title: 'Александр. Спецвыпуск', meta: 'Журнал в подарок · единственный экземпляр · 2026', pages: 3, ratio: 840 / 1189 },
     evgenij:  { title: 'Евгений', soon: true },
+    your:     { title: 'Ваш альбом', meta: 'Пока пустая обложка', blank: true },
   };
   const pageSrc = (key, i) => `img/albums/${key}/${String(i + 1).padStart(2, '0')}.webp`;
   const shelf = $('[data-shelf]');
@@ -184,6 +185,7 @@
   const vTotal = $('[data-viewer-total]');
   const vPrev = $('[data-viewer-prev]');
   const vNext = $('[data-viewer-next]');
+  const vBlank = $('[data-viewer-blank]');
   const toast = $('.toast');
   let toastT;
   const say = (msg) => { toast.textContent = msg; toast.classList.add('is-on'); clearTimeout(toastT); toastT = setTimeout(() => toast.classList.remove('is-on'), 2800); };
@@ -244,6 +246,7 @@
   };
 
   const go = (dir) => {
+    if (cur && ALBUMS[cur]?.blank) return;
     if (solo) {
       const next = clamp(idx + dir, 0, soloImgs.length - 1);
       if (next === idx) return;
@@ -308,6 +311,21 @@
 
   function openAlbum(key, from) {
     const a = ALBUMS[key];
+    if (a.blank) {
+      cur = key; opener = from;
+      $('#viewer-title').textContent = a.title;
+      $('[data-viewer-meta]').textContent = a.meta;
+      vBook.hidden = true; vBlank.hidden = false;
+      viewer.classList.add('is-blank');
+      viewer.hidden = false;
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(() => viewer.classList.add('is-open'));
+      $('[data-viewer-close]').focus();
+      track('album_blank');
+      return;
+    }
+    vBook.hidden = false; vBlank.hidden = true;
+    viewer.classList.remove('is-blank');
     if (a.soon) {
       from?.classList.remove('is-shake'); void from?.offsetWidth; from?.classList.add('is-shake');
       say('Альбом Евгения ещё собирается — скоро здесь можно будет полистать');
@@ -348,7 +366,7 @@
   }
 
   const closeViewer = () => {
-    viewer.classList.remove('is-open');
+    viewer.classList.remove('is-open', 'is-blank');
     document.body.style.overflow = '';
     setTimeout(() => { viewer.hidden = true; vBook.innerHTML = ''; }, 500);
     opener?.focus({ preventScroll: true });
@@ -358,7 +376,7 @@
   // повернули телефон или потянули окно — пересобираем книгу под новый режим
   let reflowT;
   addEventListener('resize', () => {
-    if (!cur || isSolo() === solo) return;
+    if (!cur || ALBUMS[cur]?.blank || isSolo() === solo) return;
     clearTimeout(reflowT);
     reflowT = setTimeout(() => {
       const page = solo ? idx : idx * 2;            // где мы были, в страницах

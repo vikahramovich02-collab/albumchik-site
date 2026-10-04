@@ -87,14 +87,19 @@
   <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
 
   <header class="nav" data-nav>
-    <a class="nav__brand" href="#top" aria-label="ALBUMCHIK — наверх">ALBUMCHIK</a>
+    <span class="nav__edge" aria-hidden="true"></span>
+    <a class="nav__brand" href="#top" aria-label="ALBUMCHIK — наверх">
+      <svg class="nav__mark" viewBox="0 0 100 100" aria-hidden="true"><path d="M0 0H100V100H62V72H38V100H0Z M40 40V58H60V40Z" fill-rule="evenodd"/></svg>
+      <span class="nav__word" aria-hidden="true">ALBUMCHIK</span>
+    </a>
     <nav class="nav__links" aria-label="Разделы">
       <a href="#works" class="u">Работы</a>
       <a href="#services" class="u">Услуги и цены</a>
+      <a href="#ai" class="u">ИИ-фото</a>
       <a href="#process" class="u">Как работаем</a>
       <a href="#contact" class="u">Контакты</a>
+      <a class="nav__cta" href="https://t.me/albumchik" target="_blank" rel="noopener" data-goal="cta_nav">Заказать альбом <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 15.5L15.5 8.5M15.5 8.5H9.8M15.5 8.5V14.2"/></svg></span></a>
     </nav>
-    <a class="nav__cta u" href="https://t.me/albumchik" target="_blank" rel="noopener" data-goal="cta_nav">Заказать альбом ↗</a>
     <button class="nav__burger" type="button" data-menu-open aria-expanded="false" aria-controls="menu">Меню</button>
   </header>
 
@@ -104,11 +109,12 @@
     <ul class="menu__list">
       <li><a href="#works">Работы</a></li>
       <li><a href="#services">Услуги и цены</a></li>
+      <li><a href="#ai">ИИ-фото</a></li>
       <li><a href="#process">Как работаем</a></li>
       <li><a href="#faq">Вопросы</a></li>
       <li><a href="#contact">Контакты</a></li>
     </ul>
-    <a class="menu__cta" href="https://t.me/albumchik" target="_blank" rel="noopener" data-goal="cta_menu">Заказать альбом ↗</a>
+    <a class="menu__cta" href="https://t.me/albumchik" target="_blank" rel="noopener" data-goal="cta_menu">Заказать альбом <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 15.5L15.5 8.5M15.5 8.5H9.8M15.5 8.5V14.2"/></svg></span></a>
   </nav>
 
   <main id="main">
@@ -120,28 +126,32 @@
       </h1>
       <div class="hero__meta">
         <span class="hero__arrow" aria-hidden="true">↓</span>
-        <p class="lead" data-reveal>Собираю ваши фото в альбом-журнал: с сюжетом, текстами и вёрсткой как в глянце. Фотосессия, путешествие, человек, которому хочется сказать главное — всё становится книгой.</p>
+        <p class="lead" data-reveal>Собираю ваши фото в альбом-журнал: с сюжетом, текстами и вёрсткой как в глянце. Фотосессия, путешествие, человек, которому хочется сказать главное — всё становится журналом.</p>
       </div>
     </section>
 
     <!-- ПОЛКА: альбомы стоят в ряд, по клику выпадает журнал и листается -->
     <section class="shelf" id="shelf" aria-label="Альбомы — полистать">
       <div class="shelf__stage" data-shelf>
-        <button class="album" type="button" data-album="pakeersh" style="--n:0" aria-label="Полистать альбом PAKEERSH">
+        <button class="album" type="button" data-cursor="смотреть" data-album="pakeersh" style="--n:0" aria-label="Полистать альбом PAKEERSH">
           <span class="album__spine"><span>PAKEERSH · 2026</span></span>
           <span class="album__cover"><img src="img/albums/pakeersh/01-s.webp" width="280" height="394" alt="Обложка альбома PAKEERSH"></span>
         </button>
-        <button class="album" type="button" data-album="polina" style="--n:1" aria-label="Полистать альбом POLINA">
+        <button class="album" type="button" data-cursor="смотреть" data-album="polina" style="--n:1" aria-label="Полистать альбом POLINA">
           <span class="album__spine"><span>POLINA · MY 23’S</span></span>
           <span class="album__cover"><img src="img/albums/polina/01-s.webp" width="280" height="387" alt="Обложка альбома POLINA — MY 23’S"></span>
         </button>
-        <button class="album" type="button" data-album="mary" style="--n:2" aria-label="Полистать журнал про Александра">
+        <button class="album" type="button" data-cursor="смотреть" data-album="mary" style="--n:2" aria-label="Полистать журнал про Александра">
           <span class="album__spine"><span>АЛЕКСАНДР · СПЕЦВЫПУСК</span></span>
           <span class="album__cover"><img src="img/albums/mary/01-s.webp" width="280" height="396" alt="Обложка журнала-подарка про Александра Лукашевича"></span>
         </button>
-        <button class="album album--soon" type="button" data-album="evgenij" style="--n:3" aria-label="Альбом Евгения — в работе">
+        <button class="album album--soon" type="button" data-cursor="скоро" data-album="evgenij" style="--n:3" aria-label="Альбом Евгения — в работе">
           <span class="album__spine"><span>ЕВГЕНИЙ · В РАБОТЕ</span></span>
           <span class="album__cover"><img src="img/albums/evgenij/01-s.webp" width="280" height="394" alt="Альбом Евгения — в работе"><span class="album__tag">в работе</span></span>
+        </button>
+        <button class="album album--blank" type="button" data-cursor="заказать" data-album="your" style="--n:4" aria-label="Ваш альбом — заказать">
+          <span class="album__spine"><span>ВАШ АЛЬБОМ</span></span>
+          <span class="album__cover"><span class="album__blank">ваш<br>альбом</span></span>
         </button>
       </div>
       <div class="shelf__chips" role="list">
@@ -149,8 +159,8 @@
         <button type="button" class="chip" data-chip="polina" role="listitem">POLINA</button>
         <button type="button" class="chip" data-chip="mary" role="listitem">Александр</button>
         <button type="button" class="chip chip--soon" data-chip="evgenij" role="listitem">Евгений · в работе</button>
+        <button type="button" class="chip chip--blank" data-chip="your" role="listitem">Ваш альбом</button>
       </div>
-      <p class="caption shelf__hint"><span class="only-fine">Нажмите на альбом, чтобы полистать</span><span class="only-touch">Листайте вбок, нажмите на альбом — он откроется</span></p>
     </section>
 
     <section class="pair" aria-label="Съёмка и альбом">
@@ -168,7 +178,10 @@
     <section class="strip" aria-label="Кадры из одной съёмки">
       <div class="strip__head">
         <p class="label" data-reveal>ИЗ ОДНОЙ СЪЁМКИ<br>(95)<br>кадров</p>
-        <h2 class="h2" data-reveal>Из сотни кадров остаются те, что складываются в историю.</h2>
+        <div class="strip__main">
+          <h2 class="h2" data-reveal>Из сотни кадров остаются те, что складываются в историю.</h2>
+          <a class="btn" href="https://t.me/albumchik" target="_blank" rel="noopener" data-reveal data-goal="cta_shoot">Заказать фотосессию <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 15.5L15.5 8.5M15.5 8.5H9.8M15.5 8.5V14.2"/></svg></span></a>
+        </div>
       </div>
       <div class="marquee" data-marquee>
         <div class="marquee__track">
@@ -226,7 +239,7 @@
     <!-- УСЛУГИ -->
     <section class="section" id="services">
       <div class="opener">
-        <p class="label" data-reveal>УСЛУГИ<br>(04)<br>Форматы и цены</p>
+        <p class="label" data-reveal>УСЛУГИ<br>(06)<br>Форматы и цены</p>
         <div class="opener__main">
           <h2 class="h2" data-reveal>Каждый альбом — отдельный журнал со своим сюжетом.</h2>
           <p class="lead" data-reveal>Беру отбор, сюжет, тексты и вёрстку. Вы присылаете фото и пару историй — получаете макет, готовый к печати, или сразу книгу.</p>
@@ -265,6 +278,22 @@
             <p class="service__text">Маршрут, места, билеты и заметки — поездка, которую можно снова пролистать.</p>
           </div>
           <span class="service__price">от 180 BYN</span>
+        </li>
+        <li class="service" data-reveal data-preview="img/evg-1-480.webp">
+          <span class="service__num">05</span>
+          <div class="service__main">
+            <h3 class="service__title">Фотосессия</h3>
+            <p class="service__text">Съёмка сразу под развороты: продумываю кадры так, чтобы они легли в альбом, а не просто в галерею.</p>
+          </div>
+          <span class="service__price">цена по запросу</span>
+        </li>
+        <li class="service" data-reveal data-preview="img/mary-1-480.webp">
+          <span class="service__num">06</span>
+          <div class="service__main">
+            <h3 class="service__title">ИИ-фото</h3>
+            <p class="service__text">Образы и сцены, которых не было на съёмке: другой город, другой свет, другая одежда. Или целая серия с нуля.</p>
+          </div>
+          <span class="service__price">цена по запросу</span>
         </li>
       </ol>
       <p class="note" data-reveal>Нет фото? Есть доп. услуги: фотосет под альбом и ИИ-генерация кадров, которых не было. Печать считается отдельно — зависит от формата, бумаги и тиража.</p>
@@ -313,6 +342,26 @@
       </article>
     </section>
 
+    <!-- ИИ-ФОТО -->
+    <section class="section" id="ai">
+      <div class="opener">
+        <p class="label" data-reveal>ИИ-ФОТО<br>(05)<br>Отдельная услуга</p>
+        <div class="opener__main">
+          <h2 class="h2 h2--lg" data-split data-reveal>
+            <span class="line"><span>Кадра не было —</span></span>
+            <span class="line"><span>а теперь есть.</span></span>
+          </h2>
+          <p class="lead" data-reveal>Работала с фешен-брендами и собирала им кампейны нейросетью: образы, локации и свет, которых не было ни на одной съёмке. Тот же инструмент работает и для альбома.</p>
+          <ul class="facts" data-reveal>
+            <li><span class="facts__k">Когда пригодится</span><span class="facts__v">фото мало, они разного качества или их нет совсем</span></li>
+            <li><span class="facts__k">Что получится</span><span class="facts__v">недостающие развороты, обложка, серия в одном стиле</span></li>
+            <li><span class="facts__k">Как считается</span><span class="facts__v">отдельно от альбома, по количеству кадров</span></li>
+          </ul>
+          <a class="btn" href="https://t.me/albumchik" target="_blank" rel="noopener" data-reveal data-goal="cta_ai">Обсудить ИИ-съёмку <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 15.5L15.5 8.5M15.5 8.5H9.8M15.5 8.5V14.2"/></svg></span></a>
+        </div>
+      </div>
+    </section>
+
     <!-- ПРОЦЕСС -->
     <section class="section" id="process">
       <div class="opener">
@@ -348,8 +397,8 @@
       </h2>
       <div class="cta__meta">
         <div class="cta__links">
-          <a class="big-link magnet" href="https://t.me/albumchik" target="_blank" rel="noopener" data-goal="cta_telegram">Telegram ↗</a>
-          <a class="big-link magnet" href="https://instagram.com/albumchik" target="_blank" rel="noopener" data-goal="cta_instagram">Instagram ↗</a>
+          <a class="big-link magnet" href="https://t.me/albumchik" target="_blank" rel="noopener" data-goal="cta_telegram">Telegram <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 15.5L15.5 8.5M15.5 8.5H9.8M15.5 8.5V14.2"/></svg></span></a>
+          <a class="big-link magnet" href="https://instagram.com/albumchik" target="_blank" rel="noopener" data-goal="cta_instagram">Instagram <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 15.5L15.5 8.5M15.5 8.5H9.8M15.5 8.5V14.2"/></svg></span></a>
         </div>
         <p class="lead" data-reveal>Напишите, что за альбом задумали и к какой дате он нужен — отвечу в тот же день и пришлю примеры в похожем формате.</p>
       </div>
@@ -371,6 +420,11 @@
     </div>
     <div class="viewer__stage">
       <div class="book__body viewer__book" data-viewer-book></div>
+      <div class="viewer__blank" data-viewer-blank hidden>
+        <p class="viewer__blank-title">ваш альбом</p>
+        <p class="viewer__blank-text">Здесь будет ваша обложка: фотосессия, путешествие, год жизни или человек, которому хочется сказать главное.</p>
+        <a class="viewer__blank-cta" href="https://t.me/albumchik" target="_blank" rel="noopener" data-goal="cta_blank">Заказать <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8.5 15.5L15.5 8.5M15.5 8.5H9.8M15.5 8.5V14.2"/></svg></span></a>
+      </div>
     </div>
     <div class="viewer__bottom">
       <button type="button" class="u" data-viewer-prev>← Назад</button>

@@ -520,3 +520,160 @@ html.no-loader .loader { display: none; }
   .viewer__bottom button { pointer-events: auto; padding: 8px 13px; background: var(--paper); }
   .viewer__book.is-solo { width: min(100%, calc((100svh - 90px) * var(--ratio, .71))); }
 }
+
+/* ============================================================
+   ШАПКА: знак по центру, разделы справа
+   ============================================================ */
+.nav { grid-template-columns: 1fr auto 1fr; }
+.nav__edge { display: block; }
+
+/* знак стоит ровно по центру, название выезжает из-под маски вправо */
+.nav__brand { position: relative; display: inline-flex; align-items: center; justify-self: center; }
+.nav__mark { width: 19px; height: 19px; fill: var(--ink); display: block; transition: transform .5s var(--ease); }
+.nav__brand:hover .nav__mark { transform: scale(1.08); }
+.nav__word {
+  position: absolute; left: 100%; top: 50%; translate: 0 -50%;
+  padding-left: 10px; white-space: nowrap; font-size: 16px; letter-spacing: -0.004em;
+  clip-path: inset(0 100% 0 0); transition: clip-path .6s var(--ease);
+}
+.nav__brand:hover .nav__word, .nav__brand:focus-visible .nav__word { clip-path: inset(0 0 0 0); }
+
+/* разделы мельче и прижаты вправо */
+.nav__links { justify-self: end; align-items: center; gap: 20px; font-size: 14px; }
+.nav__cta { display: inline-flex; align-items: center; gap: 8px; margin-left: 6px; }
+
+/* ---------- Стрелка в квадрате ---------- */
+.arrow {
+  display: inline-grid; place-items: center; flex: none;
+  width: 1.5em; height: 1.5em; border: 1px solid currentColor;
+  transition: background-color .35s var(--ease), color .35s var(--ease);
+  vertical-align: -0.35em;
+}
+.arrow svg { width: 100%; height: 100%; display: block; }
+.arrow path { fill: none; stroke: currentColor; stroke-width: 2.4; stroke-linecap: square; }
+/* на ховере квадрат заливается — стрелка выворачивается наизнанку */
+a:hover > .arrow, a:focus-visible > .arrow { background: currentColor; }
+a:hover > .arrow path, a:focus-visible > .arrow path { stroke: var(--paper); }
+
+/* в крупных ссылках заявки квадрат тоньше — иначе спорит с кеглем */
+.big-link { display: inline-flex; align-items: center; gap: 12px; }
+.big-link .arrow { width: .72em; height: .72em; vertical-align: baseline; }
+.big-link .arrow path { stroke-width: 1.6; }
+.big-link::after { right: auto; width: 100%; }
+
+.menu__cta { display: inline-flex; align-items: center; gap: 10px; }
+
+/* ---------- Шапка на планшете и телефоне ---------- */
+@media (max-width: 800px) {
+  .nav { grid-template-columns: auto 1fr auto; }
+  .nav__edge { display: none; }
+  .nav__brand { justify-self: start; }
+  /* ховера нет — название видно всегда, знак сдвигается влево от него */
+  .nav__brand { gap: 10px; }
+  .nav__word { position: static; translate: none; padding-left: 0; clip-path: none; }
+}
+
+/* ============================================================
+   ПОЛКА: плотный ряд, как настоящие книги на полке
+   ============================================================ */
+.shelf__stage {
+  --w: clamp(150px, 15vw, 230px);
+  --t: calc(var(--w) * .13);
+  gap: 0;                                  /* книги стоят вплотную и перекрывают друг друга */
+  padding: 72px var(--pad) 26px;
+  perspective: 2200px; perspective-origin: 50% 40%;
+}
+.album {
+  --ry: 38deg;
+  margin-right: calc(var(--w) * -.34);     /* перекрытие — ряд читается как корешки на полке */
+}
+.album:last-child { margin-right: 0; }
+/* ближние книги перекрывают дальние: первая сверху */
+.album { z-index: calc(20 - var(--n)); }
+.shelf__stage .album:hover, .shelf__stage .album.is-hot, .shelf__stage .album:focus-visible { z-index: 30; }
+.album__cover { box-shadow: 1px 0 0 rgba(0,0,0,.08); }
+
+/* при наведении книга выезжает из ряда и разворачивается к нам */
+.shelf__stage .album:hover, .shelf__stage .album.is-hot, .shelf__stage .album:focus-visible {
+  --ry: 4deg; --pop: 110px; --lift: -30px;
+}
+
+/* ---------- «Ваш альбом» — пустая обложка в конце ряда ---------- */
+.album--blank .album__cover {
+  background: var(--fog);
+  display: grid; place-items: center;
+  box-shadow: inset 0 0 0 1px var(--smoke), 1px 0 0 rgba(0,0,0,.08);
+}
+.album--blank .album__cover::after { content: none; }
+.album--blank .album__spine { background: var(--smoke); color: var(--paper); }
+.album__blank {
+  font-size: clamp(15px, 1.5vw, 21px); line-height: 1.1; text-align: center;
+  color: var(--ash); letter-spacing: -0.01em;
+}
+.chip--blank { color: var(--ash); }
+
+/* ---------- Экран «ваш альбом» в просмотрщике ---------- */
+.viewer__blank {
+  display: grid; gap: 26px; justify-items: center; align-content: center;
+  text-align: center; max-width: 520px; padding: 0 var(--pad);
+}
+.viewer__blank[hidden] { display: none; }
+.viewer__blank-title { font-size: var(--h2); line-height: 1; letter-spacing: -0.012em; }
+.viewer__blank-text { color: var(--ash); font-size: var(--lead); line-height: 1.25; }
+.viewer__blank-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 21px; border: 1px solid var(--ink); padding: 13px 26px;
+  transition: background-color .35s var(--ease), color .35s var(--ease);
+}
+.viewer__blank-cta:hover { background: var(--ink); color: var(--paper); }
+.viewer__blank-cta:hover .arrow { background: var(--paper); }
+.viewer__blank-cta:hover .arrow path { stroke: var(--ink); }
+
+/* в режиме заглушки листалка не нужна */
+.viewer.is-blank .viewer__counter,
+.viewer.is-blank .viewer__bottom { visibility: hidden; }
+
+@media (max-width: 700px) {
+  .shelf__stage { --w: 46vw; gap: 0; padding-left: 16vw; padding-right: 30vw; }
+  .album { --ry: 24deg; margin-right: calc(var(--w) * -.26); }
+  .viewer__blank-title { font-size: 34px; }
+}
+
+/* ---------- Кнопка в рамке (как в экране «ваш альбом») ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; justify-self: start; align-self: start;
+  font-size: 19px; border: 1px solid var(--ink); padding: 11px 22px;
+  transition: background-color .35s var(--ease), color .35s var(--ease);
+}
+.btn:hover, .btn:focus-visible { background: var(--ink); color: var(--paper); }
+.btn:hover .arrow, .btn:focus-visible .arrow { background: var(--paper); }
+.btn:hover .arrow path, .btn:focus-visible .arrow path { stroke: var(--ink); }
+.strip__main { display: grid; gap: 26px; justify-items: start; }
+
+/* ---------- Ряд расступается вокруг книги, на которую навели ---------- */
+.album { transition: transform .9s var(--ease), opacity .6s var(--ease), translate .75s var(--ease); }
+.shelf__stage .album:hover ~ .album,
+.shelf__stage .album.is-hot ~ .album { translate: calc(var(--w) * .42) 0; }
+.shelf__stage .album:has(~ .album:hover),
+.shelf__stage .album:has(~ .album.is-hot) { translate: calc(var(--w) * -.22) 0; }
+
+/* ---------- Перечень «ключ — значение» в блоке про ИИ ---------- */
+.facts { list-style: none; margin: 0; padding: 0; display: grid; }
+.facts li { display: grid; grid-template-columns: minmax(160px, 220px) 1fr; gap: var(--gap); padding: 20px 0; border-top: 1px solid var(--fog); }
+.facts li:last-child { border-bottom: 1px solid var(--fog); }
+.facts__k { color: var(--ash); }
+.facts__v { max-width: 560px; }
+@media (max-width: 700px) {
+  .facts li { grid-template-columns: 1fr; gap: 6px; padding: 16px 0; }
+}
+
+/* следующая книга ложится ПОВЕРХ предыдущей — только так виден корешок каждой */
+.album { z-index: calc(10 + var(--n)); }
+.shelf__stage .album:hover, .shelf__stage .album.is-hot, .shelf__stage .album:focus-visible { z-index: 30; }
+/* мягкая тень по левому краю отделяет книгу от соседней */
+.album__cover { box-shadow: -10px 0 24px rgba(0,0,0,.10); }
+.album--blank .album__cover { box-shadow: inset 0 0 0 1px var(--smoke), -10px 0 24px rgba(0,0,0,.08); }
+
+/* книга в конце прокрутки уезжает вбок — обрезаем, иначе страница едет по горизонтали.
+   clip (а не hidden) не создаёт скролл-контейнер и не ломает sticky внутри */
+.book { overflow-x: clip; }
