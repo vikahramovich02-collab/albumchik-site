@@ -910,3 +910,17 @@ a:hover > .arrow path, a:focus-visible > .arrow path { stroke: var(--paper); }
   .step { grid-template-columns: 1fr; }
   .step__num, .step__title, .step__text { grid-column: 1; }
 }
+
+/* ---------- Полка идёт по диагонали: каждая следующая книга ниже ---------- */
+.shelf__stage { align-items: flex-start; padding-bottom: 120px; }
+.album { --step: 30px; }
+.album { transform:
+  translateY(calc(var(--n) * var(--step)))
+  translateY(var(--drop, 0px))
+  translateY(calc(var(--lift, 0px) + var(--bob, 0px)))
+  translateZ(var(--pop, 0px))
+  rotateY(var(--ry, 38deg)); }
+@media (max-width: 700px) {
+  .shelf__stage { padding-bottom: 80px; }
+  .album { --step: 18px; }
+}
