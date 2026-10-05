@@ -950,3 +950,6 @@ a:hover > .arrow path, a:focus-visible > .arrow path { stroke: var(--paper); }
   .docs__section { padding-top: 40px; }
   .docs p { font-size: 16px; }
 }
+
+/* подпись на первом экране — мельче и короче, чтобы не спорила с заголовком */
+.hero .lead { font-size: clamp(15px, 1.1vw, 17px); max-width: 420px; }
