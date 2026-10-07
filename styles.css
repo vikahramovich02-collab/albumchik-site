@@ -287,7 +287,7 @@ html.no-loader .loader { display: none; }
 }
 
 /* ---------- Полка альбомов ---------- */
-.shelf { padding: 41px 0 120px; overflow: hidden; }
+.shelf { padding: 16px 0 120px; overflow: hidden; }
 .shelf__stage {
   --w: clamp(150px, 16vw, 250px);
   --t: calc(var(--w) * .11);             /* толщина корешка */
@@ -623,7 +623,7 @@ a:hover > .arrow path, a:focus-visible > .arrow path { stroke: var(--paper); }
   --w: clamp(150px, 15vw, 230px);
   --t: calc(var(--w) * .13);
   gap: 0;                                  /* книги стоят вплотную и перекрывают друг друга */
-  padding: 72px var(--pad) 26px;
+  padding: 16px var(--pad) 26px;
   perspective: 2200px; perspective-origin: 50% 40%;
 }
 .album {
