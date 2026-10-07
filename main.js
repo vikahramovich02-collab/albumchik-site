@@ -183,7 +183,6 @@
     pakeersh: { title: 'PAKEERSH', meta: 'Журнал о себе · 2026', pages: 26, ratio: 840 / 1181 },
     polina:   { title: 'POLINA. MY 23’S', meta: 'Альбом в подарок · 2026', pages: 42, ratio: 840 / 1162 },
     mary:     { title: 'Александр. Спецвыпуск', meta: 'Журнал в подарок · единственный экземпляр · 2026', pages: 36, ratio: 840 / 1189 },
-    evgenij:  { title: 'Евгений', soon: true },
     your:     { title: 'Ваш альбом', meta: 'Пока пустая обложка', blank: true },
   };
   const pageSrc = (key, i) => `img/albums/${key}/${String(i + 1).padStart(2, '0')}.webp`;
