@@ -954,9 +954,18 @@ a:hover > .arrow path, a:focus-visible > .arrow path { stroke: var(--paper); }
 /* подпись на первом экране — мельче и короче, чтобы не спорила с заголовком */
 .hero .lead { font-size: clamp(15px, 1.1vw, 17px); max-width: 420px; }
 
-/* ---------- Фотосет с готовым альбомом ---------- */
-.shoots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; margin-top: 56px; padding: 0 var(--pad); }
-.shoots .clip { aspect-ratio: 2 / 3; }
+/* ---------- Фотосет с готовым альбомом: лента с прокруткой вбок ---------- */
+.shoots {
+  display: flex; gap: 13px; margin-top: 56px;
+  overflow-x: auto; overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch;
+  padding: 0 var(--pad) 13px;
+  scrollbar-width: none;
+}
+.shoots::-webkit-scrollbar { display: none; }
+.shoots .clip { flex: none; width: clamp(240px, 26vw, 380px); aspect-ratio: 2 / 3; scroll-snap-align: start; }
 .shoots img { width: 100%; height: 100%; object-fit: cover; }
-@media (max-width: 900px) { .shoots { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 700px) { .shoots { gap: 8px; margin-top: 32px; } }
+@media (max-width: 700px) {
+  .shoots { gap: 8px; margin-top: 32px; }
+  .shoots .clip { width: 68vw; }
+}
