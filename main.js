@@ -180,7 +180,7 @@
 
   /* ---------- Полка и просмотрщик альбома ---------- */
   const ALBUMS = {
-    pakeersh: { title: 'PAKEERSH', meta: 'Журнал о себе · 2026', pages: 26, ratio: 840 / 1181 },
+    pakeersh: { title: 'PAKEERSH', meta: 'Журнал о себе · 2026', pages: 28, ratio: 840 / 1176 },
     polina:   { title: 'POLINA. MY 23’S', meta: 'Альбом в подарок · 2026', pages: 42, ratio: 840 / 1162 },
     mary:     { title: 'Александр. Спецвыпуск', meta: 'Журнал в подарок · единственный экземпляр · 2026', pages: 36, ratio: 840 / 1189 },
     your:     { title: 'Ваш альбом', meta: 'Пока пустая обложка', blank: true },
