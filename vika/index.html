@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vika Akhramovich — product designer</title>
+<meta name="description" content="Vika Akhramovich — product designer. Продукты, сайты и визуал: от флоу до готового фронта.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://albumchik.by/vika/">
+<meta property="og:title" content="Vika Akhramovich — product designer">
+<meta property="og:url" content="https://albumchik.by/vika/">
+<meta property="og:image" content="https://maryrose.by/vika/img/site-mary.webp">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap">
+<style>
+/* Сайт-портфолио Вики. Первый экран: позиционирование огромным по центру, вокруг плавают работы.
+   Ниже проекты по одному: линейка, номер, название, картинки. Живёт на albumchik.by/vika. */
+:root{
+  --bg:#161718; --fg:#e8e9ea; --dim:#8a8f95; --rule:#e8e9ea;
+  --sans:"Geist","Helvetica Neue",Arial,sans-serif;
+  --pad:clamp(16px,1.6vw,24px);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg)}
+body{font-family:var(--sans);font-weight:400;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+
+/* шапка: 4 колонки мелким текстом */
+.meta{position:relative;z-index:5;display:grid;grid-template-columns:1fr 1.4fr .6fr auto;gap:8px 24px;padding:var(--pad);font-size:13px;line-height:1.3}
+.meta b{font-weight:400;display:inline-flex;align-items:center;gap:8px}
+.meta b::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--fg)}
+.meta .dim{color:var(--dim)}
+.meta a:hover{color:var(--dim)}
+
+/* первый экран */
+.hero{position:relative;height:100svh;min-height:640px;margin-top:-56px;overflow:hidden}
+.pos{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;z-index:2}
+.pos h1{margin:0;text-align:center;font-weight:500;font-size:clamp(64px,13.4vw,230px);line-height:.84;letter-spacing:-.06em}
+.pos h1 span{display:block}
+.pos p{margin:clamp(20px,3vh,32px) 0 0;max-width:40ch;text-align:center;color:var(--dim);font-size:clamp(14px,1.2vw,17px);line-height:1.45}
+
+/* плавающие работы: позиция и размер задаются на карточке, слой — над или под текстом */
+.fly{position:absolute;left:var(--x);top:var(--y);width:var(--w);z-index:1;will-change:transform}
+.fly.top{z-index:3}
+.fly a{display:block;animation:bob var(--d,9s) ease-in-out infinite alternate;animation-delay:var(--dl,0s)}
+.fly img{width:100%;height:auto;box-shadow:0 20px 50px rgba(0,0,0,.35);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.fly a:hover img{transform:scale(1.04)}
+@keyframes bob{from{transform:translate3d(0,-10px,0) rotate(-.6deg)}to{transform:translate3d(0,12px,0) rotate(.6deg)}}
+/* появление карточек при загрузке */
+.fly{opacity:0;transition:opacity .9s ease}
+.is-ready .fly{opacity:1}
+.is-ready .fly:nth-child(2n){transition-delay:.15s}
+.is-ready .fly:nth-child(3n){transition-delay:.3s}
+
+.scroll{position:absolute;left:50%;bottom:var(--pad);transform:translateX(-50%);z-index:4;font-size:13px;color:var(--dim)}
+
+/* проекты */
+.work{padding:0 var(--pad)}
+.case{padding-top:clamp(56px,9vh,96px)}
+.case__head{display:grid;grid-template-columns:1fr 1.4fr .6fr auto;gap:8px 24px;padding-top:10px;border-top:1px solid var(--rule);font-size:13px;line-height:1.3}
+.case__head .dim{color:var(--dim)}
+.case__head a{border-bottom:1px solid rgba(232,233,234,.35)}
+.case__head a:hover{border-color:var(--fg)}
+.case__title{margin:clamp(20px,3vh,32px) 0 clamp(20px,3vh,32px);font-weight:500;font-size:clamp(40px,6vw,96px);line-height:.92;letter-spacing:-.05em}
+.shots{display:grid;gap:var(--pad);grid-template-columns:repeat(var(--cols,1),1fr)}
+.shots img{width:100%;height:100%;object-fit:cover;background:#222}
+.shots .wide{grid-column:1/-1}
+
+.outro{padding:clamp(96px,16vh,180px) var(--pad) var(--pad);display:flex;flex-direction:column;gap:clamp(48px,10vh,120px)}
+.outro h2{margin:0;font-weight:500;font-size:clamp(48px,9vw,150px);line-height:.88;letter-spacing:-.055em}
+.outro h2 a{border-bottom:3px solid var(--fg)}
+.outro h2 a:hover{color:var(--dim);border-color:var(--dim)}
+footer{display:grid;grid-template-columns:1fr 1.4fr .6fr auto;gap:8px 24px;padding-top:10px;border-top:1px solid var(--rule);font-size:13px}
+footer .dim{color:var(--dim)}
+
+/* проявление при каждом заходе в экран */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.is-in{opacity:1;transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  .fly a{animation:none}
+  .reveal{opacity:1;transform:none;transition:none}
+}
+@media (max-width:760px){
+  .meta,.case__head,footer{grid-template-columns:1fr auto}
+  .meta .hide-m,.case__head .hide-m,footer .hide-m{display:none}
+  .fly.hide-m{display:none}
+  .fly{width:calc(var(--w) * 1.7)}
+  .fly.low{top:calc(var(--y) + 9%)}
+  .shots{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+  <div class="meta">
+    <b><a href="https://maryrose.by/vika">vika akhramovich</a></b>
+    <span class="hide-m">Product designer, 5&nbsp;лет в&nbsp;стартапах<br><span class="dim">Сейчас CPO и&nbsp;продуктовый дизайнер в&nbsp;Mary AI</span></span>
+    <span class="dim hide-m">Minsk</span>
+    <span>2026©</span>
+  </div>
+
+  <section class="hero" id="hero">
+    <div class="pos">
+      <h1><span>Product</span><span>designer</span></h1>
+      <p>Проектирую продукт целиком: флоу, интерфейс, сайт и&nbsp;весь визуал — от&nbsp;задачи до&nbsp;готового фронта.</p>
+    </div>
+
+    <!-- --z: глубина для параллакса за курсором -->
+    <div class="fly" style="--x:8%;--y:20%;--w:15vw;--z:.6;--d:10s"><a href="#mary"><img src="/vika/img/site-mary-s.webp" alt="Сайт Mary AI"></a></div>
+    <div class="fly top" style="--x:57%;--y:24%;--w:13vw;--z:1;--d:8s;--dl:-2s"><a href="#mary"><img src="/vika/img/mk-brochure-dark-s.webp" alt="Брошюра Mary"></a></div>
+    <div class="fly" style="--x:80%;--y:13%;--w:14vw;--z:.4;--d:11s;--dl:-4s"><a href="#albumchik"><img src="/vika/img/site-albumchik-s.webp" alt="Сайт ALBUMCHIK"></a></div>
+    <div class="fly hide-m" style="--x:30%;--y:9%;--w:10vw;--z:.3;--d:12s;--dl:-1s"><a href="#mary"><img src="/vika/img/mk-badges-dark-s.webp" alt="Бейджи Mary"></a></div>
+    <div class="fly low" style="--x:12%;--y:62%;--w:12vw;--z:.8;--d:9s;--dl:-3s"><a href="#intreatment"><img src="/vika/img/site-intreatment-s.webp" alt="Сайт InTreatment"></a></div>
+    <div class="fly top low" style="--x:36%;--y:76%;--w:13vw;--z:1.1;--d:10s;--dl:-5s"><a href="#mary"><img src="/vika/img/mk-brochure-s.webp" alt="Брошюра Mary"></a></div>
+    <div class="fly low" style="--x:74%;--y:60%;--w:11vw;--z:.5;--d:9.5s;--dl:-6s"><a href="#mary"><img src="/vika/img/mk-links-s.webp" alt="Страница links Mary"></a></div>
+    <div class="fly hide-m" style="--x:88%;--y:40%;--w:9vw;--z:.7;--d:11s;--dl:-2.5s"><a href="#mary"><img src="/vika/img/mk-ceo-s.webp" alt="Страница CEO Mary"></a></div>
+
+    <a class="scroll" href="#work">(selected work ↓)</a>
+  </section>
+
+  <main class="work" id="work">
+    <article class="case" id="mary">
+      <div class="case__head reveal"><span>01.</span><span class="hide-m">AI-платформа для бизнеса</span><span class="dim hide-m">продукт · UI · сайт · визуал</span><a href="https://maryrose.by/?utm_source=vika&amp;utm_medium=portfolio" target="_blank" rel="noopener">maryrose.by ↗</a></div>
+      <h2 class="case__title reveal">Mary AI</h2>
+      <div class="shots" style="--cols:2">
+        <img class="wide reveal" src="/vika/img/site-mary.webp" alt="Сайт Mary AI" loading="lazy">
+        <img class="reveal" src="/vika/img/mk-brochure-dark.webp" alt="Брошюра Mary" loading="lazy">
+        <img class="reveal" src="/vika/img/mk-badges-dark.webp" alt="Бейджи Mary" loading="lazy">
+        <img class="reveal" src="/vika/img/mk-links.webp" alt="Страница links" loading="lazy">
+        <img class="reveal" src="/vika/img/mk-ceo.webp" alt="Страница CEO" loading="lazy">
+      </div>
+    </article>
+
+    <article class="case" id="intreatment">
+      <div class="case__head reveal"><span>02.</span><span class="hide-m">Психологическая платформа</span><span class="dim hide-m">сайт · чат-подбор</span><a href="https://intreatment.online" target="_blank" rel="noopener">intreatment.online ↗</a></div>
+      <h2 class="case__title reveal">InTreatment</h2>
+      <div class="shots"><img class="reveal" src="/vika/img/site-intreatment.webp" alt="Сайт InTreatment" loading="lazy"></div>
+    </article>
+
+    <article class="case" id="albumchik">
+      <div class="case__head reveal"><span>03.</span><span class="hide-m">Студия дизайна альбомов</span><span class="dim hide-m">сайт</span><a href="https://albumchik.by" target="_blank" rel="noopener">albumchik.by ↗</a></div>
+      <h2 class="case__title reveal">ALBUMCHIK</h2>
+      <div class="shots"><img class="reveal" src="/vika/img/site-albumchik.webp" alt="Сайт ALBUMCHIK" loading="lazy"></div>
+    </article>
+
+  </main>
+
+  <section class="outro">
+    <h2 class="reveal">Есть задача?<br><a href="https://t.me/viksaaaaaa_a" target="_blank" rel="noopener">Напишите</a></h2>
+    <footer>
+      <a href="https://maryrose.by/vika">← contacts</a>
+      <span class="hide-m"><a href="https://t.me/viksikkkkkkkkkkkkkkk" target="_blank" rel="noopener">channel @viksikkkkkkkkkkkkkkk</a></span>
+      <span class="dim hide-m">Minsk</span>
+      <a href="https://t.me/viksaaaaaa_a" target="_blank" rel="noopener">@viksaaaaaa_a</a>
+    </footer>
+  </section>
+
+<script>
+  // работы плавно появляются, потом ходят за курсором — ближние сильнее
+  requestAnimationFrame(() => document.body.classList.add('is-ready'));
+  const hero = document.getElementById('hero');
+  const flies = [...hero.querySelectorAll('.fly')].map(f => [f, +getComputedStyle(f).getPropertyValue('--z') || .5]);
+  let tx = 0, ty = 0, cx = 0, cy = 0, sy = 0;
+  hero.addEventListener('pointermove', e => {
+    const r = hero.getBoundingClientRect();
+    tx = (e.clientX - r.left) / r.width - .5;
+    ty = (e.clientY - r.top) / r.height - .5;
+  });
+  addEventListener('scroll', () => { sy = scrollY; }, { passive: true });
+  (function loop() {
+    cx += (tx - cx) * .06; cy += (ty - cy) * .06;
+    flies.forEach(([f, z]) => {
+      f.style.transform = `translate3d(${-cx * 60 * z}px, ${-cy * 40 * z - sy * .25 * z}px, 0)`;
+    });
+    requestAnimationFrame(loop);
+  })();
+
+  const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('is-in', e.isIntersecting)), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
