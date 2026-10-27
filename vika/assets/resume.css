@@ -1,0 +1,127 @@
+/* Резюме: одна колонка как в кейсах, опыт строками «годы слева — описание справа». Для PDF — светлая печатная версия. */
+:root{--col:820px}
+.cv{max-width:calc(var(--col) + var(--pad) * 2);margin:0 auto;padding:clamp(48px,10vh,120px) var(--pad) 0}
+.cv__k{display:flex;align-items:center;gap:10px;margin:0;font-size:13px;color:var(--dim)}
+.cv__k::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--fg)}
+.cv h1{margin:clamp(20px,3vh,32px) 0 0;font-weight:400;font-size:clamp(48px,6vw,96px);line-height:.9;letter-spacing:-.05em}
+.cv__role{margin:18px 0 0;font-size:clamp(18px,1.6vw,22px);letter-spacing:-.01em}
+.cv__lead{margin:16px 0 0;max-width:60ch;font-size:16px;line-height:1.6;color:var(--dim)}
+.cv__cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.cv__cta .btn{height:40px;padding:0 18px;font-size:13px}
+.cv__facts{display:grid;grid-template-columns:repeat(4,1fr);gap:20px 24px;margin:40px 0 0;padding:0;list-style:none}
+.cv__facts li{padding-top:12px;border-top:1px solid var(--line);font-size:14px;line-height:1.4}
+.cv__facts b{display:block;font-weight:400;font-size:12px;color:var(--dim);margin-bottom:6px}
+.cv__facts a{word-break:break-word;border-bottom:1px solid var(--line)}
+
+.cv__sec{margin-top:clamp(64px,10vh,112px)}
+.cv__sec h2{margin:0 0 8px;font-weight:500;font-size:clamp(28px,3vw,44px);letter-spacing:-.04em}
+
+.job{display:grid;grid-template-columns:160px 1fr;gap:24px;padding:24px 0;border-top:1px solid var(--line)}
+.job:last-child{border-bottom:1px solid var(--line)}
+.job__when{font-size:14px;color:var(--dim);padding-top:6px}
+.job h3{margin:0;font-weight:500;font-size:clamp(22px,2vw,28px);letter-spacing:-.03em}
+.job__role{margin:6px 0 0;font-size:15px}
+.job__about{margin:10px 0 0;font-size:15px;line-height:1.55;color:var(--dim)}
+.job ul{margin:14px 0 0;padding-left:18px;font-size:15px;line-height:1.6;color:#c9ccd0}
+.job li+li{margin-top:6px}
+.job__links{display:flex;flex-wrap:wrap;gap:6px 18px;margin:14px 0 0;font-size:14px}
+.job__links a{color:var(--dim);border-bottom:1px solid var(--line)}
+.job__links a:hover{color:var(--fg)}
+
+.proj-list{margin:16px 0 0;padding:0;list-style:none}
+.proj-list a{display:grid;grid-template-columns:200px 1fr;gap:16px;padding:14px 0;border-top:1px solid var(--line);font-size:15px;transition:padding .3s,color .2s}
+.proj-list li:last-child a{border-bottom:1px solid var(--line)}
+.proj-list b{font-weight:500}
+.proj-list span{color:var(--dim)}
+.proj-list a:hover{padding-left:8px}
+
+.cv__two{display:grid;grid-template-columns:1.4fr 1fr;gap:40px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 0;padding:0;list-style:none}
+.tags li{padding:7px 12px;border:1px solid var(--line);border-radius:999px;font-size:13px}
+
+@media (max-width:760px){
+  .cv__facts{grid-template-columns:1fr 1fr}
+  .job{grid-template-columns:1fr;gap:6px}
+  .proj-list a{grid-template-columns:1fr;gap:4px}
+  .cv__two{grid-template-columns:1fr}
+}
+
+/* печать / PDF: светлый лист A4, без шапки сайта и кнопок */
+@media print{
+  @page{size:A4;margin:14mm 14mm}
+  :root{--bg:#fff;--fg:#111;--dim:#5d6166;--line:rgba(0,0,0,.14);color-scheme:light}
+  html,body{background:#fff;color:#111}
+  .meta,.end,.cv__cta,.cur,.job__links{display:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .cv{padding:0;max-width:none}
+  .cv h1{font-size:40px}
+  .cv__role{font-size:17px;margin-top:10px}
+  .cv__lead{font-size:12.5px;color:#333}
+  .cv__facts{margin-top:18px;gap:10px 16px}
+  .cv__facts li{font-size:11.5px}
+  .cv__sec{margin-top:22px}
+  .cv__sec h2{font-size:20px}
+  .job{grid-template-columns:110px 1fr;gap:14px;padding:12px 0;break-inside:avoid}
+  .job__when{font-size:11.5px;padding-top:3px}
+  .job h3{font-size:16px}
+  .job__role,.job__about,.job ul{font-size:11.5px}
+  .job ul{color:#222;margin-top:8px}
+  .job li+li{margin-top:3px}
+  .proj-list a{grid-template-columns:130px 1fr;padding:6px 0;font-size:11.5px}
+  .tags li{font-size:10.5px;padding:4px 9px;border-color:rgba(0,0,0,.2)}
+  .cv__two{gap:24px}
+  .cv__facts a{border:0}
+}
+/* PDF в один лист */
+@media print{
+  @page{margin:11mm 13mm}
+  .cv h1{font-size:32px}
+  .cv__role{font-size:15px;margin-top:6px}
+  .cv__lead{font-size:11px;margin-top:8px;line-height:1.5}
+  .cv__facts{margin-top:12px}
+  .cv__facts li{font-size:10.5px;padding-top:6px}
+  .cv__facts b{font-size:9.5px;margin-bottom:3px}
+  .cv__sec{margin-top:14px}
+  .cv__sec h2{font-size:16px;margin-bottom:4px}
+  .job{padding:8px 0}
+  .job h3{font-size:14px}
+  .job__role,.job__about,.job ul{font-size:10.5px;line-height:1.45}
+  .job__about,.job ul{margin-top:5px}
+  .job li+li{margin-top:2px}
+  .proj-list{margin-top:6px}
+  .proj-list a{padding:4px 0;font-size:10.5px}
+  .tags{margin-top:8px;gap:4px}
+  .tags li{font-size:9.5px;padding:3px 8px}
+}
+.job li a{border-bottom:1px solid var(--line)} @media print{.job li a{border:0}}
+/* навыки строками вместо плашек */
+.skills{margin:16px 0 0;padding:0;list-style:none}
+.skills li{display:grid;grid-template-columns:160px 1fr;gap:24px;padding:14px 0;border-top:1px solid var(--line);font-size:15px;line-height:1.55}
+.skills li:last-child{border-bottom:1px solid var(--line)}
+.skills b{font-weight:400;color:var(--dim)}
+.cv{padding-bottom:clamp(96px,16vh,180px)}
+@media (max-width:760px){ .skills li{grid-template-columns:1fr;gap:4px} }
+@media print{
+  .cv{padding-bottom:0}
+  .skills{margin-top:6px}
+  .skills li{grid-template-columns:110px 1fr;gap:14px;padding:5px 0;font-size:10.5px;line-height:1.45}
+}
+.end{padding:0 var(--pad) var(--pad)}
+.proj-list a{grid-template-columns:160px 1fr;gap:24px}
+@media print{ .proj-list a{grid-template-columns:110px 1fr;gap:14px} }
+/* телефон только в PDF, на открытой странице его нет */
+.print-only{display:none}
+@media print{ .print-only{display:block} .cv__facts{grid-template-columns:repeat(3,1fr)} }
+.cv__facts{grid-template-columns:repeat(3,1fr)}
+@media (max-width:760px){ .cv__facts{grid-template-columns:1fr 1fr} }
+.job__when small{display:block;margin-top:4px;font-size:13px;color:var(--faint)}
+@media print{ .job__when small{font-size:10px;color:#777;margin-top:2px} }
+@media print{
+  @page{margin:9mm 12mm}
+  .cv h1{font-size:30px}
+  .cv__lead{font-size:10.5px}
+  .cv__sec{margin-top:11px}
+  .job{padding:6px 0}
+  .job__role,.job__about,.job ul{font-size:10px}
+  .skills li,.proj-list a{padding:4px 0;font-size:10px}
+}

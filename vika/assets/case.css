@@ -1,0 +1,158 @@
+/* Страница кейса: шапка с фактами, большая обложка, главы
+   (слева узкий текст прилипает, справа листаются работы с подписями), живые ссылки, следующий кейс. */
+
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:0 var(--pad);font-size:13px}
+.top a{color:var(--dim)} .top a:hover{color:var(--fg)}
+
+.intro{padding:clamp(48px,10vh,120px) var(--pad) clamp(32px,6vh,64px)}
+.kicker{display:flex;align-items:center;gap:10px;margin:0;font-size:13px;color:var(--dim)}
+.kicker::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--fg)}
+.intro h1{margin:clamp(20px,3vh,32px) 0 0;font-weight:500;font-size:clamp(56px,11vw,190px);line-height:.86;letter-spacing:-.06em}
+.lead{max-width:46ch;margin:clamp(24px,4vh,40px) 0 0;font-size:clamp(18px,1.6vw,24px);line-height:1.4;letter-spacing:-.01em}
+.intro__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(28px,4vh,40px)}
+
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:clamp(48px,8vh,88px)}
+.facts div{padding-top:12px;border-top:1px solid var(--rule)}
+.facts dt{font-size:12px;color:var(--dim);margin:0 0 8px;letter-spacing:.02em}
+.facts dd{margin:0;font-size:15px;line-height:1.45}
+
+.hero-media{margin:0;padding:0 var(--pad)}
+.hero-media img,.hero-media video{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--panel)}
+.hero-media figcaption{margin-top:10px;font-size:12px;color:var(--dim)}
+
+/* цифры */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:clamp(64px,12vh,140px) var(--pad) 0}
+.nums div{padding-top:12px;border-top:1px solid var(--line)}
+.nums b{display:block;font-weight:500;font-size:clamp(44px,5vw,80px);line-height:1;letter-spacing:-.05em}
+.nums span{display:block;margin-top:12px;font-size:14px;line-height:1.45;color:var(--dim);max-width:28ch}
+
+/* оглавление */
+.toc{padding:clamp(64px,12vh,140px) var(--pad) 0}
+.toc h2{margin:0 0 24px;font-size:13px;font-weight:400;color:var(--dim)}
+.toc ol{margin:0;padding:0;list-style:none;counter-reset:t}
+.toc li{counter-increment:t}
+.toc a{display:grid;grid-template-columns:56px 1fr auto;gap:16px;align-items:baseline;padding:14px 0;border-top:1px solid var(--line);font-size:clamp(18px,1.6vw,24px);letter-spacing:-.01em;transition:color .2s,padding .3s}
+.toc a::before{content:counter(t,decimal-leading-zero);font-size:13px;color:var(--dim)}
+.toc a span{font-size:13px;color:var(--dim)}
+.toc a:hover{padding-left:8px;color:var(--dim)}
+.toc li:last-child a{border-bottom:1px solid var(--line)}
+
+/* главы */
+.chapters{padding:0 var(--pad)}
+.ch{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:0 clamp(32px,5vw,96px);padding-top:clamp(80px,14vh,160px)}
+.ch__text{position:sticky;top:clamp(24px,5vh,56px);align-self:start;padding-top:14px;border-top:1px solid var(--rule)}
+.ch__n{display:flex;gap:10px;font-size:13px;color:var(--dim)}
+.ch h2{margin:18px 0 0;font-weight:500;font-size:clamp(32px,3.6vw,56px);line-height:.98;letter-spacing:-.045em;max-width:14ch}
+.ch p{margin:18px 0 0;max-width:44ch;font-size:16px;line-height:1.6;color:#c9ccd0}
+.ch p b{color:var(--fg);font-weight:500}
+.ch ul.rows{margin:24px 0 0;padding:0;list-style:none;max-width:48ch}
+.ch ul.rows li{display:grid;grid-template-columns:132px 1fr;gap:16px;padding:10px 0;border-top:1px solid var(--line);font-size:14px;line-height:1.45}
+.ch ul.rows li b{font-weight:500}
+.ch ul.rows li span{color:var(--dim)}
+.ch blockquote{margin:28px 0 0;padding-left:18px;border-left:1px solid var(--fg);max-width:36ch;font-size:clamp(18px,1.5vw,22px);line-height:1.4;letter-spacing:-.01em}
+.ch .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
+.ch .tags span{padding:6px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;color:var(--dim)}
+.ch .more{display:inline-block;margin-top:22px;font-size:14px;border-bottom:1px solid rgba(232,233,234,.35)}
+.ch .more:hover{border-color:var(--fg)}
+
+.ch__media{display:flex;flex-direction:column;gap:clamp(24px,4vh,48px);padding-top:14px}
+.ch__media figure{margin:0}
+.ch__media img,.ch__media video{width:100%;height:auto;background:var(--panel)}
+.ch__media figcaption{margin-top:10px;font-size:12px;line-height:1.45;color:var(--dim);max-width:60ch}
+.ch__media figcaption b{color:var(--fg);font-weight:400}
+.shot{border-radius:6px;overflow:hidden}
+.panel{background:var(--panel);padding:clamp(16px,3vw,48px);border-radius:6px}
+.panel img,.panel video{border-radius:6px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.panel--light{background:#e7eaec}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:var(--pad)}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--pad)}
+.phones{display:flex;justify-content:center;gap:clamp(12px,2vw,32px)}
+.phones img{width:min(46%,300px);border-radius:28px;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+
+/* живые работы */
+.live{padding:clamp(96px,16vh,180px) var(--pad) 0}
+.live h2{margin:0;font-weight:500;font-size:clamp(40px,6vw,96px);line-height:.92;letter-spacing:-.05em}
+.live p.sub{margin:16px 0 0;max-width:52ch;color:var(--dim);font-size:15px;line-height:1.5}
+.live ul{margin:clamp(32px,6vh,56px) 0 0;padding:0;list-style:none}
+.live li a{display:grid;grid-template-columns:1.2fr 1fr auto;gap:16px;align-items:baseline;padding:18px 0;border-top:1px solid var(--line);transition:padding .3s,color .2s}
+.live li:last-child a{border-bottom:1px solid var(--line)}
+.live li a b{font-weight:500;font-size:clamp(22px,2.4vw,36px);letter-spacing:-.03em}
+.live li a span{font-size:14px;color:var(--dim)}
+.live li a i{font-style:normal;font-size:22px}
+.live li a:hover{padding-left:10px;color:var(--dim)}
+
+/* призыв (для ALBUMCHIK — заказать журнал) */
+.order{margin:clamp(80px,14vh,160px) var(--pad) 0;padding:clamp(32px,6vw,80px);background:var(--fg);color:#111;border-radius:6px;display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:end}
+.order h2{margin:0;font-weight:500;font-size:clamp(40px,5.6vw,88px);line-height:.92;letter-spacing:-.05em}
+.order p{margin:0 0 20px;font-size:16px;line-height:1.5;max-width:40ch}
+.order .btn{border-color:#111;color:#111}
+.order .btn--fill{background:#111;color:var(--fg)}
+.order .btn--fill:hover{background:transparent;color:#111}
+
+/* следующий кейс */
+.next{display:block;margin:clamp(96px,16vh,180px) var(--pad) 0;padding-top:12px;border-top:1px solid var(--rule)}
+.next small{font-size:13px;color:var(--dim)}
+.next strong{display:block;margin-top:14px;font-weight:500;font-size:clamp(56px,11vw,190px);line-height:.86;letter-spacing:-.06em;transition:color .2s}
+.next:hover strong{color:var(--dim)}
+
+.end{padding:clamp(64px,10vh,120px) var(--pad) var(--pad)}
+
+@media (max-width:900px){
+  .ch{grid-template-columns:1fr}
+  .ch__text{position:static}
+  .ch__media{padding-top:32px}
+  .facts,.nums{grid-template-columns:1fr 1fr}
+  .order{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  .facts,.nums{grid-template-columns:1fr}
+  .duo,.trio{grid-template-columns:1fr}
+  .live li a{grid-template-columns:1fr auto}
+  .live li a span{display:none}
+  .ch ul.rows li{grid-template-columns:1fr;gap:4px}
+}
+@media (max-width:560px){ .toc a{grid-template-columns:40px 1fr} .toc a span{display:none} }
+
+/* шапка легче (Вика, 22.10): заголовок тоньше и меньше, лид короткий и приглушённый, кнопки компактнее */
+.intro h1{font-weight:400;font-size:clamp(48px,7.2vw,124px);line-height:.9;letter-spacing:-.05em}
+.lead{max-width:52ch;font-size:clamp(15px,1.1vw,17px);line-height:1.55;letter-spacing:0;color:var(--dim)}
+.intro__cta .btn{height:40px;padding:0 18px;font-size:13px}
+.facts dd{font-size:14px}
+
+/* одна колонка по центру (Вика, 22.10): узкий контейнер с текстом, между ним крупные картинки */
+:root{--col:680px;--wide:1240px}
+.intro,.nums,.toc,.live,.next,.end{max-width:calc(var(--col) + var(--pad) * 2);margin-left:auto;margin-right:auto}
+.intro h1{font-size:clamp(48px,6vw,96px)}
+.facts{grid-template-columns:1fr 1fr;gap:20px 24px}
+.nums{grid-template-columns:1fr 1fr;gap:28px 24px}
+.hero-media{max-width:calc(var(--wide) + var(--pad) * 2);margin:0 auto}
+.next strong{font-size:clamp(44px,6vw,96px)}
+.order{max-width:var(--col);margin-left:auto;margin-right:auto;grid-template-columns:1fr}
+
+.chapters{max-width:calc(var(--wide) + var(--pad) * 2);margin:0 auto}
+.ch{display:block;padding-top:clamp(72px,12vh,140px)}
+.ch__text{position:static;max-width:var(--col);margin:0 auto}
+.ch h2{max-width:none}
+.ch p,.ch ul.rows,.ch blockquote{max-width:none}
+.ch__media{max-width:var(--wide);margin:clamp(32px,6vh,64px) auto 0;padding-top:0;gap:clamp(20px,3vh,32px)}
+.ch__media figcaption{max-width:var(--col);margin-left:auto;margin-right:auto;text-align:center}
+.ch__media .duo figcaption,.ch__media .trio figcaption{text-align:left;margin-left:0}
+@media (max-width:560px){ .facts,.nums{grid-template-columns:1fr} }
+/* «что сделано» вместо цифр */
+.nums.done{grid-template-columns:repeat(3,1fr)}
+.nums.done b{font-size:clamp(26px,2.4vw,36px);letter-spacing:-.03em}
+.nums.done span{margin-top:8px}
+@media (max-width:560px){.nums.done{grid-template-columns:1fr}}
+/* роль · период в одну строку */
+.factline{display:flex;flex-wrap:wrap;gap:8px 28px;margin:clamp(28px,4vh,40px) 0 0;padding-top:14px;border-top:1px solid var(--line);font-size:15px}
+.factline span+span{color:var(--dim)}
+
+/* карточки отдельных проектов внутри большого кейса (Mary → платформа, 2 сайта, питч-дек) */
+.proj{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vh,32px) var(--pad)}
+.proj__card{display:block}
+.proj__card img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:6px;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.proj__card:hover img{transform:scale(1.02)}
+.proj__card small{display:block;margin-top:12px;font-size:12px;color:var(--dim)}
+.proj__card b{display:block;margin-top:4px;font-weight:500;font-size:clamp(18px,1.6vw,24px);letter-spacing:-.02em;line-height:1.15}
+@media (max-width:560px){ .proj{grid-template-columns:1fr} }
+.kicker a{border-bottom:1px solid transparent} .kicker a:hover{border-color:var(--dim)}

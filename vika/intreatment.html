@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>InTreatment — кейс · Vika Akhramovich</title>
+<meta name="description" content="Кейс InTreatment: многостраничный сайт, чат-подбор психолога вместо каталога анкет и личные кабинеты клиента, психолога и администратора. Продуктовый дизайнер — Вика Ахрамович.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="InTreatment — кейс Вики Ахрамович">
+<meta property="og:image" content="img/it/cover.webp">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="assets/base.css?v=8">
+<link rel="stylesheet" href="assets/case.css?v=8">
+</head>
+<body>
+  <div class="meta">
+    <b><a href="index.html">vika akhramovich</a></b>
+    <span class="hide-m">Product designer<br><span class="dim">Сайт, онбординг и платформа</span></span>
+    <span class="dim hide-m">Кейс 02 / 03</span>
+    <a href="index.html#work">← все работы</a>
+  </div>
+
+  <header class="intro">
+    <p class="kicker reveal">Кейс 02 · Платформа подбора психологов</p>
+    <h1 class="reveal">InTreatment</h1>
+    <p class="lead reveal">Сайт, чат-подбор и личные кабинеты для платформы подбора психологов. Всё, через что проходит человек: от первого захода до кабинета после записи.</p>
+    <div class="intro__cta reveal">
+      <a class="btn btn--fill" href="#live">Смотреть живые работы ↓</a>
+      <a class="btn" href="https://intreatment.online" target="_blank" rel="noopener">intreatment.online ↗︎</a>
+    </div>
+    <p class="factline reveal"><span>Продуктовый дизайнер</span><span>май — август 2026</span></p>
+  </header>
+
+  <figure class="hero-media reveal">
+    <img src="img/it/cover.webp" alt="Сайт и чат-подбор InTreatment на десктопе и телефоне">
+    <figcaption>Главная на ноутбуке и чат-подбор на телефоне</figcaption>
+  </figure>
+
+  <section class="nums">
+    <div class="reveal"><b>95%</b><span>заходят с телефона, поэтому каждый экран сначала собирался на 390 px</span></div>
+    <div class="reveal"><b>15</b><span>шагов в чат-подборе от приветствия до оплаты</span></div>
+    <div class="reveal"><b>3</b><span>продукта: сайт, чат-подбор и кабинеты</span></div>
+    <div class="reveal"><b>14</b><span>страниц сайта: главная, психологам, журнал, статьи, тесты, подбор, юридические</span></div>
+  </section>
+
+  <nav class="toc" aria-label="Главы кейса">
+    <h2>Что внутри</h2>
+    <ol>
+      <li><a href="#context">Контекст <span>платформа подбора психологов</span></a></li>
+      <li><a href="#tasks">Задачи <span>три продукта</span></a></li>
+      <li><a href="#team">Команда и связка <span>Figma + Claude Code</span></a></li>
+      <li><a href="#style">Поиск стилистики <span>с первого раза не зашло</span></a></li>
+      <li><a href="#rhythm">Ритм работы <span>созвоны и протоколы</span></a></li>
+      <li><a href="#map">Путь клиента <span>картирование в Miro</span></a></li>
+      <li><a href="#site">Сайт <span>14 страниц в журнальном стиле</span></a></li>
+      <li><a href="#chat">Чат-подбор <span>онбординг как разговор</span></a></li>
+      <li><a href="#cabinet">Личные кабинеты <span>клиент, психолог, админ</span></a></li>
+      <li><a href="#data">Данные и прототип <span>сначала заказчицам, потом по данным</span></a></li>
+      <li><a href="#result">Итоги</a></li>
+    </ol>
+  </nav>
+
+  <main class="chapters">
+
+    <section class="ch" id="context">
+      <div class="ch__text">
+        <div class="ch__n"><span>01</span><span>Контекст</span></div>
+        <h2>Платформа подбора психологов</h2>
+        <p>С весны работаю с двумя основательницами. Они строят платформу подбора психологов, примерно как «Ясно».</p>
+        <p>До меня подбор шёл через Telegram-бота: он задавал вопросы и по дереву запросов приводил человека к психологу. Сайт был визиткой, и записаться через него было сложно.</p>
+        <p><b>95% людей заходят с телефона</b>, часто вечером, когда им тяжело. Листать каталог из сотни анкет в таком состоянии никто не будет. Поэтому подбор мы строили как разговор.</p>
+      </div>
+      <div class="ch__media">
+        <figure class="reveal"><img class="shot" src="img/it/home_0.webp" alt="Первый экран сайта" loading="lazy"><figcaption>Первый экран: «Найдите своего психолога с первой встречи» и одна кнопка, которая запускает подбор</figcaption></figure>
+        <figure class="reveal"><img class="shot" src="img/it/home_1.webp" alt="С чем мы поможем" loading="lazy"><figcaption>«С чем мы поможем»: сферы запросов простыми словами</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="ch" id="tasks">
+      <div class="ch__text">
+        <div class="ch__n"><span>02</span><span>Задачи</span></div>
+        <h2>Три продукта</h2>
+        <p>Я делала всё, через что проходит человек: от первого захода на сайт до кабинета после записи.</p>
+        <ul class="rows">
+          <li><b>Сайт</b><span>Главная, страница для психологов, журнал, тесты, подбор и юридические страницы</span></li>
+          <li><b>Чат-подбор</b><span>По сути онбординг: человек находит психолога в разговоре</span></li>
+          <li><b>Личный кабинет</b><span>Сама платформа: кабинеты клиента, психолога и администратора</span></li>
+        </ul>
+        <p>Отдельная задача была со стилем. Он должен был нравиться основательницам и цеплять их будущих клиентов.</p>
+      </div>
+      <div class="ch__media">
+        <figure class="reveal"><img class="shot" src="img/it/home_2.webp" alt="Как устроен сервис" loading="lazy"><figcaption>«Сервис устроен удобно»: три шага влезают в один экран, описание раскрывается при наведении</figcaption></figure>
+        <figure class="reveal"><img class="shot" src="img/it/home_3.webp" alt="Индивидуальная специализация" loading="lazy"><figcaption>Психологи: у каждого свой круг запросов, кружочки переключаются сами</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="ch" id="team">
+      <div class="ch__text">
+        <div class="ch__n"><span>03</span><span>Команда и связка</span></div>
+        <h2>Проджект и связка Figma + Claude Code</h2>
+        <p>Работала в паре с сильным проджектом. Процесс вели вместе, и в управлении я многое у неё переняла.</p>
+        <ul class="rows">
+          <li><b>Figma</b><span>Дизайн экранов</span></li>
+          <li><b>Дизайн-система</b><span>Собирала через Claude Code</span></li>
+          <li><b>Фронт</b><span>Целостный рабочий прототип</span></li>
+          <li><b>Разработка</b><span>Передавала готовый фронт разработчику</span></li>
+        </ul>
+      </div>
+      <div class="ch__media">
+        <figure class="reveal panel panel--light"><img src="img/it/design-system.webp" alt="Дизайн-система InTreatment" loading="lazy"><figcaption style="color:#5d6166">Дизайн-система: цвета, отступы, радиусы, текстовые стили и компоненты</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="ch" id="style">
+      <div class="ch__text">
+        <div class="ch__n"><span>04</span><span>Поиск стилистики</span></div>
+        <h2>С первого раза стиль не зашёл</h2>
+        <p>Сначала отталкивалась от старого брендинга. Собрала мудборды, кучу референсов, накидала новый вижн бренда. Не зашло, такое бывает.</p>
+        <p>Собрали новый бриф. Стало понятно, что основательницы хотят журнальный и лаконичный стиль. А ещё у них был свой шрифт, под который нужно было подстроиться.</p>
+        <p>Тут я немного стрессанула, но собралась и за день сделала концепт первой страницы. Его утвердили.</p>
+        <ul class="rows">
+          <li><b>Попытка 1</b><span>Старый брендинг, мудборды, новый вижн. Не зашло</span></li>
+          <li><b>Новый бриф</b><span>Журнальный стиль, лаконично, их шрифт</span></li>
+          <li><b>Попытка 2</b><span>Концепт первой страницы за день. Утвердили</span></li>
+        </ul>
+        <blockquote>Самым сложным было понять, чего человек хочет, когда он сам не может это сформулировать.</blockquote>
+      </div>
+      <div class="ch__media">
+        <figure class="reveal"><img class="shot" src="img/it/psy_0.webp" alt="Страница для психологов" loading="lazy"><figcaption>Журнальная типографика: заголовки капсом, много воздуха, острые углы</figcaption></figure>
+        <figure class="reveal"><img class="shot" src="img/it/psy_1.webp" alt="Страница для психологов, второй экран" loading="lazy"><figcaption>Фото работают как в журнале: крупно и с подписью</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="ch" id="rhythm">
+      <div class="ch__text">
+        <div class="ch__n"><span>05</span><span>Ритм работы</span></div>
+        <h2>Много созвонов</h2>
+        <p>Согласовывали, обсуждали, защищали решения. Разбирали каждый блок, докручивали, переделывали и снова созванивались.</p>
+        <ul class="rows">
+          <li><b>Встреча</b><span>Основательницы проходят страницу и говорят, что не так</span></li>
+          <li><b>Протокол</b><span>Записываю каждую правку по экранам</span></li>
+          <li><b>Правки</b><span>Сразу в прототипе</span></li>
+          <li><b>Телефон</b><span>Команда проверяет на своих телефонах</span></li>
+          <li><b>Новый круг</b><span>Новый список правок</span></li>
+        </ul>
+        <p>Дальше стало легче: следующие страницы собирались в той же стилистике.</p>
+      </div>
+      <div class="ch__media">
+        <figure class="reveal"><img class="shot" src="img/it/home_4.webp" alt="Как психологи попадают в проект" loading="lazy"><figcaption>«Как психологи попадают в проект»: формулировки шагов дословно от основательниц</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="ch" id="map">
+      <div class="ch__text">
+        <div class="ch__n"><span>06</span><span>Картирование</span></div>
+        <h2>Путь клиента в Miro</h2>
+        <p>Перед кабинетом разложили в Miro весь путь клиента: воронку сайта, воронку бота и схему, где отвечает ИИ, а живой дежурный проверяет. Красным отмечены места, где клиенты уходят: регистрация, оплата, покупка пакета.</p>
+        <p>По этим схемам потом сверяли всё, что рисовали в Figma и собирали в прототипе.</p>
+      </div>
+      <div class="ch__media">
+        <figure class="reveal panel panel--light"><img src="img/it/miro-site.webp" alt="Воронка клиента на сайте" loading="lazy"><figcaption style="color:#5d6166">Воронка клиента на сайте и платформе. Отдельные ветки: срочная помощь, «не готов записаться», брошенная регистрация и оплата</figcaption></figure>
+        <figure class="reveal panel panel--light"><img src="img/it/miro-bot.webp" alt="Воронка в Telegram-боте" loading="lazy"><figcaption style="color:#5d6166">Воронка в Telegram-боте: брошенная запись, напоминание через час, ретаргет, пакеты и продление</figcaption></figure>
+        <figure class="reveal"><img class="shot" src="img/it/miro-board.webp" alt="Доска в Miro" loading="lazy"><figcaption>Доска в Miro со всеми схемами проекта: «как есть» и «как будет»</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="ch" id="site">
+      <div class="ch__text">
+        <div class="ch__n"><span>07</span><span>Сайт</span></div>
+        <h2>14 страниц в одной стилистике</h2>
+        <p>После утверждённой главной все страницы собирались в той же системе. Главная ведёт в подбор, страница для психологов собирает заявки в команду, журнал пишут сами психологи, а тесты помогают человеку понять свой запрос и тоже приводят в подбор.</p>
+        <ul class="rows">
+          <li><b>Подбор и вход</b><span>Главная с кнопкой подбора, «Давайте начнём», вход в кабинет</span></li>
+          <li><b>Тесты</b><span>8 вопросов, результат по преобладающему ответу и своя кнопка в подбор</span></li>
+          <li><b>Журнал</b><span>Статьи психологов, рубрики, популярное, подписка</span></li>
+          <li><b>Для психологов</b><span>Ценности, как подбираем клиентов, анкета в команду</span></li>
+        </ul>
+        <p>Мобильную версию проверяли по скринам команды: карточки статей кликаются целиком, нижняя панель прячется при открытом меню, кнопки одной ширины.</p>
+        <a class="more" href="https://vikahramovich02-collab.github.io/intreatment/" target="_blank" rel="noopener">Открыть прототип сайта ↗︎</a>
+      </div>
+      <div class="ch__media">
+        <figure class="reveal"><img class="shot" src="img/it/journal_0.webp" alt="Журнал InTreatment Live" loading="lazy"><figcaption>Журнал «InTreatment live»: свежая статья, рубрики, популярное</figcaption></figure>
+        <figure class="reveal"><img class="shot" src="img/it/journal_1.webp" alt="Журнал, лента статей" loading="lazy"><figcaption>Лента статей и рубрики-чипсы</figcaption></figure>
+        <figure class="reveal"><img class="shot" src="img/it/podbor.webp" alt="Страница подбора" loading="lazy"><figcaption>«Давайте начнём»: вход в подбор через сайт, Telegram или ВКонтакте</figcaption></figure>
+        <figure class="reveal panel"><div class="phones"><img src="img/it/home_m.webp" alt="Главная на телефоне" loading="lazy"><img src="img/it/journal_m.webp" alt="Журнал на телефоне" loading="lazy"></div><figcaption>Мобильная версия: главная и журнал</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="ch" id="chat">
+      <div class="ch__text">
+        <div class="ch__n"><span>08</span><span>Чат-подбор</span></div>
+        <h2>Онбординг как разговор</h2>
+        <p>Алгоритм подбора я перенесла из их Telegram-бота: дерево категорий, подкатегории, описания ситуаций и специалисты с реальными ценами. А интерфейс сделала заново, как спокойную переписку.</p>
+        <p>Человек отвечает своими словами или выбирает вариант, получает карточку психолога с видео-кружком и ближайшим временем, выбирает слот, регистрируется по телефону или через Яндекс ID / VK ID и оплачивает. Для кризисных ответов есть отдельная ветка с помощью.</p>
+        <p>По просьбе команды убрала обрезку визитки психолога на телефоне. Текст визитки не повторяет карточку в профиле, поэтому режется только компоновкой, а не содержанием. Замерила на самой длинной визитке в базе: запас по высоте экрана остался.</p>
+        <ul class="rows">
+          <li><b>Шаги</b><span>Чат → карточка и календарь → регистрация → оплата → готово</span></li>
+          <li><b>Оплата</b><span>Тариф, СБП или карта, промокод</span></li>
+          <li><b>Мобильная</b><span>Визитка целиком на экране 390×844</span></li>
+        </ul>
+        <a class="more" href="https://vikahramovich02-collab.github.io/intreatment-podbor/" target="_blank" rel="noopener">Пройти чат-подбор ↗︎</a>
+      </div>
+      <div class="ch__media">
+        <figure class="reveal"><img class="shot" src="img/it/chat.webp" alt="Чат-подбор на десктопе" loading="lazy"><figcaption>Начало подбора: ИИ-помощник объясняет, сколько займёт, и спрашивает, как обращаться</figcaption></figure>
+        <figure class="reveal panel panel--light"><img src="img/it/card-before-after.webp" alt="Карточка психолога: было и стало" loading="lazy"><figcaption style="color:#5d6166">Карточка психолога на телефоне: было, стало и крайний случай с самой длинной визиткой</figcaption></figure>
+        <figure class="reveal panel"><div class="phones"><img src="img/it/chat_m.webp" alt="Чат-подбор на телефоне" loading="lazy"><img src="img/it/pl-client_m.webp" alt="Кабинет клиента на телефоне" loading="lazy"></div><figcaption>Чат-подбор и кабинет клиента на телефоне</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="ch" id="cabinet">
+      <div class="ch__text">
+        <div class="ch__n"><span>09</span><span>Личный кабинет</span></div>
+        <h2>Три кабинета на одной платформе</h2>
+        <p>В кабинете с человеком остаётся тот же ассистент: напоминает о встрече, помогает перенести, спрашивает, как прошло, и предлагает записаться снова.</p>
+        <p>Функции взяла из их рабочей админки, а визуал сделала в нашем журнальном стиле. Роли переключаются в одном прототипе.</p>
+        <ul class="rows">
+          <li><b>Клиент</b><span>Ближайшая встреча, перенос и отмена за 24 часа, пакеты, ассистент</span></li>
+          <li><b>Психолог</b><span>Встречи на сегодня, заявки с таймером, клиенты с заметками, расписание, доход</span></li>
+          <li><b>Администратор</b><span>Воронка, модерация психологов, дежурный, который проверяет ответы ИИ, инциденты, платежи</span></li>
+        </ul>
+      </div>
+      <div class="ch__media">
+        <figure class="reveal"><img class="shot" src="img/it/pl-client.webp" alt="Кабинет клиента" loading="lazy"><figcaption>Кабинет клиента: следующий шаг и ближайшая встреча сверху</figcaption></figure>
+        <figure class="reveal"><img class="shot" src="img/it/pl-spec.webp" alt="Кабинет психолога" loading="lazy"><figcaption>Кабинет психолога: встречи на сегодня и прошедшие</figcaption></figure>
+        <figure class="reveal"><img class="shot" src="img/it/pl-admin.webp" alt="Кабинет администратора" loading="lazy"><figcaption>Администратор: сколько ответов ИИ ждут проверки, воронка и нагрузка психологов</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="ch" id="data">
+      <div class="ch__text">
+        <div class="ch__n"><span>10</span><span>Данные и прототип</span></div>
+        <h2>Сначала для заказчиц, потом по данным</h2>
+        <p>Сайт и чат собраны как рабочие прототипы. Разработчик получил готовый фронт и подключил данные, верстать с нуля не пришлось. На этом же фронте удобно собирать варианты для A/B-тестов.</p>
+        <p>Уже пришли первые результаты аналитики. Видно, как пользователи ходят по сайту и что можно убрать и упростить.</p>
+        <p>Первый прототип уже немного переделан. Я считаю, это нормальная работа дизайнера: сначала докрутить до того, чтобы нравилось заказчицам, а потом по данным подбирать решения для пользователей.</p>
+      </div>
+      <div class="ch__media">
+        <figure class="reveal panel panel--light"><img src="img/it/tests-board.webp" alt="Тесты: страницы и прохождение" loading="lazy"><figcaption style="color:#5d6166">Тесты в Figma: все страницы и прохождение до результата</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="ch" id="result">
+      <div class="ch__text">
+        <div class="ch__n"><span>11</span><span>Итоги</span></div>
+        <h2>Итоги</h2>
+        <p>Заказчицы теперь не могут налюбоваться сайтом. А муж одной из основательниц отдельно сказал, что ему очень нравятся страницы. Честно, это мой любимый отзыв.</p>
+        <p>Каждая новая ниша это новая логическая задачка. Если что-то не получилось с первого раза, со второго получится.</p>
+      </div>
+      <div class="ch__media">
+        <figure class="reveal"><img class="shot" src="img/it/home_0.webp" alt="Главная InTreatment" loading="lazy"><figcaption>intreatment.online</figcaption></figure>
+      </div>
+    </section>
+  </main>
+
+  <section class="live" id="live">
+    <h2 class="reveal">Живые работы</h2>
+    <p class="sub reveal">Прототипы собраны мной и по сути являются готовым фронтом, который забрала разработка.</p>
+    <ul>
+      <li class="reveal"><a href="https://intreatment.online" target="_blank" rel="noopener"><b>Основной сайт</b><span>intreatment.online</span><i>↗︎</i></a></li>
+      <li class="reveal"><a href="https://vikahramovich02-collab.github.io/intreatment/" target="_blank" rel="noopener"><b>Прототип сайта</b><span>готовый фронт, 14 страниц</span><i>↗︎</i></a></li>
+      <li class="reveal"><a href="https://vikahramovich02-collab.github.io/intreatment-podbor/" target="_blank" rel="noopener"><b>Чат-подбор</b><span>прототип онбординга</span><i>↗︎</i></a></li>
+    </ul>
+  </section>
+
+  <a class="next reveal" href="albumchik.html"><small>Следующий кейс · 03</small><strong>ALBUMCHIK →</strong></a>
+
+  <div class="end">
+    <footer class="foot">
+      <a href="index.html">← все работы</a>
+      <span class="hide-m"><a href="https://t.me/viksikkkkkkkkkkkkkkk" target="_blank" rel="noopener">channel @viksikkkkkkkkkkkkkkk</a></span>
+      <span class="dim hide-m">Minsk</span>
+      <a href="https://t.me/viksaaaaaa_a" target="_blank" rel="noopener">@viksaaaaaa_a</a>
+    </footer>
+  </div>
+<script src="assets/site.js?v=8"></script>
+</body>
+</html>

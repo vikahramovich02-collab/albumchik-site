@@ -1,0 +1,49 @@
+/* Общее для всех страниц портфолио: токены, шапка-строка, подвал, проявление, курсор-круг. */
+:root{
+  --bg:#161718; --fg:#e8e9ea; --dim:#8a8f95; --faint:#5d6166; --rule:#e8e9ea; --line:rgba(232,233,234,.14);
+  --panel:#1f2021;
+  --sans:"Geist","Helvetica Neue",Arial,sans-serif;
+  --pad:clamp(16px,1.6vw,24px);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--fg)}
+body{font-family:var(--sans);font-weight:400;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+
+/* шапка: 4 колонки мелким текстом */
+.meta{position:relative;z-index:5;display:grid;grid-template-columns:1fr 1.4fr .6fr auto;gap:8px 24px;padding:var(--pad);font-size:13px;line-height:1.3}
+.meta b{font-weight:400;display:inline-flex;align-items:center;gap:8px}
+.meta b::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--fg)}
+.meta .dim{color:var(--dim)}
+.meta a:hover{color:var(--dim)}
+
+footer.foot{display:grid;grid-template-columns:1fr 1.4fr .6fr auto;gap:8px 24px;padding-top:10px;border-top:1px solid var(--rule);font-size:13px}
+footer.foot .dim{color:var(--dim)}
+
+/* проявление при каждом заходе в экран */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal.is-in{opacity:1;transform:none}
+
+/* курсор-круг над обложками кейсов */
+.cur{position:fixed;left:0;top:0;z-index:50;width:112px;height:112px;margin:-56px 0 0 -56px;border-radius:50%;background:#fff;color:#111;
+  display:grid;place-items:center;text-align:center;font-size:13px;line-height:1.15;font-weight:500;pointer-events:none;
+  transform:translate3d(var(--cx,-200px),var(--cy,-200px),0) scale(0);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.cur.is-on{transform:translate3d(var(--cx),var(--cy),0) scale(1)}
+@media (hover:hover) and (pointer:fine){ [data-cursor]{cursor:none} [data-cursor] *{cursor:none} }
+@media (hover:none){ .cur{display:none} }
+
+/* кнопки */
+.btn{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 22px;border-radius:999px;border:1px solid rgba(232,233,234,.35);font-size:14px;transition:background .2s,color .2s,border-color .2s}
+.btn:hover{border-color:var(--fg)}
+.btn--fill{background:var(--fg);color:#111;border-color:var(--fg)}
+.btn--fill:hover{background:transparent;color:var(--fg)}
+
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+}
+@media (max-width:760px){
+  .meta,footer.foot{grid-template-columns:1fr auto}
+  .meta .hide-m,footer.foot .hide-m{display:none}
+}

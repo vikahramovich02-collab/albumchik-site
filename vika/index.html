@@ -10,95 +10,17 @@
 <meta property="og:title" content="Vika Akhramovich — product designer">
 <meta property="og:url" content="https://albumchik.by/vika/">
 <meta property="og:image" content="https://maryrose.by/img/site-mary.webp">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap">
-<style>
-/* Сайт-портфолио Вики. Первый экран: позиционирование огромным по центру, вокруг плавают работы.
-   Ниже проекты по одному: линейка, номер, название, картинки. Живёт на albumchik.by/vika. */
-:root{
-  --bg:#161718; --fg:#e8e9ea; --dim:#8a8f95; --rule:#e8e9ea;
-  --sans:"Geist","Helvetica Neue",Arial,sans-serif;
-  --pad:clamp(16px,1.6vw,24px);
-  color-scheme:dark;
-}
-*{box-sizing:border-box}
-html,body{margin:0;background:var(--bg);color:var(--fg)}
-body{font-family:var(--sans);font-weight:400;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
-
-/* шапка: 4 колонки мелким текстом */
-.meta{position:relative;z-index:5;display:grid;grid-template-columns:1fr 1.4fr .6fr auto;gap:8px 24px;padding:var(--pad);font-size:13px;line-height:1.3}
-.meta b{font-weight:400;display:inline-flex;align-items:center;gap:8px}
-.meta b::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--fg)}
-.meta .dim{color:var(--dim)}
-.meta a:hover{color:var(--dim)}
-
-/* первый экран */
-.hero{position:relative;height:100svh;min-height:640px;margin-top:-56px;overflow:hidden}
-.pos{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;z-index:2}
-.pos h1{margin:0;text-align:center;font-weight:500;font-size:clamp(64px,13.4vw,230px);line-height:.84;letter-spacing:-.06em}
-.pos h1 span{display:block}
-.pos p{margin:clamp(20px,3vh,32px) 0 0;max-width:40ch;text-align:center;color:var(--dim);font-size:clamp(14px,1.2vw,17px);line-height:1.45}
-
-/* плавающие работы: позиция и размер задаются на карточке, слой — над или под текстом */
-.fly{position:absolute;left:var(--x);top:var(--y);width:var(--w);z-index:1;will-change:transform}
-.fly.top{z-index:3}
-.fly a{display:block;animation:bob var(--d,9s) ease-in-out infinite alternate;animation-delay:var(--dl,0s)}
-.fly img{width:100%;height:auto;box-shadow:0 20px 50px rgba(0,0,0,.35);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
-.fly a:hover img{transform:scale(1.04)}
-@keyframes bob{from{transform:translate3d(0,-10px,0) rotate(-.6deg)}to{transform:translate3d(0,12px,0) rotate(.6deg)}}
-/* появление карточек при загрузке */
-.fly{opacity:0;transition:opacity .9s ease}
-.is-ready .fly{opacity:1}
-.is-ready .fly:nth-child(2n){transition-delay:.15s}
-.is-ready .fly:nth-child(3n){transition-delay:.3s}
-
-.scroll{position:absolute;left:50%;bottom:var(--pad);transform:translateX(-50%);z-index:4;font-size:13px;color:var(--dim)}
-
-/* проекты */
-.work{padding:0 var(--pad)}
-.case{padding-top:clamp(56px,9vh,96px)}
-.case__head{display:grid;grid-template-columns:1fr 1.4fr .6fr auto;gap:8px 24px;padding-top:10px;border-top:1px solid var(--rule);font-size:13px;line-height:1.3}
-.case__head .dim{color:var(--dim)}
-.case__head a{border-bottom:1px solid rgba(232,233,234,.35)}
-.case__head a:hover{border-color:var(--fg)}
-.case__title{margin:clamp(20px,3vh,32px) 0 clamp(20px,3vh,32px);font-weight:500;font-size:clamp(40px,6vw,96px);line-height:.92;letter-spacing:-.05em}
-.shots{display:grid;gap:var(--pad);grid-template-columns:repeat(var(--cols,1),1fr)}
-.shots img{width:100%;height:100%;object-fit:cover;background:#222}
-.shots .wide{grid-column:1/-1}
-
-.outro{padding:clamp(96px,16vh,180px) var(--pad) var(--pad);display:flex;flex-direction:column;gap:clamp(48px,10vh,120px)}
-.outro h2{margin:0;font-weight:500;font-size:clamp(48px,9vw,150px);line-height:.88;letter-spacing:-.055em}
-.outro h2 a{border-bottom:3px solid var(--fg)}
-.outro h2 a:hover{color:var(--dim);border-color:var(--dim)}
-footer{display:grid;grid-template-columns:1fr 1.4fr .6fr auto;gap:8px 24px;padding-top:10px;border-top:1px solid var(--rule);font-size:13px}
-footer .dim{color:var(--dim)}
-
-/* проявление при каждом заходе в экран */
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
-.reveal.is-in{opacity:1;transform:none}
-
-@media (prefers-reduced-motion:reduce){
-  .fly a{animation:none}
-  .reveal{opacity:1;transform:none;transition:none}
-}
-@media (max-width:760px){
-  .meta,.case__head,footer{grid-template-columns:1fr auto}
-  .meta .hide-m,.case__head .hide-m,footer .hide-m{display:none}
-  .fly.hide-m{display:none}
-  .fly{width:calc(var(--w) * 1.7)}
-  .fly.low{top:calc(var(--y) + 9%)}
-  .shots{grid-template-columns:1fr}
-}
-</style>
+<link rel="stylesheet" href="assets/base.css?v=8">
+<link rel="stylesheet" href="assets/home.css?v=9">
 </head>
 <body>
   <div class="meta">
     <b><a href="https://maryrose.by/vika">vika akhramovich</a></b>
-    <span class="hide-m">Product designer, 5&nbsp;лет в&nbsp;стартапах<br><span class="dim">Сейчас CPO и&nbsp;продуктовый дизайнер в&nbsp;Mary AI</span></span>
+    <span class="hide-m">Product designer · AI-native<br><span class="dim">Сейчас CPO и&nbsp;продуктовый дизайнер в&nbsp;Mary AI</span><br><a href="resume.html" class="cv-link">резюме ↗︎</a></span>
     <span class="dim hide-m">Minsk</span>
     <span>2026©</span>
   </div>
@@ -106,53 +28,103 @@ footer .dim{color:var(--dim)}
   <section class="hero" id="hero">
     <div class="pos">
       <h1><span>Product</span><span>designer</span></h1>
-      <p>Проектирую продукт целиком: флоу, интерфейс, сайт и&nbsp;весь визуал — от&nbsp;задачи до&nbsp;готового фронта.</p>
+      <p>Продуктовый дизайнер, который работает вместе с&nbsp;ИИ. Он меня дополняет и&nbsp;ускоряет путь от&nbsp;флоу до&nbsp;живого фронта.</p>
     </div>
 
     <!-- --z: глубина для параллакса за курсором -->
-    <div class="fly" style="--x:8%;--y:20%;--w:15vw;--z:.6;--d:10s"><a href="#mary"><img src="img/site-mary-s.webp" alt="Сайт Mary AI"></a></div>
-    <div class="fly top" style="--x:57%;--y:24%;--w:13vw;--z:1;--d:8s;--dl:-2s"><a href="#mary"><img src="img/mk-brochure-dark-s.webp" alt="Брошюра Mary"></a></div>
-    <div class="fly" style="--x:80%;--y:13%;--w:14vw;--z:.4;--d:11s;--dl:-4s"><a href="#albumchik"><img src="img/site-albumchik-s.webp" alt="Сайт ALBUMCHIK"></a></div>
-    <div class="fly hide-m" style="--x:30%;--y:9%;--w:10vw;--z:.3;--d:12s;--dl:-1s"><a href="#mary"><img src="img/mk-badges-dark-s.webp" alt="Бейджи Mary"></a></div>
-    <div class="fly low" style="--x:12%;--y:62%;--w:12vw;--z:.8;--d:9s;--dl:-3s"><a href="#intreatment"><img src="img/site-intreatment-s.webp" alt="Сайт InTreatment"></a></div>
-    <div class="fly top low" style="--x:36%;--y:76%;--w:13vw;--z:1.1;--d:10s;--dl:-5s"><a href="#mary"><img src="img/mk-brochure-s.webp" alt="Брошюра Mary"></a></div>
-    <div class="fly low" style="--x:74%;--y:60%;--w:11vw;--z:.5;--d:9.5s;--dl:-6s"><a href="#mary"><img src="img/mk-links-s.webp" alt="Страница links Mary"></a></div>
-    <div class="fly hide-m" style="--x:88%;--y:40%;--w:9vw;--z:.7;--d:11s;--dl:-2.5s"><a href="#mary"><img src="img/mk-ceo-s.webp" alt="Страница CEO Mary"></a></div>
+    <div class="fly" style="--x:8%;--y:20%;--w:15vw;--z:.6;--d:10s"><a href="mary.html"><img src="img/site-mary-s.webp" alt="Сайт Mary AI"></a></div>
+    <div class="fly top" style="--x:57%;--y:24%;--w:13vw;--z:1;--d:8s;--dl:-2s"><a href="mary.html"><img src="img/mk-brochure-dark-s.webp" alt="Брошюра Mary"></a></div>
+    <div class="fly" style="--x:80%;--y:13%;--w:14vw;--z:.4;--d:11s;--dl:-4s"><a href="albumchik.html"><img src="img/site-albumchik-s.webp" alt="Сайт ALBUMCHIK"></a></div>
+    <div class="fly hide-m" style="--x:30%;--y:9%;--w:10vw;--z:.3;--d:12s;--dl:-1s"><a href="mary.html"><img src="img/mk-badges-dark-s.webp" alt="Бейджи Mary"></a></div>
+    <div class="fly low" style="--x:12%;--y:62%;--w:12vw;--z:.8;--d:9s;--dl:-3s"><a href="intreatment.html"><img src="img/site-intreatment-s.webp" alt="Сайт InTreatment"></a></div>
+    <div class="fly top low" style="--x:36%;--y:76%;--w:13vw;--z:1.1;--d:10s;--dl:-5s"><a href="mary.html"><img src="img/mk-brochure-s.webp" alt="Брошюра Mary"></a></div>
+    <div class="fly low" style="--x:74%;--y:60%;--w:11vw;--z:.5;--d:9.5s;--dl:-6s"><a href="mary.html"><img src="img/mk-links-s.webp" alt="Страница links Mary"></a></div>
+    <div class="fly hide-m" style="--x:88%;--y:40%;--w:9vw;--z:.7;--d:11s;--dl:-2.5s"><a href="mary.html"><img src="img/mk-ceo-s.webp" alt="Страница CEO Mary"></a></div>
 
     <a class="scroll" href="#work">(selected work ↓)</a>
   </section>
 
   <main class="work" id="work">
     <article class="case" id="mary">
-      <div class="case__head reveal"><span>01.</span><span class="hide-m">AI-платформа для бизнеса</span><span class="dim hide-m">продукт · UI · сайт · визуал</span><a href="https://maryrose.by/?utm_source=vika&amp;utm_medium=portfolio" target="_blank" rel="noopener">maryrose.by ↗</a></div>
-      <h2 class="case__title reveal">Mary AI</h2>
-      <div class="shots" style="--cols:2">
-        <img class="wide reveal" src="img/site-mary.webp" alt="Сайт Mary AI" loading="lazy">
-        <img class="reveal" src="img/mk-brochure-dark.webp" alt="Брошюра Mary" loading="lazy">
-        <img class="reveal" src="img/mk-badges-dark.webp" alt="Бейджи Mary" loading="lazy">
-        <img class="reveal" src="img/mk-links.webp" alt="Страница links" loading="lazy">
-        <img class="reveal" src="img/mk-ceo.webp" alt="Страница CEO" loading="lazy">
-      </div>
+      <div class="case__head reveal"><span>01.</span><span class="hide-m">AI-платформа для бизнеса · CPO и продуктовый дизайнер</span><span class="dim hide-m">с июля 2025</span><a href="https://maryrose.by/?utm_source=vika&amp;utm_medium=portfolio" target="_blank" rel="noopener">maryrose.by ↗︎</a></div>
+      <div class="case__title reveal"><h2>Mary AI</h2><p>Весь продукт от интерфейса платформы до сайтов, питч-дека для инвесторов, роликов и печати.</p></div>
+      <a class="cover" href="mary.html" data-cursor="Смотреть кейс" aria-label="Кейс Mary AI">
+        <video data-auto data-src="img/mary/promo.mp4" poster="img/mary/promo-poster.webp" muted loop playsinline preload="none"></video>
+      </a>
+      <div class="case__tags reveal"><span>Продукт</span><span>Платформа</span><span>Дизайн-система</span><span>3 сайта</span><span>Питч-дек</span><span>Моушен</span><span>Айдентика</span><span>Печать</span></div>
     </article>
 
     <article class="case" id="intreatment">
-      <div class="case__head reveal"><span>02.</span><span class="hide-m">Психологическая платформа</span><span class="dim hide-m">сайт · чат-подбор</span><a href="https://intreatment.online" target="_blank" rel="noopener">intreatment.online ↗</a></div>
-      <h2 class="case__title reveal">InTreatment</h2>
-      <div class="shots"><img class="reveal" src="img/site-intreatment.webp" alt="Сайт InTreatment" loading="lazy"></div>
-    </article>
-
-    <article class="case" id="albumchik">
-      <div class="case__head reveal"><span>03.</span><span class="hide-m">Студия дизайна альбомов</span><span class="dim hide-m">сайт</span><a href="https://albumchik.by" target="_blank" rel="noopener">albumchik.by ↗</a></div>
-      <h2 class="case__title reveal">ALBUMCHIK</h2>
-      <div class="shots"><img class="reveal" src="img/site-albumchik.webp" alt="Сайт ALBUMCHIK" loading="lazy"></div>
+      <div class="case__head reveal"><span>02.</span><span class="hide-m">Платформа подбора психологов · продуктовый дизайнер</span><span class="dim hide-m">май — август 2026</span><a href="https://intreatment.online" target="_blank" rel="noopener">intreatment.online ↗︎</a></div>
+      <div class="case__title reveal"><h2>InTreatment</h2><p>Многостраничный сайт, чат-подбор вместо каталога анкет и личные кабинеты клиента, психолога и админа.</p></div>
+      <a class="cover" href="intreatment.html" data-cursor="Смотреть кейс" aria-label="Кейс InTreatment">
+        <img src="img/it/cover.webp" alt="Сайт и чат-подбор InTreatment" loading="lazy">
+      </a>
+      <div class="case__tags reveal"><span>Исследование</span><span>Путь клиента</span><span>Сайт</span><span>Онбординг</span><span>Платформа</span><span>Мобильная версия</span><span>Дизайн-система</span></div>
     </article>
 
   </main>
 
+  <section class="all" id="all">
+    <div class="all__head">
+      <h2 class="reveal">Все работы</h2>
+      <div class="flt" role="tablist" aria-label="Фильтр работ">
+        <button class="is-on" data-f="all">Все</button>
+        <button data-f="platform">Платформы и сервисы</button>
+        <button data-f="site">Сайты</button>
+        <button data-f="print">Печать и айдентика</button>
+      </div>
+    </div>
+    <div class="wks">
+      <a class="wk reveal" data-kind="platform" href="mary-platform.html" data-cursor="Смотреть"><span class="wk__img"><img src="img/mary/v-platform.webp" alt="Mary AI" loading="lazy"><video data-hover data-src="img/mary/v-platform.mp4" muted loop playsinline preload="none"></video></span><b>Mary AI</b><small>Платформа: чат, автоматизации, дизайн-система</small></a>
+      <a class="wk reveal" data-kind="site" href="mary-site.html" data-cursor="Смотреть"><span class="wk__img"><img src="img/mary/home_0.webp" alt="maryrose.by" loading="lazy"><video data-hover data-src="img/mary/v-site.mp4" muted loop playsinline preload="none"></video></span><b>maryrose.by</b><small>Основной сайт Mary AI</small></a>
+      <a class="wk reveal" data-kind="site" href="mary-dev.html" data-cursor="Смотреть"><span class="wk__img"><img src="img/mary/dev_0.webp" alt="sales.maryrose.by" loading="lazy"><video data-hover data-src="img/mary/v-dev.mp4" muted loop playsinline preload="none"></video></span><b>sales.maryrose.by</b><small>Сайт заказной разработки</small></a>
+      <a class="wk reveal" data-kind="site" href="intreatment.html#site" data-cursor="Смотреть"><span class="wk__img"><img src="img/it/home_0.webp" alt="intreatment.online" loading="lazy"></span><b>intreatment.online</b><small>Многостраничный сайт платформы</small></a>
+      <a class="wk reveal" data-kind="site" href="https://vikahramovich02-collab.github.io/ingribel-site/" target="_blank" rel="noopener" data-cursor="Открыть сайт"><span class="wk__img"><img src="img/site-ingribel.webp" alt="Сайт INGRIBEL" loading="lazy"></span><b>INGRIBEL ↗︎</b><small>Сайт производителя пищевых ингредиентов</small></a>
+      <a class="wk reveal" data-kind="site" href="https://vikahramovich02-collab.github.io/creative-bus-landing/" target="_blank" rel="noopener" data-cursor="Открыть сайт"><span class="wk__img"><img src="img/site-creativebus.webp?v=2" alt="Сайт Creative Bus" loading="lazy"></span><b>Creative Bus ↗︎</b><small>Лендинг рекламы на транспорте с прайсом и калькулятором</small></a>
+      <a class="wk reveal" data-kind="site" href="https://vikahramovich02-collab.github.io/cinematic-store/" target="_blank" rel="noopener" data-cursor="Открыть сайт"><span class="wk__img"><img src="img/site-cinematic.webp" alt="Интернет-магазин CINEMATIC" loading="lazy"></span><b>CINEMATIC ↗︎</b><small>Интернет-магазин бренда мужской одежды · в разработке</small></a>
+      <a class="wk reveal" data-kind="site print" href="hideliv.html" data-cursor="Смотреть кейс"><span class="wk__img"><img src="img/hd/bb-01.webp" alt="Лендинг hideliv QC" loading="lazy"></span><b>hideliv QC</b><small>Айдентика и лендинг сервиса инспекции товаров в Китае</small></a>
+      <a class="wk reveal" data-kind="site" href="https://albumchik.by" target="_blank" rel="noopener" data-cursor="Открыть сайт"><span class="wk__img"><img src="img/al/home_0.webp" alt="albumchik.by" loading="lazy"></span><b>albumchik.by ↗︎</b><small>Сайт моего проекта журналов</small></a>
+      <a class="wk reveal" data-kind="print" href="albumchik.html#magazines" data-cursor="Смотреть"><span class="wk__img"><img src="img/al/cover.webp" alt="ALBUMCHIK" loading="lazy"></span><b>ALBUMCHIK</b><small>Журналы о человеке и фотоальбомы</small></a>
+      <a class="wk reveal" data-kind="print" href="mary.html#brand" data-cursor="Смотреть"><span class="wk__img"><img src="img/mary/brochure.webp" alt="Брошюра-гармошка Mary" loading="lazy"></span><b>Mary · печать</b><small>Бейджи, брошюра-гармошка, визитки</small></a>
+    </div>
+  </section>
+
+  <section class="ai" id="ai">
+    <div class="ai__head">
+      <p class="ai__k reveal">Моё преимущество</p>
+      <h2 class="reveal">Продуктовый дизайнер, который работает с&nbsp;ИИ</h2>
+      <p class="ai__lead reveal">ИИ меня дополняет, а не заменяет: берёт рутину, а решения и вкус остаются за мной. Поэтому недели работы превращаются в дни.</p>
+    </div>
+    <ol class="ai__list">
+      <li class="reveal"><span>01</span><h3>Быстро</h3><p>Концепт за день, правки за пару часов.</p></li>
+      <li class="reveal"><span>02</span><h3>Гипотезы на живом</h3><p>Проверяю варианты на людях, а не на картинках.</p></li>
+      <li class="reveal"><span>03</span><h3>Прототип = фронт</h3><p>Живой сайт, разработка не верстает с нуля.</p></li>
+      <li class="reveal"><span>04</span><h3>Не вайбкод</h3><p>Сначала продукт и система, потом код.</p></li>
+    </ol>
+    <div class="ai__tools reveal"><span>Figma</span><span>Claude Code</span><span>Codex</span><span>Higgsfield</span><span>React</span><span>Miro</span><span>GitHub</span></div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="services__head">
+      <h2 class="reveal">Что я делаю</h2>
+      <p class="reveal">Веду продукт <b>от задачи и пути клиента до готового фронта</b>, который забирает разработка, и везде использую ИИ, чтобы это шло быстрее. А всё, что продукт показывает людям снаружи (сайт, презентация, ролик, печать), делаю в той же системе, поэтому всё выглядит как одно целое.</p>
+    </div>
+    <ul class="srv">
+      <li class="reveal"><span class="n">01</span><h3>Продукт и интерфейсы<small>веб-сервисы, платформы, мобильные</small></h3><p>Разбираю задачу и путь клиента, рисую флоу и нахожу, где люди теряются. Проектирую интерфейсы, собираю дизайн-систему и рабочий прототип, который по сути готовый фронт. На нём же быстро собираются варианты для A/B-тестов.</p><span class="see"><a href="mary-platform.html">Mary · платформа →</a><a href="intreatment.html#chat">InTreatment · чат-подбор →</a><a href="intreatment.html#cabinet">InTreatment · кабинеты →</a></span></li>
+      <li class="reveal"><span class="n">02</span><h3>Сайты<small>лендинги и многостраничные</small></h3><p>Структура, тексты вместе с заказчиком, дизайн, анимации и мобильная версия. SEO и аналитику закладываю сразу. Могу сама сверстать и выложить.</p><span class="see"><a href="mary-site.html">maryrose.by →</a><a href="mary-dev.html">sales.maryrose.by →</a><a href="intreatment.html#site">intreatment.online →</a><a href="albumchik.html#site">albumchik.by →</a></span></li>
+      <li class="reveal"><span class="n">03</span><h3>Презентации<small>питч-деки, продающие, отдельные слайды</small></h3><p>Собираю историю и цифры в презентацию для инвесторов или клиентов. Делаю PDF, PPTX и веб-версию, могу оживить слайды моушеном.</p><span class="see"><a href="mary-deck.html">Mary · питч-дек на $3M →</a></span></li>
+      <li class="reveal"><span class="n">04</span><h3>Моушен и видео<small>промо, мокапы, заставки</small></h3><p>Промо-ролики продукта, моушен интерфейсов и слайдов, видео-мокапы устройств, заставки и оформление YouTube-канала.</p><span class="see"><a href="mary.html#motion">Mary · ролики и мокапы →</a></span></li>
+      <li class="reveal"><span class="n">05</span><h3>Айдентика<small>знак, стиль, носители</small></h3><p>Логотип и фирменный стиль, бейджи, визитки, мерч. Всё сразу проверяю на настоящих носителях и мокапах.</p><span class="see"><a href="mary.html#brand">Mary · бейджи и брошюры →</a><a href="albumchik.html#brand">ALBUMCHIK →</a></span></li>
+      <li class="reveal"><span class="n">06</span><h3>Графика для соцсетей<small>посты, баннеры, обложки</small></h3><p>Посты и карусели, сторис, баннеры, шапки каналов и обложки к видео. В одном стиле с продуктом, чтобы соцсети не жили отдельно от сайта.</p><span class="see"><a href="mary.html#content">Mary · контент →</a></span></li>
+      <li class="reveal"><span class="n">07</span><h3>Печать и вёрстка<small>журналы, альбомы, брошюры</small></h3><p>Журналы и фотоальбомы, брошюры и буклеты. Отбор кадров, сетка, типографика и подготовка к печати.</p><span class="see"><a href="albumchik.html#magazines">ALBUMCHIK · журналы →</a><a href="mary.html#brand">Mary · брошюра →</a></span></li>
+    </ul>
+  </section>
+
   <section class="outro">
     <h2 class="reveal">Есть задача?<br><a href="https://t.me/viksaaaaaa_a" target="_blank" rel="noopener">Напишите</a></h2>
-    <footer>
-      <a href="https://maryrose.by/vika">← contacts</a>
+    <footer class="foot">
+      <a href="resume.html">резюме · pdf</a>
       <span class="hide-m"><a href="https://t.me/viksikkkkkkkkkkkkkkk" target="_blank" rel="noopener">channel @viksikkkkkkkkkkkkkkk</a></span>
       <span class="dim hide-m">Minsk</span>
       <a href="https://t.me/viksaaaaaa_a" target="_blank" rel="noopener">@viksaaaaaa_a</a>
@@ -179,8 +151,19 @@ footer .dim{color:var(--dim)}
     requestAnimationFrame(loop);
   })();
 
-  const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('is-in', e.isIntersecting)), { threshold: .12 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  // фильтр работ: прячем карточки, которые не подходят
+  const wks = [...document.querySelectorAll('.wk')];
+  document.querySelectorAll('.flt button').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.flt button').forEach(x => x.classList.toggle('is-on', x === b));
+    wks.forEach(w => w.hidden = b.dataset.f !== 'all' && !w.dataset.kind.split(' ').includes(b.dataset.f));
+  }));
+  // у карточек с роликом видео играет при наведении
+  wks.forEach(w => {
+    const v = w.querySelector('video[data-hover]'); if (!v) return;
+    w.addEventListener('pointerenter', () => { if (!v.src) v.src = v.dataset.src; v.play().catch(() => {}); w.classList.add('is-play'); });
+    w.addEventListener('pointerleave', () => { v.pause(); w.classList.remove('is-play'); });
+  });
 </script>
+<script src="assets/site.js?v=8"></script>
 </body>
 </html>
