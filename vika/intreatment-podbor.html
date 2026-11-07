@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>InTreatment: редизайн подбора — Vika Akhramovich</title>
+<meta name="description" content="Как я переделала чат-подбор психолога InTreatment после правок клиенток: воронка по шагам, карточка в один экран, понятное согласие, маскот-помощник и три кабинета в одной системе.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="InTreatment: редизайн подбора — кейс Вики Ахрамович">
+<meta property="og:image" content="img/it2/v2-topics.webp">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="assets/base.css?v=8">
+<link rel="stylesheet" href="assets/case.css?v=8">
+<style>
+  .ba { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
+  .ba p { margin: 0; padding: 12px 14px; border-radius: 12px; background: rgba(255,255,255,.06); font-size: 14px; line-height: 1.5; }
+  .ba p b { display: block; font-weight: 500; margin-bottom: 4px; }
+  .quote { margin: 18px 0 0; padding-left: 14px; border-left: 2px solid rgba(255,255,255,.25); font-size: 15px; line-height: 1.55; }
+  .mascot-fig img { max-width: 420px; margin: 0 auto; display: block; }
+  @media (max-width: 700px) { .ba { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+  <div class="meta">
+    <b><a href="index.html">vika akhramovich</a></b>
+    <span class="hide-m">Product designer<br><span class="dim">Редизайн подбора и кабинетов</span></span>
+    <span class="dim hide-m">InTreatment · часть 2</span>
+    <a href="index.html#work">← все работы</a>
+  </div>
+
+  <header class="intro">
+    <p class="kicker reveal">InTreatment · часть 2 · Редизайн подбора</p>
+    <h1 class="reveal">Подбор, который не бросают</h1>
+    <p class="lead reveal">Клиентки прислали 16 правок к чат-подбору со словами «смотрится топорно» и «виден эффект вайбкодинга». Я разложила их по шагам воронки и пересобрала подбор, путь после оплаты и три кабинета в одной системе.</p>
+    <div class="intro__cta reveal">
+      <a class="btn btn--fill" href="#live">Пройти подбор ↓</a>
+      <a class="btn" href="intreatment.html">Часть 1: сайт и первый подбор</a>
+    </div>
+    <p class="factline reveal"><span>Продуктовый дизайнер</span><span>ноябрь 2026</span></p>
+  </header>
+
+  <figure class="hero-media reveal">
+    <img src="img/it2/v2-topics.webp" alt="Новый чат-подбор InTreatment: меню с темами слева, карточка психолога в ленте">
+    <figcaption>Новый подбор: у каждой темы свой психолог, карточка целиком в одном экране</figcaption>
+  </figure>
+
+  <section class="nums">
+    <div class="reveal"><b>16</b><span>правок от клиенток, которые я свела в 4 проблемы</span></div>
+    <div class="reveal"><b>12</b><span>шагов воронки от согласия до первой сессии, у каждого своя метрика</span></div>
+    <div class="reveal"><b>1</b><span>экран на карточку психолога вместо прокрутки</span></div>
+    <div class="reveal"><b>3</b><span>кабинета на одном языке: клиент, психолог, администратор</span></div>
+  </section>
+
+  <nav class="toc" aria-label="Главы кейса">
+    <h2>Что внутри</h2>
+    <ol>
+      <li><a href="#feedback">Правки клиенток <span>16 пунктов → 4 проблемы</span></a></li>
+      <li><a href="#funnel">Воронка как каркас <span>где люди уходят</span></a></li>
+      <li><a href="#consent">Согласие и начало <span>кнопка вместо чекбокса</span></a></li>
+      <li><a href="#topics">Темы и варианты <span>у каждой темы свой психолог</span></a></li>
+      <li><a href="#card">Карточка психолога <span>в один экран</span></a></li>
+      <li><a href="#duty">Дежурный и самопомощь <span>не оставлять в тупике</span></a></li>
+      <li><a href="#mascot">Маскот и тон <span>мягкий проводник</span></a></li>
+      <li><a href="#after">После оплаты <span>«Вы записаны» и кабинет</span></a></li>
+      <li><a href="#system">Система и платформа <span>три кабинета</span></a></li>
+      <li><a href="#next">Что меряем дальше</a></li>
+    </ol>
+  </nav>
+
+  <main class="chapters">
+
+    <section class="ch" id="feedback">
+      <div class="ch__text">
+        <div class="ch__n"><span>01</span><span>Правки клиенток</span></div>
+        <h2>16 пунктов, 4 проблемы</h2>
+        <p>Первую версию подбора разработчик перенёс к себе, и в его сборке появились тени, желтоватые серые и зелёные наведения. Клиентки прошли подбор сами и прислали документ на 16 пунктов.</p>
+        <p class="quote">«Всё же не готовы выпускать в люди платформу с данным дизайном, он смотрится топорно, не стильно»</p>
+        <p>Я не стала чинить пункты по одному, а сгруппировала их:</p>
+        <ul class="rows">
+          <li><b>Доверие</b><span>серое, жёлтое, тени под сообщениями, «как примитивная компьютерная игра»</span></li>
+          <li><b>Понятность</b><span>кнопки Яндекс ID и VK ID «не работают», пока не отмечено согласие, а этого никто не видит</span></li>
+          <li><b>Карточка</b><span>«прыгает, не центрирована», «не входит в экран»</span></li>
+          <li><b>После записи</b><span>непонятно, как добавить встречу в календарь, длинная инструкция к мессенджерам, кабинет из «квадратов и прямоугольников»</span></li>
+        </ul>
+      </div>
+      <div class="ch__media">
+        <figure class="reveal"><img class="shot" src="img/it2/v1-start.webp" alt="Первая версия подбора: старт" loading="lazy"><figcaption>Было: старт подбора. Много текста, согласие мелким чекбоксом под полем</figcaption></figure>
+        <figure class="reveal"><img class="shot" src="img/it2/v1-sit.webp" alt="Первая версия подбора: ситуации" loading="lazy"><figcaption>Было: ситуации плашками в две колонки, низ экрана перегружен кнопками</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="ch" id="funnel">
+      <div class="ch__text">
+        <div class="ch__n"><span>02</span><span>Воронка</span></div>
+        <h2>Каркас кейса — шаги, на которых уходят</h2>
+        <p>Подбор психолога проходят вечером, с телефона и часто в тревоге. Любая лишняя секунда на шаге — повод закрыть вкладку. Поэтому каждое решение я привязывала к конкретному шагу и к тому, что на нём меряем.</p>
+        <ul class="rows">
+          <li><b>Вход → согласие</b><span>доля нажавших «Даю согласие»</span></li>
+          <li><b>Имя → сфера → тема</b><span>время на шаг, доля «Ничего из этого»</span></li>
+          <li><b>Ситуации</b><span>сколько отмечают хотя бы одну</span></li>
+          <li><b>Карточка</b><span>клик «Выбрать дату и время», просмотр видео</span></li>
+          <li><b>Регистрация → оплата</b><span>доля дошедших до оплаты за время брони</span></li>
+          <li><b>«Вы записаны» → сессия</b><span>подключённые уведомления, доходимость до первой встречи</span></li>
+        </ul>
+        <p>Прототип собран как готовый фронт. Разработчик забирает его целиком, а варианты для A/B-тестов собираются на нём же, без отдельной вёрстки.</p>
+      </div>
+      <div class="ch__media">
+        <figure class="reveal panel"><div class="phones"><img src="img/it2/m-consent.webp" alt="Согласие на телефоне" loading="lazy"><img src="img/it2/m-sit.webp" alt="Ситуации на телефоне" loading="lazy"><img src="img/it2/m-card.webp" alt="Карточка на телефоне" loading="lazy"></div><figcaption>Три шага воронки на телефоне: согласие, ситуации, карточка</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="ch" id="consent">
+      <div class="ch__text">
+        <div class="ch__n"><span>03</span><span>Согласие и начало</span></div>
+        <h2>Сначала согласие, потом знакомство</h2>
+        <p>Клиентки попросили начинать с их текста про персональные данные. Я поставила его первым сообщением, а согласие сделала понятной кнопкой «Даю согласие» на месте поля ввода. Пока согласия нет, писать некуда, поэтому вопрос «почему не работает» не возникает.</p>
+        <p>После согласия ассистент знакомится коротко и по структуре: заголовок, одна строка, три пункта и вопрос «Как к вам можно обращаться?».</p>
+        <div class="ba"><p><b>Было</b>Чекбокс под полем, ввод заблокирован без объяснения</p><p><b>Стало</b>Текст клиенток и одна кнопка, потом приветствие</p></div>
+        <p>A/B: кнопка против чекбокса, метрика — доля дошедших до имени.</p>
+      </div>
+      <div class="ch__media">
+        <figure class="reveal"><img class="shot" src="img/it2/v2-consent.webp" alt="Согласие первым сообщением" loading="lazy"><figcaption>Первое сообщение — текст клиенток, внизу одна кнопка</figcaption></figure>
+        <figure class="reveal"><img class="shot" src="img/it2/v2-welcome.webp" alt="Приветствие после согласия" loading="lazy"><figcaption>После согласия: короткое приветствие по структуре</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="ch" id="topics">
+      <div class="ch__text">
+        <div class="ch__n"><span>04</span><span>Темы и варианты</span></div>
+        <h2>Варианты строками, у каждой темы свой психолог</h2>
+        <p>Варианты ответа больше не серые плашки, а строки со стрелкой и тонкими разделителями. Длинные списки встают в две колонки, мелкие действия — «Другой специалист», «Другая тема» — стали небольшими кнопками.</p>
+        <p>Слева появилось меню. Человек часто приходит с несколькими запросами, и раньше вернуться к первой теме было неудобно. Теперь каждая тема — карточка со сферой, подтемой и подобранным психологом, и к любой можно вернуться в один клик.</p>
+        <p>Поле ввода стало компактной карточкой, а «Шаг назад» и «Вернуться к темам» переехали внутрь него.</p>
+      </div>
+      <div class="ch__media">
+        <figure class="reveal"><img class="shot" src="img/it2/v2-cat.webp" alt="Выбор сферы" loading="lazy"><figcaption>Выбор сферы: строки в две колонки</figcaption></figure>
+        <figure class="reveal"><img class="shot" src="img/it2/v2-sit.webp" alt="Ситуации с отметками" loading="lazy"><figcaption>Ситуации: можно отметить несколько, счётчик на кнопке</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="ch" id="card">
+      <div class="ch__text">
+        <div class="ch__n"><span>05</span><span>Карточка психолога</span></div>
+        <h2>Вся карточка в одном экране</h2>
+        <p>Главная жалоба была на карточку: она не помещалась, и половину экрана занимали кнопки под ней. Я собрала её в одну компактную карточку: видео-кружок, имя, цена, ближайшая дата, три строки о себе и два действия прямо внутри.</p>
+        <p>«Знакомство с психологом» теперь кнопка, как просили клиентки. Она открывает окно из двух половин: слева профиль и расписание, справа видео-визитка крупным кружком.</p>
+        <p>A/B: видео-кружок против фото, метрика — клик «Выбрать дату и время».</p>
+      </div>
+      <div class="ch__media">
+        <figure class="reveal panel panel--light"><img src="img/it2/card-before-after.webp" alt="Карточка психолога: было и стало" loading="lazy"><figcaption style="color:#5d6166">Было: карточка обрезана кнопками. Стало: целиком в экране, действия внутри</figcaption></figure>
+        <figure class="reveal"><img class="shot" src="img/it2/v2-profile.webp" alt="Окно знакомства с психологом" loading="lazy"><figcaption>Знакомство с психологом: профиль и запись слева, видео справа</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="ch" id="duty">
+      <div class="ch__text">
+        <div class="ch__n"><span>06</span><span>Дежурный и самопомощь</span></div>
+        <h2>Не оставлять человека в тупике</h2>
+        <p>Если человек пишет своими словами, сообщение уходит дежурному психологу. Раньше после этого был тупик. Теперь под сообщением три ответа из текста клиенток: продолжить с ИИ-дежурным, дождаться человека или вернуться к подбору.</p>
+        <p>Самопомощь живёт в меню карточкой и открывается окном: сверху бесплатные экстренные номера, ниже практики, которые можно забрать сразу. Человеку в кризисе мы сначала даём помощь и только потом что-то предлагаем.</p>
+      </div>
+      <div class="ch__media">
+        <figure class="reveal"><img class="shot" src="img/it2/v2-duty.webp" alt="Ответ дежурного психолога" loading="lazy"><figcaption>Дежурный: подпись серым в одну строку и три ответа</figcaption></figure>
+        <figure class="reveal"><img class="shot" src="img/it2/v2-help.webp" alt="Окно самопомощи" loading="lazy"><figcaption>Самопомощь: экстренные номера первыми, справа спокойная сцена</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="ch" id="mascot">
+      <div class="ch__text">
+        <div class="ch__n"><span>07</span><span>Маскот и тон</span></div>
+        <h2>Мягкий проводник вместо иконки</h2>
+        <p>Психологический сервис открывают в тревоге, и голый логотип в чате ощущается холодно. Я нарисовала маскота кодом: круглая голова, мятные крылья, а глаза взяты из логотипа InTreatment — точка и пунктирное колечко.</p>
+        <p>Он живой только у последней реплики: парит, машет крыльями, моргает. Пока ассистент печатает, глаза бегают. При наведении появляется подпись «ИИ-ассистент InTreatment», чтобы было честно, кто отвечает.</p>
+      </div>
+      <div class="ch__media">
+        <figure class="reveal panel panel--light mascot-fig"><img src="img/it2/mascot.webp" alt="Маскот InTreatment" loading="lazy"><figcaption style="color:#5d6166">Маскот: глаза «●◌» из логотипа, анимирован в чате</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="ch" id="after">
+      <div class="ch__text">
+        <div class="ch__n"><span>08</span><span>После оплаты</span></div>
+        <h2>«Вы записаны» без лишних шагов</h2>
+        <p>Экран после оплаты я собрала по правкам клиенток:</p>
+        <ul class="rows">
+          <li><b>Ссылка</b><span>подпись «Ссылка на встречу» и кнопка «Копировать»</span></li>
+          <li><b>Календарь</b><span>выбор: Google, Apple, Outlook или файл .ics</span></li>
+          <li><b>Уведомления</b><span>каналы тремя переключателями, мессенджер подключается одной кнопкой, без инструкции</span></li>
+          <li><b>Тексты</b><span>без точек в заголовках, «администратор» в единственном числе</span></li>
+        </ul>
+        <p>Кабинет переехал в тот же каркас, что и чат: меню слева, «Мои сессии» вместо «Терапии», мягкие карточки вместо прямоугольников.</p>
+      </div>
+      <div class="ch__media">
+        <figure class="reveal"><img class="shot" src="img/it2/v2-register.webp" alt="Регистрация" loading="lazy"><figcaption>Регистрация: почта или Яндекс ID / VK ID, бронь времени справа</figcaption></figure>
+        <figure class="reveal"><img class="shot" src="img/it2/v2-done.webp" alt="Вы записаны на встречу" loading="lazy"><figcaption>«Вы записаны на встречу»: календарь, имя и уведомления на одной странице</figcaption></figure>
+        <figure class="reveal"><img class="shot" src="img/it2/v2-cabinet.webp" alt="Кабинет клиента после записи" loading="lazy"><figcaption>Кабинет: ближайшая сессия и ссылка на встречу</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="ch" id="system">
+      <div class="ch__text">
+        <div class="ch__n"><span>09</span><span>Система и платформа</span></div>
+        <h2>Один язык для подбора и трёх кабинетов</h2>
+        <p>Цвета я сняла с референса пипеткой, а не подбирала на глаз: светлый фон без желтизны, холодный графитовый текст, нейтральные тёмные кнопки и один мятный акцент. Playfair остался только в крупных заголовках.</p>
+        <p>На этой системе пересобраны все три кабинета. У каждого своя ссылка, и в каждом сверху один следующий шаг.</p>
+        <ul class="rows">
+          <li><b>Клиент</b><span>ближайшая сессия, перенос, календарь, ассистент, материалы, оплаты</span></li>
+          <li><b>Психолог</b><span>заявки, клиенты, сообщения, расписание со светлой загрузкой вместо плотного зелёного, доход</span></li>
+          <li><b>Администратор</b><span>ответы ИИ на проверку, воронка, модерация психологов, инциденты, платежи</span></li>
+        </ul>
+      </div>
+      <div class="ch__media">
+        <figure class="reveal"><img class="shot" src="img/it2/pl-client.webp" alt="Кабинет клиента" loading="lazy"><figcaption>Кабинет клиента</figcaption></figure>
+        <figure class="reveal"><img class="shot" src="img/it2/pl-sched.webp" alt="Расписание психолога" loading="lazy"><figcaption>Кабинет психолога: расписание</figcaption></figure>
+        <figure class="reveal"><img class="shot" src="img/it2/pl-admin.webp" alt="Кабинет администратора" loading="lazy"><figcaption>Администратор: что ждёт проверки и загрузка психологов</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="ch" id="next">
+      <div class="ch__text">
+        <div class="ch__n"><span>10</span><span>Что дальше</span></div>
+        <h2>Что меряем дальше</h2>
+        <p>Красиво — это только начало. Дальше нужно проверить, что новые решения правда держат людей в воронке.</p>
+        <ul class="rows">
+          <li><b>Согласие</b><span>кнопка против чекбокса → дошедшие до имени</span></li>
+          <li><b>Карточка</b><span>видео против фото → клик «Выбрать дату и время»</span></li>
+          <li><b>Темы</b><span>сколько людей ведут больше одной темы и возвращаются к ним</span></li>
+          <li><b>После оплаты</b><span>подключённые мессенджеры → доходимость до первой сессии</span></li>
+        </ul>
+      </div>
+      <div class="ch__media">
+        <figure class="reveal"><img class="shot" src="img/it2/pl-start.webp" alt="Три кабинета платформы" loading="lazy"><figcaption>Вход в платформу: три кабинета, у каждого своя ссылка</figcaption></figure>
+      </div>
+    </section>
+  </main>
+
+  <section class="live" id="live">
+    <h2 class="reveal">Живые работы</h2>
+    <p class="sub reveal">Прототипы собраны мной и по сути являются готовым фронтом, который забирает разработка.</p>
+    <ul>
+      <li class="reveal"><a href="https://vikahramovich02-collab.github.io/intreatment-podbor/v2/" target="_blank" rel="noopener"><b>Новый подбор</b><span>чат, карточка, запись, кабинет</span><i>↗︎</i></a></li>
+      <li class="reveal"><a href="https://vikahramovich02-collab.github.io/intreatment-podbor/platform/#client" target="_blank" rel="noopener"><b>Кабинет клиента</b><span>платформа</span><i>↗︎</i></a></li>
+      <li class="reveal"><a href="https://vikahramovich02-collab.github.io/intreatment-podbor/platform/#specialist" target="_blank" rel="noopener"><b>Кабинет психолога</b><span>платформа</span><i>↗︎</i></a></li>
+      <li class="reveal"><a href="https://vikahramovich02-collab.github.io/intreatment-podbor/platform/#admin" target="_blank" rel="noopener"><b>Администратор</b><span>платформа</span><i>↗︎</i></a></li>
+      <li class="reveal"><a href="https://vikahramovich02-collab.github.io/intreatment-podbor/" target="_blank" rel="noopener"><b>Первая версия подбора</b><span>для сравнения</span><i>↗︎</i></a></li>
+    </ul>
+  </section>
+
+  <a class="next reveal" href="intreatment.html"><small>Часть 1</small><strong>InTreatment: сайт и первый подбор →</strong></a>
+
+  <div class="end">
+    <footer class="foot">
+      <a href="index.html">← все работы</a>
+      <span class="hide-m"><a href="https://t.me/viksikkkkkkkkkkkkkkk" target="_blank" rel="noopener">channel @viksikkkkkkkkkkkkkkk</a></span>
+      <span class="dim hide-m">Minsk</span>
+      <a href="https://t.me/viksaaaaaa_a" target="_blank" rel="noopener">@viksaaaaaa_a</a>
+    </footer>
+  </div>
+<script src="assets/site.js?v=8"></script>
+</body>
+</html>
