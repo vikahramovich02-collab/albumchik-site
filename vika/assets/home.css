@@ -163,3 +163,16 @@
 .srch input::placeholder{color:var(--dim)}
 .wks-empty{margin:40px 0 0;color:var(--dim);font-size:15px}
 @media (max-width:760px){ .flt-box{justify-content:flex-start} .flt--aud{padding-left:0;border-left:0} .srch input{width:100%} .srch{flex:1 1 100%} }
+
+/* все работы в две колонки, подпись одной строкой под картинкой (Вика, 12.11, референс Spelllens) */
+.wks{grid-template-columns:1fr 1fr;gap:clamp(28px,4vh,44px) 14px}
+.wk__img img,.wk__img video{aspect-ratio:16/10}
+.wk{display:grid;grid-template-columns:1.2fr 1fr auto;column-gap:16px;align-items:baseline}
+.wk .wk__img{grid-column:1/-1}
+.wk b{grid-column:1;grid-row:2;margin-top:12px;font-size:14px;font-weight:500;letter-spacing:0}
+.wk .wk__type{grid-column:2;grid-row:2;margin-top:12px;font-size:13px}
+.wk small{display:none}
+.wk::after{content:"→";grid-column:3;grid-row:2;margin-top:12px;font-size:13px;color:var(--dim);transition:transform .3s,color .2s}
+.wk[target="_blank"]::after{content:"↗"}
+.wk:hover::after{color:var(--fg);transform:translateX(3px)}
+@media (max-width:560px){ .wks{grid-template-columns:1fr} }
