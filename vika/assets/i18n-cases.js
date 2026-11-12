@@ -276,6 +276,7 @@ window.I18N_EXTRA = {
 "Кейс 02 · Платформа подбора психологов": "Case 02 · Therapist matching platform",
 "Сайт, чат-подбор и личные кабинеты для платформы подбора психологов. Всё, через что проходит человек: от первого захода до кабинета после записи.": "Website, chat-based matching and user accounts for a therapist matching platform. Everything a person goes through, from the first visit to their account after booking.",
 "Смотреть живые работы ↓": "See the live work ↓",
+"Ссылки ↓": "Links ↓",
 "Главная на ноутбуке и чат-подбор на телефоне": "Homepage on a laptop and chat matching on a phone",
 "заходят с телефона, поэтому каждый экран сначала собирался на 390 px": "visit from their phones, so every screen was designed at 390 px first",
 "шагов в чат-подборе от приветствия до оплаты": "steps in chat matching, from greeting to payment",
