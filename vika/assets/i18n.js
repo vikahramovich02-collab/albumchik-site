@@ -148,6 +148,7 @@
     "Презентации и коммерческие предложения: собирала историю и цифры в понятную подачу.": "Decks and proposals: turned the story and numbers into a clear pitch.",
     "Логотипы и фирменный стиль, визитки и другие печатные носители.": "Logos and brand identity, business cards and other print.",
     "Избранные проекты": "Selected projects",
+    "Последние проекты": "Recent projects",
     "Услуга для абонентов: кабинет, онбординг, лендинг, дизайн-система · 2026": "Subscriber service: account, onboarding, landing, design system · 2026",
     "Chat-first платформа автоматизации бизнеса: интерфейс, дизайн-система, сайты, питч-дек · с 2025": "Chat-first business automation platform: interface, design system, websites, pitch deck · since 2025",
     "Платформа подбора психологов: сайт, чат-подбор, кабинеты · 2026": "Therapist matching platform: website, chat matching, accounts · 2026",
