@@ -183,3 +183,13 @@ img.shot{outline:1px solid rgba(17,17,17,.08);outline-offset:-1px}
 .next{max-width:calc(var(--col) + var(--pad) * 2)}
 @media (max-width:900px){ .wks{grid-template-columns:1fr 1fr} }
 @media (max-width:560px){ .wks{grid-template-columns:1fr} .others__head{flex-direction:column;gap:8px} }
+/* на всю ширину экрана без зазоров (Вика, 12.11) */
+.bleed{display:grid;gap:0;width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}
+.bleed img,.bleed video{display:block;width:100%;height:100%;object-fit:cover;border-radius:0}
+.bleed--2{grid-template-columns:1fr 1fr}
+.bleed--3{grid-template-columns:repeat(3,1fr)}
+.bleed--4{grid-template-columns:repeat(4,1fr)}
+.bleed + .bleed{margin-top:calc(clamp(20px,3vh,32px) * -1)}
+.bleed__cap{margin:-8px auto 0;max-width:var(--col);text-align:center;font-size:12px;line-height:1.45;color:var(--dim)}
+@media (max-width:760px){ .bleed--4{grid-template-columns:1fr 1fr} .bleed--3{grid-template-columns:1fr} .bleed--2{grid-template-columns:1fr} }
+html,body{overflow-x:clip}
