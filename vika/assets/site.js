@@ -98,3 +98,34 @@
   });
   sync();
 })();
+
+// блок «орбита»: текст подсвечивается по мере скролла, работы кружат вокруг
+(() => {
+  const sec = document.querySelector('.orbit'); if (!sec) return;
+  const p = sec.querySelector('.orbit__text'), imgs = [...sec.querySelectorAll('.orbit__ring img')];
+  const hl = window.CSS && CSS.highlights && typeof Highlight !== 'undefined';
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let t0 = performance.now();
+  const prog = () => { const r = sec.getBoundingClientRect(); return Math.min(1, Math.max(0, -r.top / (r.height - innerHeight))); };
+  const light = k => {
+    if (!hl) { p.style.color = 'var(--fg)'; return; }
+    const n = p.firstChild; if (!n || n.nodeType !== 3) return;
+    const len = Math.round(n.nodeValue.length * Math.min(1, k * 1.25));
+    const r = document.createRange(); r.setStart(n, 0); r.setEnd(n, len);
+    CSS.highlights.set('lit', new Highlight(r));
+  };
+  (function loop(now) {
+    const k = prog(); light(k);
+    if (!reduce) {
+      const W = innerWidth, H = innerHeight, rx = Math.min(W * .42, 620), ry = H * .36;
+      const a0 = (now - t0) / 1000 * .12 + k * Math.PI * 1.2;
+      imgs.forEach((im, i) => {
+        const a = a0 + i / imgs.length * Math.PI * 2;
+        const x = Math.cos(a) * rx, y = Math.sin(a) * ry, z = (Math.sin(a) + 1) / 2;
+        im.style.transform = `translate(-50%,-50%) translate(${x}px,${y}px) scale(${.75 + z * .35})`;
+        im.style.zIndex = Math.round(z * 10); im.style.opacity = (.55 + z * .45).toFixed(2);
+      });
+    }
+    requestAnimationFrame(loop);
+  })(performance.now());
+})();

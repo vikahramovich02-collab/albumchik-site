@@ -125,3 +125,41 @@
 
 .wk__type{display:block;margin-top:14px;font-size:12px;letter-spacing:.02em;color:var(--dim)}
 .wk__type + b{margin-top:4px}
+
+/* «Что я делаю»: видно только заголовки, при наведении проявляются текст, ссылки и картинка (Вика, 12.11) */
+.srv li{grid-template-columns:64px minmax(0,1.1fr) minmax(0,1.4fr) minmax(0,.8fr) 200px;align-items:start;position:relative;transition:padding .3s}
+.srv li .srv__img{width:200px;aspect-ratio:4/3;object-fit:cover;border-radius:6px}
+@media (hover:hover){
+  .srv li p,.srv li .see,.srv li .srv__img,.srv h3 small{opacity:0;transition:opacity .35s ease,transform .45s cubic-bezier(.2,.7,.2,1)}
+  .srv li .srv__img{transform:translateY(8px) scale(.97)}
+  .srv li:hover p,.srv li:hover .see,.srv li:hover h3 small,.srv li:focus-within p,.srv li:focus-within .see{opacity:1}
+  .srv li:hover .srv__img{opacity:1;transform:none}
+  .srv li h3{transition:color .25s}
+  .srv:hover li:not(:hover) h3{color:var(--dim)}
+}
+@media (max-width:900px){ .srv li .srv__img{display:none} .srv li{grid-template-columns:40px 1fr} }
+
+/* ряды без пустоты: раскрываются по наведению */
+@media (hover:hover){
+  .srv li{max-height:96px;overflow:hidden;transition:max-height .5s cubic-bezier(.2,.7,.2,1)}
+  .srv li:hover{max-height:340px}
+}
+
+/* блок «текст проявляется по скроллу, вокруг кружат работы» (Вика, 12.11) */
+.orbit{position:relative;height:260vh}
+.orbit__stage{position:sticky;top:0;height:100svh;overflow:hidden;display:grid;place-items:center}
+.orbit__text{position:relative;z-index:2;margin:0;max-width:18ch;text-align:center;font-weight:500;font-size:clamp(34px,4.6vw,76px);line-height:1.02;letter-spacing:-.045em;color:var(--faint)}
+::highlight(lit){color:var(--fg)}
+.orbit__ring{position:absolute;inset:0;z-index:1;pointer-events:none}
+.orbit__ring img{position:absolute;left:50%;top:50%;width:clamp(120px,13vw,220px);border-radius:6px;box-shadow:0 20px 50px rgba(0,0,0,.35);will-change:transform}
+@media (prefers-reduced-motion:reduce){ .orbit{height:auto} .orbit__stage{position:relative;height:auto;padding:120px var(--pad)} .orbit__ring{display:none} }
+
+/* фильтры: тип, аудитория, поиск (Вика, 12.11) */
+.flt-box{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;justify-content:flex-end}
+.flt--aud{padding-left:18px;border-left:1px solid var(--line)}
+.srch input{height:36px;width:220px;padding:0 14px 0 34px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--fg);font:inherit;font-size:13px;outline:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' stroke='%238a8f95' stroke-width='1.5'%3E%3Ccircle cx='6' cy='6' r='4.5'/%3E%3Cpath d='m9.5 9.5 3 3'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:13px 50%}
+.srch input:focus{border-color:var(--line2)}
+.srch input::placeholder{color:var(--dim)}
+.wks-empty{margin:40px 0 0;color:var(--dim);font-size:15px}
+@media (max-width:760px){ .flt-box{justify-content:flex-start} .flt--aud{padding-left:0;border-left:0} .srch input{width:100%} .srch{flex:1 1 100%} }

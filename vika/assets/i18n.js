@@ -11,6 +11,8 @@
     "Резюме": "CV",
     "Минск": "Minsk",
     "Работаю удалённо": "Working remotely",
+    "Ничего не нашлось": "Nothing found",
+    "Делаю продукты, которые бизнес понимает с первого экрана, а разработка забирает как готовый фронт": "I build products that businesses get from the first screen and developers pick up as a ready front end",
     "Светлая": "Light", "Тёмная": "Dark",
     "Кабинет, онбординг, лендинг и дизайн-система: продукт вместе с МТС после хакатона": "Account, onboarding, landing page and design system: a product with MTS after the hackathon",
     "Платформа, дизайн-система, 2 сайта, питч-дек и айдентика": "Platform, design system, 2 websites, pitch deck and identity",
@@ -159,7 +161,9 @@
     const lead = v.match(/^\s*/)[0], tail = v.match(/\s*$/)[0];
     nodes.push([n, v, lead + map.get(k) + tail]);
   }
+  const ph = document.querySelector(".srch input");
   const apply = l => {
+    if (ph) ph.placeholder = l === "en" ? "Search work" : "Поиск по работам";
     nodes.forEach(([n, ru, en]) => { n.nodeValue = l === "en" ? en : ru; });
     document.documentElement.lang = l;
     document.querySelectorAll(".lang button").forEach(b => b.classList.toggle("is-on", b.dataset.l === l));
