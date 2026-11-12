@@ -22,7 +22,7 @@
 .job h3{margin:0;font-weight:500;font-size:clamp(22px,2vw,28px);letter-spacing:-.03em}
 .job__role{margin:6px 0 0;font-size:15px}
 .job__about{margin:10px 0 0;font-size:15px;line-height:1.55;color:var(--dim)}
-.job ul{margin:14px 0 0;padding-left:18px;font-size:15px;line-height:1.6;color:#c9ccd0}
+.job ul{margin:14px 0 0;padding-left:18px;font-size:15px;line-height:1.6;color:var(--text)}
 .job li+li{margin-top:6px}
 .job__links{display:flex;flex-wrap:wrap;gap:6px 18px;margin:14px 0 0;font-size:14px}
 .job__links a{color:var(--dim);border-bottom:1px solid var(--line)}
@@ -124,4 +124,28 @@
   .job{padding:6px 0}
   .job__role,.job__about,.job ul{font-size:10px}
   .skills li,.proj-list a{padding:4px 0;font-size:10px}
+}
+/* 12.11: с МТС в опыте PDF снова в одну страницу */
+@media print{
+  @page{margin:8mm 11mm}
+  .cv h1{font-size:28px}
+  .cv__lead{font-size:10px;line-height:1.45;margin-top:6px}
+  .cv__facts{margin-top:10px;gap:6px 14px}
+  .cv__facts li{font-size:10px;padding-top:5px}
+  .cv__sec{margin-top:9px}
+  .cv__sec h2{font-size:15px;margin-bottom:2px}
+  .job{padding:5px 0;gap:12px}
+  .job h3{font-size:13px}
+  .job__role,.job__about,.job ul{font-size:9.5px;line-height:1.4}
+  .job__about,.job ul{margin-top:4px}
+  .job li+li{margin-top:1px}
+  .skills li,.proj-list a{padding:3px 0;font-size:9.5px;line-height:1.4}
+  .proj-list{margin-top:4px}
+}
+@media print{
+  .job__about{display:none}
+  .job{padding:4px 0}
+  .job h3{font-size:12.5px}
+  .cv__sec{margin-top:8px}
+  .skills li,.proj-list a{padding:2px 0}
 }

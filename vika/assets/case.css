@@ -43,7 +43,7 @@
 .ch__text{position:sticky;top:clamp(24px,5vh,56px);align-self:start;padding-top:14px;border-top:1px solid var(--rule)}
 .ch__n{display:flex;gap:10px;font-size:13px;color:var(--dim)}
 .ch h2{margin:18px 0 0;font-weight:500;font-size:clamp(32px,3.6vw,56px);line-height:.98;letter-spacing:-.045em;max-width:14ch}
-.ch p{margin:18px 0 0;max-width:44ch;font-size:16px;line-height:1.6;color:#c9ccd0}
+.ch p{margin:18px 0 0;max-width:44ch;font-size:16px;line-height:1.6;color:var(--text)}
 .ch p b{color:var(--fg);font-weight:500}
 .ch ul.rows{margin:24px 0 0;padding:0;list-style:none;max-width:48ch}
 .ch ul.rows li{display:grid;grid-template-columns:132px 1fr;gap:16px;padding:10px 0;border-top:1px solid var(--line);font-size:14px;line-height:1.45}
@@ -52,7 +52,7 @@
 .ch blockquote{margin:28px 0 0;padding-left:18px;border-left:1px solid var(--fg);max-width:36ch;font-size:clamp(18px,1.5vw,22px);line-height:1.4;letter-spacing:-.01em}
 .ch .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:22px}
 .ch .tags span{padding:6px 10px;border:1px solid var(--line);border-radius:999px;font-size:12px;color:var(--dim)}
-.ch .more{display:inline-block;margin-top:22px;font-size:14px;border-bottom:1px solid rgba(232,233,234,.35)}
+.ch .more{display:inline-block;margin-top:22px;font-size:14px;border-bottom:1px solid var(--line2)}
 .ch .more:hover{border-color:var(--fg)}
 
 .ch__media{display:flex;flex-direction:column;gap:clamp(24px,4vh,48px);padding-top:14px}
@@ -60,14 +60,16 @@
 .ch__media img,.ch__media video{width:100%;height:auto;background:var(--panel)}
 .ch__media figcaption{margin-top:10px;font-size:12px;line-height:1.45;color:var(--dim);max-width:60ch}
 .ch__media figcaption b{color:var(--fg);font-weight:400}
-.shot{border-radius:6px;overflow:hidden}
+.shot{border-radius:6px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(17,17,17,.08)}
+figure.shot-w{position:relative}
+img.shot{outline:1px solid rgba(17,17,17,.08);outline-offset:-1px}
 .panel{background:var(--panel);padding:clamp(16px,3vw,48px);border-radius:6px}
-.panel img,.panel video{border-radius:6px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.panel img,.panel video{border-radius:6px;box-shadow:0 24px 60px rgba(0,0,0,.14)}
 .panel--light{background:#e7eaec}
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:var(--pad)}
 .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--pad)}
 .phones{display:flex;justify-content:center;gap:clamp(12px,2vw,32px)}
-.phones img{width:min(46%,300px);border-radius:28px;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.phones img{width:min(46%,300px);border-radius:28px;box-shadow:0 24px 60px rgba(0,0,0,.16)}
 
 /* живые работы */
 .live{padding:clamp(96px,16vh,180px) var(--pad) 0}
@@ -82,12 +84,12 @@
 .live li a:hover{padding-left:10px;color:var(--dim)}
 
 /* призыв (для ALBUMCHIK — заказать журнал) */
-.order{margin:clamp(80px,14vh,160px) var(--pad) 0;padding:clamp(32px,6vw,80px);background:var(--fg);color:#111;border-radius:6px;display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:end}
+.order{margin:clamp(80px,14vh,160px) var(--pad) 0;padding:clamp(32px,6vw,80px);background:var(--fg);color:var(--inv);border-radius:6px;display:grid;grid-template-columns:1.3fr 1fr;gap:24px;align-items:end}
 .order h2{margin:0;font-weight:500;font-size:clamp(40px,5.6vw,88px);line-height:.92;letter-spacing:-.05em}
 .order p{margin:0 0 20px;font-size:16px;line-height:1.5;max-width:40ch}
-.order .btn{border-color:#111;color:#111}
-.order .btn--fill{background:#111;color:var(--fg)}
-.order .btn--fill:hover{background:transparent;color:#111}
+.order .btn{border-color:rgba(255,255,255,.45);color:var(--inv)}
+.order .btn--fill{background:var(--inv);color:#111}
+.order .btn--fill:hover{background:transparent;color:var(--inv)}
 
 /* следующий кейс */
 .next{display:block;margin:clamp(96px,16vh,180px) var(--pad) 0;padding-top:12px;border-top:1px solid var(--rule)}
@@ -156,3 +158,7 @@
 .proj__card b{display:block;margin-top:4px;font-weight:500;font-size:clamp(18px,1.6vw,24px);letter-spacing:-.02em;line-height:1.15}
 @media (max-width:560px){ .proj{grid-template-columns:1fr} }
 .kicker a{border-bottom:1px solid transparent} .kicker a:hover{border-color:var(--dim)}
+
+/* три телефона в ряд (МТС, лендинг на телефоне) */
+.phones img:nth-child(3){display:block}
+@media (min-width:561px){ .phones:has(img:nth-child(3)) img{width:min(30%,260px)} }
