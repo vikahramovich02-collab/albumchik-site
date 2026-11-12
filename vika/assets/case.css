@@ -193,3 +193,7 @@ img.shot{outline:1px solid rgba(17,17,17,.08);outline-offset:-1px}
 .bleed__cap{margin:-8px auto 0;max-width:var(--col);text-align:center;font-size:12px;line-height:1.45;color:var(--dim)}
 @media (max-width:760px){ .bleed--4{grid-template-columns:1fr 1fr} .bleed--3{grid-template-columns:1fr} .bleed--2{grid-template-columns:1fr} }
 html,body{overflow-x:clip}
+/* обложка кейса на всю ширину экрана, без скруглений и рамки (Вика, 12.11) */
+.hero-media{max-width:none;width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);padding:0}
+.hero-media img,.hero-media video{border-radius:0;outline:none!important;box-shadow:none!important}
+.hero-media figcaption{max-width:var(--col);margin:10px auto 0;padding:0 var(--pad);text-align:center}
