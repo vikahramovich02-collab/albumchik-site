@@ -2,7 +2,7 @@
 :root{
   --bg:#161718; --fg:#e8e9ea; --dim:#8a8f95; --faint:#5d6166; --rule:#e8e9ea; --line:rgba(232,233,234,.14); --line2:rgba(232,233,234,.35);
   --text:#c9ccd0; --panel:#1f2021; --inv:#111;
-  --sans:"Geist","Helvetica Neue",Arial,sans-serif;
+  --sans:"Inter","Geist","Helvetica Neue",Arial,sans-serif; /* Inter подгружен только стрелками ↗←→↓↑ */
   --pad:clamp(16px,1.6vw,24px);
   color-scheme:dark;
 }
@@ -61,3 +61,7 @@ footer.foot .dim{color:var(--dim)}
 .meta,footer.foot,.case__head{grid-template-columns:1fr 1.4fr .6fr .5fr}
 .meta>:last-child,footer.foot>:last-child,.case__head>:last-child{justify-self:end}
 @media (max-width:760px){ .meta,footer.foot,.case__head{grid-template-columns:1fr auto} }
+
+/* шапка: всё по верхнему краю (Вика, 12.11) */
+.meta{align-items:start}
+.meta b{align-items:center;line-height:1.3}
