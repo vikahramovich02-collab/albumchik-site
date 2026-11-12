@@ -20,7 +20,7 @@
     "Что внутри": "Contents",
     "Есть задача?": "Got a project?",
     "Напишите": "Let's talk",
-    "5+ лет опыта в дизайне. Работаю вместе с ИИ: он меня дополняет и ускоряет путь от флоу до живого фронта.": "5+ years in design. I work together with AI: it complements me and speeds up the way from flow to a live front end.",
+    "5+ лет опыта в дизайне. Работаю вместе с ИИ: он меня дополняет и ускоряет путь от флоу до живого фронта": "5+ years in design. I work together with AI: it complements me and speeds up the way from flow to a live front end",
     "AI-платформа для бизнеса · продуктовый дизайнер": "AI platform for business · product designer",
     "с июля 2025": "since July 2025",
     "Весь продукт от интерфейса платформы до сайтов, питч-дека для инвесторов, роликов и печати.": "The whole product, from the platform interface to websites, an investor pitch deck, videos and print.",
