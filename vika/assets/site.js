@@ -129,3 +129,11 @@
     requestAnimationFrame(loop);
   })(performance.now());
 })();
+
+// полноширинные ряды внутри колонки главы: сдвиг на левый край экрана (Вика, 13.11)
+(() => {
+  const rows = [...document.querySelectorAll('.ch__media .bleed')];
+  if (!rows.length) return;
+  const fit = () => rows.forEach(r => { const p = r.parentElement.getBoundingClientRect(); r.style.setProperty('--bx', p.left + 'px'); });
+  fit(); addEventListener('resize', fit); addEventListener('load', fit);
+})();

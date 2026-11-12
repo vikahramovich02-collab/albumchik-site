@@ -287,3 +287,5 @@ html,body{overflow-x:clip}
 .flowwide img{display:block;width:100%;height:auto;border-radius:0}
 .flowwide figcaption{background:var(--bg);padding-top:12px;text-align:center;font-size:12px;color:var(--dim)}
 .flowwide figcaption a{color:var(--fg);border-bottom:1px solid var(--line2)}
+
+.ch__media .bleed{width:100vw;margin-left:calc(-1 * var(--bx,0px));margin-right:0}
