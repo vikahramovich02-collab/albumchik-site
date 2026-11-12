@@ -289,3 +289,5 @@ html,body{overflow-x:clip}
 .flowwide figcaption a{color:var(--fg);border-bottom:1px solid var(--line2)}
 
 .ch__media .bleed{width:100vw;margin-left:calc(-1 * var(--bx,0px));margin-right:0}
+.links-row{display:flex;flex-wrap:wrap;gap:10px}
+.links-row .more{margin-top:24px}
