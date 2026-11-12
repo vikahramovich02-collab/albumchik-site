@@ -47,3 +47,10 @@ footer.foot .dim{color:var(--dim)}
   .meta,footer.foot{grid-template-columns:1fr auto}
   .meta .hide-m,footer.foot .hide-m{display:none}
 }
+/* контакты и переключатель языка в шапке (Вика, 12.11) */
+.meta .contacts{display:flex;flex-direction:column;gap:4px}
+.meta .contacts a{color:var(--fg)} .meta .contacts a:hover{color:var(--dim)}
+.meta .end-col{display:flex;align-items:flex-start;gap:16px;justify-content:flex-end}
+.lang{display:inline-flex;gap:2px;padding:2px;border:1px solid var(--line);border-radius:999px}
+.lang button{border:0;background:none;font:inherit;font-size:12px;line-height:1;padding:5px 9px;border-radius:999px;color:var(--dim);cursor:pointer}
+.lang button.is-on{background:var(--fg);color:var(--inv)}

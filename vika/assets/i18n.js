@@ -1,0 +1,147 @@
+// Переключатель RU / EN (Вика, 12.11). Текст страницы русский; для EN подменяем текстовые узлы по словарю.
+// Чего нет в словаре, остаётся по-русски. Выбор языка запоминается.
+(() => {
+  const EN = {
+    "Продуктовый дизайнер · AI-native": "Product designer · AI-native",
+    "Продуктовый дизайнер": "Product designer",
+    "Продуктовый": "Product",
+    "дизайнер": "designer",
+    "резюме ↗︎": "CV ↗︎",
+    "резюме · pdf": "CV · pdf",
+    "Резюме": "CV",
+    "Минск": "Minsk",
+    "канал ↗︎": "channel ↗︎",
+    "← все работы": "← all work",
+    "← портфолио": "← portfolio",
+    "все работы →": "all work →",
+    "Другие работы": "Other work",
+    "Живые работы": "Live work",
+    "Что внутри": "Contents",
+    "Есть задача?": "Got a project?",
+    "Напишите": "Let's talk",
+    "5+ лет опыта в дизайне. Работаю вместе с ИИ: он меня дополняет и ускоряет путь от флоу до живого фронта.": "5+ years in design. I work together with AI: it complements me and speeds up the way from flow to a live front end.",
+    "AI-платформа для бизнеса · продуктовый дизайнер": "AI platform for business · product designer",
+    "с июля 2025": "since July 2025",
+    "Весь продукт от интерфейса платформы до сайтов, питч-дека для инвесторов, роликов и печати.": "The whole product, from the platform interface to websites, an investor pitch deck, videos and print.",
+    "Продукт": "Product", "Платформа": "Platform", "Дизайн-система": "Design system", "3 сайта": "3 websites",
+    "Питч-дек": "Pitch deck", "Моушен": "Motion", "Айдентика": "Identity", "Печать": "Print",
+    "Услуга для абонентов МТС · продуктовый дизайнер": "Service for MTS subscribers · product designer",
+    "октябрь — ноябрь 2026": "October — November 2026",
+    "лендинг ↗︎": "landing ↗︎",
+    "МТС · Помощник на звонках": "MTS · Call Assistant",
+    "После выигранного хакатона делаем продукт вместе с МТС: сценарии, личный кабинет, онбординг, лендинг и дизайн-система.": "After winning the hackathon we build the product together with MTS: scenarios, user account, onboarding, landing page and design system.",
+    "Сценарии": "Scenarios", "Онбординг": "Onboarding", "Мобильная версия": "Mobile version", "Лендинг": "Landing page",
+    "Платформа подбора психологов · продуктовый дизайнер": "Therapist matching platform · product designer",
+    "май — август 2026": "May — August 2026",
+    "Многостраничный сайт, чат-подбор вместо каталога анкет и личные кабинеты клиента, психолога и админа.": "A multi-page website, chat-based matching instead of a profile catalogue, and accounts for clients, therapists and admins.",
+    "Исследование": "Research", "Путь клиента": "Customer journey", "Сайт": "Website",
+    "Все работы": "All work", "Все": "All", "Платформы и сервисы": "Platforms & services", "Сайты": "Websites", "Печать и айдентика": "Print & identity",
+    "Кабинет услуги, онбординг и дизайн-система: продукт вместе с МТС после хакатона": "Service account, onboarding and design system: a product with MTS after the hackathon",
+    "МТС · лендинг услуги": "MTS · service landing",
+    "Сайт «Помощника на звонках» по гайду МТС, с мобильной версией": "Call Assistant website built to the MTS guide, with a mobile version",
+    "Платформа: чат, автоматизации, дизайн-система": "Platform: chat, automations, design system",
+    "Основной сайт Mary AI": "Main Mary AI website",
+    "Сайт заказной разработки": "Custom development website",
+    "InTreatment · подбор": "InTreatment · matching",
+    "Редизайн чат-подбора и трёх кабинетов после правок клиенток": "Redesign of chat matching and three accounts after client feedback",
+    "Многостраничный сайт платформы": "Multi-page platform website",
+    "Сайт производителя пищевых ингредиентов": "Website for a food ingredients manufacturer",
+    "Лендинг рекламы на транспорте с прайсом и калькулятором": "Transit advertising landing page with pricing and a calculator",
+    "Интернет-магазин бренда мужской одежды · в разработке": "Menswear online store · in progress",
+    "Айдентика и лендинг сервиса инспекции товаров в Китае": "Identity and landing page for a goods inspection service in China",
+    "Сайт моего проекта журналов": "Website of my magazine project",
+    "Моё преимущество": "My edge",
+    "Продуктовый дизайнер, который работает с ИИ": "A product designer who works with AI",
+    "ИИ меня дополняет, а не заменяет: берёт рутину, а решения и вкус остаются за мной. Поэтому недели работы превращаются в дни.": "AI complements me rather than replaces me: it takes the routine, while decisions and taste stay with me. That is how weeks of work turn into days.",
+    "Быстро": "Fast", "Концепт за день, правки за пару часов.": "A concept in a day, revisions in a couple of hours.",
+    "Гипотезы на живом": "Hypotheses on the real thing", "Проверяю варианты на людях, а не на картинках.": "I test options with people, not on static pictures.",
+    "Прототип = фронт": "Prototype = front end", "Живой сайт, разработка не верстает с нуля.": "A live site, developers don't build the layout from scratch.",
+    "Не вайбкод": "Not vibe coding", "Сначала продукт и система, потом код.": "Product and system first, code second.",
+    "Что я делаю": "What I do",
+    "Веду продукт": "I lead the product",
+    "от задачи и пути клиента до готового фронта": "from the task and customer journey to a ready front end",
+    ", который забирает разработка, и везде использую ИИ, чтобы это шло быстрее. А всё, что продукт показывает людям снаружи (сайт, презентация, ролик, печать), делаю в той же системе, поэтому всё выглядит как одно целое.": " that developers pick up, and I use AI everywhere to move faster. Everything the product shows to the outside world (website, deck, video, print) I make in the same system, so it all looks like one whole.",
+    "Продукт и интерфейсы": "Product & interfaces", "веб-сервисы, платформы, мобильные": "web services, platforms, mobile",
+    "Разбираю задачу и путь клиента, рисую флоу и нахожу, где люди теряются. Проектирую интерфейсы, собираю дизайн-систему и рабочий прототип, который по сути готовый фронт. На нём же быстро собираются варианты для A/B-тестов.": "I break down the task and the customer journey, draw flows and find where people get lost. I design interfaces, build a design system and a working prototype that is essentially a ready front end. A/B variants are assembled on it quickly too.",
+    "МТС · кабинет услуги →": "MTS · service account →", "Mary · платформа →": "Mary · platform →", "Mary · дизайн-система кодом →": "Mary · design system in code →",
+    "InTreatment · чат-подбор →": "InTreatment · chat matching →", "InTreatment · кабинеты →": "InTreatment · accounts →",
+    "лендинги и многостраничные": "landing pages and multi-page sites",
+    "Структура, тексты вместе с заказчиком, дизайн, анимации и мобильная версия. SEO и аналитику закладываю сразу. Могу сама сверстать и выложить.": "Structure, copy together with the client, design, animation and a mobile version. SEO and analytics are built in from day one. I can build and ship it myself.",
+    "МТС · лендинг →": "MTS · landing →",
+    "Презентации": "Presentations", "питч-деки, продающие, отдельные слайды": "pitch decks, sales decks, single slides",
+    "Собираю историю и цифры в презентацию для инвесторов или клиентов. Делаю PDF, PPTX и веб-версию, могу оживить слайды моушеном.": "I turn the story and numbers into a deck for investors or clients. PDF, PPTX and a web version, with motion if needed.",
+    "Mary · питч-дек на $3M →": "Mary · $3M pitch deck →",
+    "Моушен и видео": "Motion & video", "промо, мокапы, заставки": "promos, mockups, intros",
+    "Промо-ролики продукта, моушен интерфейсов и слайдов, видео-мокапы устройств, заставки и оформление YouTube-канала.": "Product promo videos, interface and slide motion, device video mockups, intros and YouTube channel design.",
+    "Mary · ролики и мокапы →": "Mary · videos and mockups →",
+    "знак, стиль, носители": "logo, style, applications",
+    "Логотип и фирменный стиль, бейджи, визитки, мерч. Всё сразу проверяю на настоящих носителях и мокапах.": "Logo and brand style, badges, business cards, merch. I check everything on real applications and mockups right away.",
+    "Mary · бейджи и брошюры →": "Mary · badges and brochures →",
+    "Графика для соцсетей": "Social media graphics", "посты, баннеры, обложки": "posts, banners, covers",
+    "Посты и карусели, сторис, баннеры, шапки каналов и обложки к видео. В одном стиле с продуктом, чтобы соцсети не жили отдельно от сайта.": "Posts and carousels, stories, banners, channel headers and video covers. In the product's style, so social media doesn't live apart from the website.",
+    "Mary · контент →": "Mary · content →",
+    "Печать и вёрстка": "Print & layout", "журналы, альбомы, брошюры": "magazines, albums, brochures",
+    "Журналы и фотоальбомы, брошюры и буклеты. Отбор кадров, сетка, типографика и подготовка к печати.": "Magazines and photo albums, brochures and booklets. Photo selection, grid, typography and prepress.",
+    "ALBUMCHIK · журналы →": "ALBUMCHIK · magazines →", "Mary · брошюра →": "Mary · brochure →",
+    // резюме
+    "Вика Ахрамович": "Vika Akhramovich",
+    "Продуктовый дизайнер · 5 лет в дизайне": "Product designer · 5 years in design",
+    "Веду продукт от задачи и пути клиента до готового фронта, который забирает разработка. Работаю вместе с ИИ: он берёт рутину, а решения и вкус остаются за мной. Делаю платформы и сервисы, сайты, презентации и всё, что продукт показывает людям снаружи.": "I lead products from the task and customer journey to a ready front end that developers pick up. I work together with AI: it takes the routine, while decisions and taste stay with me. I design platforms and services, websites, decks and everything a product shows to the outside world.",
+    "Скачать PDF ↓": "Download PDF ↓", "Портфолио": "Portfolio", "Опыт": "Experience", "5 лет, с 2021": "5 years, since 2021",
+    "Возраст": "Age", "24 года": "24", "Город": "City", "Минск · удалённо": "Minsk · remote", "Телефон": "Phone", "ссылка ↗︎": "link ↗︎",
+    "Опыт работы": "Work experience", "октябрь 2026 — сейчас": "October 2026 — now", "(после хакатона)": "(after the hackathon)",
+    "Продуктовый дизайнер · в команде Mary AI": "Product designer · Mary AI team",
+    "Услуга для абонентов МТС: после обычного звонка через минуту приходит итог, договорённости и дела. Команда выиграла хакатон МТС, и теперь мы делаем продукт вместе с МТС.": "A service for MTS subscribers: a minute after an ordinary call you get a summary, agreements and tasks. Our team won the MTS hackathon, and now we build the product together with MTS.",
+    "Команда выиграла хакатон МТС, и теперь продукт делаем вместе с МТС. Спроектировала его целиком: сценарии первого входа и работающей платформы, личный кабинет на компьютере и в телефоне, онбординг в три шага, лендинг услуги.": "Our team won the MTS hackathon, and now we build the product together with MTS. I designed it end to end: first-run and working-platform scenarios, the user account on desktop and mobile, three-step onboarding and the service landing page.",
+    "Собрала дизайн-систему в Figma (токены, текстовые стили, компоненты) и живой прототип, который стал фронтом; написала ТЗ по дизайну и продукту для разработчиков МТС.": "Built the design system in Figma (tokens, text styles, components) and a live prototype that became the front end; wrote the design and product spec for MTS developers.",
+    "Кейс МТС": "MTS case", "июль 2025 — сейчас": "July 2025 — now", "(1 год 4 месяца)": "(1 year 4 months)",
+    "Продуктовый дизайнер · веду продукт как head of design": "Product designer · leading the product as head of design",
+    "Chat-first платформа автоматизации бизнеса: компания описывает задачу словами, Mary собирает под неё систему из AI-агентов.": "A chat-first business automation platform: a company describes a task in words, and Mary builds a system of AI agents for it.",
+    "Спроектировала интерфейс платформы: онбординг диалогом, чат с Mary, автоматизации на канвасе, сотрудники и приглашения, база знаний, аналитика.": "Designed the platform interface: conversational onboarding, chat with Mary, automations on a canvas, team and invites, knowledge base, analytics.",
+    "Собрала дизайн-систему в Figma (переменные, текстовые стили, 150+ компонентов) и написала её кодом: токены и библиотека компонентов с витриной для разработки.": "Built the design system in Figma (variables, text styles, 150+ components) and in code: tokens and a component library with a showcase for developers.",
+    "Веду живой прототип на React, который по сути готовый фронт для разработки. Сверяю продакшн с макетами и веду дизайн-задачи в GitHub.": "Run a live React prototype that is essentially a ready front end for development. Check production against the designs and manage design tasks in GitHub.",
+    "Сделала и сама выложила сайты maryrose.by и sales.maryrose.by, питч-дек на $3M (RU/EN, веб-версия), промо-ролики, бейджи, брошюру и визуал соцсетей.": "Designed and shipped maryrose.by and sales.maryrose.by, a $3M pitch deck (RU/EN, web version), promo videos, badges, a brochure and social visuals.",
+    "Заложила на сайтах SEO, GEO (чтобы Mary находили и советовали нейросети) и аналитику: метрики, цели, воронки и A/B-тесты.": "Built SEO, GEO (so AI assistants find and recommend Mary) and analytics into the sites: metrics, goals, funnels and A/B tests.",
+    "Кейс Mary": "Mary case", "август 2024 — сентябрь 2026": "August 2024 — September 2026", "(2 года 1 месяц)": "(2 years 1 month)",
+    "ООО «Биянг»": "Biyang LLC", "Веб- и продуктовый дизайнер": "Web and product designer",
+    "Дизайн сайтов и интерфейсов продуктов компании. Один из них —": "Websites and product interfaces for the company. One of them is",
+    ", платформа подбора психологов: сайт, чат-подбор и личные кабинеты клиента, психолога и админа.": ", a therapist matching platform: website, chat matching and accounts for clients, therapists and admins.",
+    "Проектирование пользовательских сценариев, прототипы и подготовка макетов к разработке.": "User scenarios, prototypes and design handoff to development.",
+    "(3 года)": "(3 years)", "Фриланс": "Freelance", "Веб- и графический дизайнер": "Web and graphic designer",
+    "«Морозпродукт»: аудит сайта и дизайн нового.": "Morozprodukt: website audit and a new design.",
+    "Сайты и лендинги для малого бизнеса: структура, дизайн и мобильная версия.": "Websites and landing pages for small businesses: structure, design and mobile.",
+    "Графика для соцсетей и рекламы: посты, карусели, сторис, баннеры и обложки.": "Social and ad graphics: posts, carousels, stories, banners and covers.",
+    "Презентации и коммерческие предложения: собирала историю и цифры в понятную подачу.": "Decks and proposals: turned the story and numbers into a clear pitch.",
+    "Логотипы и фирменный стиль, визитки и другие печатные носители.": "Logos and brand identity, business cards and other print.",
+    "Избранные проекты": "Selected projects",
+    "Услуга для абонентов: кабинет, онбординг, лендинг, дизайн-система · 2026": "Subscriber service: account, onboarding, landing, design system · 2026",
+    "Chat-first платформа автоматизации бизнеса: интерфейс, дизайн-система, сайты, питч-дек · с 2025": "Chat-first business automation platform: interface, design system, websites, pitch deck · since 2025",
+    "Платформа подбора психологов: сайт, чат-подбор, кабинеты · 2026": "Therapist matching platform: website, chat matching, accounts · 2026",
+    "Навыки и инструменты": "Skills & tools", "Системы": "Systems", "Веб": "Web", "Визуал": "Visual", "Инструменты": "Tools",
+    "Product discovery, CJM и пользовательские сценарии, UX/UI, A/B-тесты и воронки": "Product discovery, CJM and user scenarios, UX/UI, A/B tests and funnels",
+    "Дизайн-системы в Figma и в коде, прототип, который становится фронтом": "Design systems in Figma and in code, a prototype that becomes the front end",
+    "Сайты и лендинги, мобильные версии, анимации, SEO, GEO и аналитика с первого дня": "Websites and landing pages, mobile versions, animation, SEO, GEO and analytics from day one",
+    "Презентации и питч-деки, моушен и видео, айдентика, вёрстка и печать": "Decks and pitch decks, motion and video, identity, layout and print",
+    "Mary AI": "Mary AI"
+  };
+  const norm = s => s.replace(/ /g, " ").replace(/\s+/g, " ").trim();
+  const map = new Map(Object.entries(EN).map(([k, v]) => [norm(k), v]));
+  let lang = "ru"; try { lang = localStorage.getItem("lang") || "ru"; } catch (e) {}
+  const nodes = [];
+  const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  while (walk.nextNode()) {
+    const n = walk.currentNode, v = n.nodeValue, k = norm(v);
+    if (!k || !map.has(k)) continue;
+    const lead = v.match(/^\s*/)[0], tail = v.match(/\s*$/)[0];
+    nodes.push([n, v, lead + map.get(k) + tail]);
+  }
+  const apply = l => {
+    nodes.forEach(([n, ru, en]) => { n.nodeValue = l === "en" ? en : ru; });
+    document.documentElement.lang = l;
+    document.querySelectorAll(".lang button").forEach(b => b.classList.toggle("is-on", b.dataset.l === l));
+  };
+  document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => {
+    lang = b.dataset.l; try { localStorage.setItem("lang", lang); } catch (e) {} apply(lang);
+  }));
+  apply(lang);
+})();
