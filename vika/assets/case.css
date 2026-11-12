@@ -236,3 +236,17 @@ html,body{overflow-x:clip}
 .quote__in img{position:absolute;right:0;top:0;height:100%;width:46%;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,transparent,#000 40%);mask-image:linear-gradient(90deg,transparent,#000 40%)}
 .quote__in img.obj{object-fit:contain;width:40%;padding:4% 4% 4% 0;-webkit-mask-image:none;mask-image:none}
 @media (max-width:760px){ .quote__in{grid-template-columns:1fr;min-height:0} .quote__in img{position:relative;width:100%;height:220px} .quote__in img.obj{width:100%;padding:0 0 24px} }
+
+/* этапы слева (Вика, 12.11): закреплены, текущий подсвечен */
+.rail{display:none}
+@media (min-width:1200px){
+  .rail{display:flex;flex-direction:column;gap:2px;position:fixed;left:var(--pad);top:50%;transform:translateY(-50%);z-index:20;max-width:220px;opacity:0;pointer-events:none;transition:opacity .3s ease}
+  .rail.is-on{opacity:1;pointer-events:auto}
+  .rail a{display:grid;grid-template-columns:26px 1fr;gap:8px;padding:5px 0;font-size:13px;line-height:1.3;color:var(--faint);transition:color .2s}
+  .rail a i{font-style:normal;font-size:12px}
+  .rail a:hover{color:var(--dim)}
+  .rail a.is-cur{color:var(--fg)}
+  .rail a.is-cur i::after{content:"";display:inline-block;width:5px;height:5px;margin-left:5px;border-radius:50%;background:var(--fg);vertical-align:middle}
+  .has-rail .ch__text>.ch__n{visibility:hidden}
+  .has-rail .chapters,.has-rail .quote,.has-rail .toc{padding-left:max(var(--pad), 250px)}
+}

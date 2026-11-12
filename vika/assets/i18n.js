@@ -11,6 +11,7 @@
     "Резюме": "CV",
     "Минск": "Minsk",
     "Работаю удалённо": "Working remotely",
+    "Светлая": "Light", "Тёмная": "Dark",
     "Кабинет, онбординг, лендинг и дизайн-система: продукт вместе с МТС после хакатона": "Account, onboarding, landing page and design system: a product with MTS after the hackathon",
     "Платформа, дизайн-система, 2 сайта, питч-дек и айдентика": "Platform, design system, 2 websites, pitch deck and identity",
     "Сайт, чат-подбор и три кабинета, два этапа работы": "Website, chat matching and three accounts, two stages of work",

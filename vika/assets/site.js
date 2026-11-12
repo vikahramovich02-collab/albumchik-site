@@ -58,3 +58,43 @@
   addEventListener('load', run);
   document.addEventListener('click', e => { if (e.target.closest('.lang')) setTimeout(run, 0); });
 })();
+
+// этапы кейса закреплены слева: видно, на каком шаге читатель (Вика, 12.11)
+(() => {
+  const chs = [...document.querySelectorAll('.chapters .ch[id]')].filter(c => c.querySelector('.ch__n'));
+  if (chs.length < 2) return;
+  const nav = document.createElement('nav'); nav.className = 'rail'; nav.setAttribute('aria-label', 'Этапы кейса');
+  chs.forEach(c => {
+    const sp = c.querySelectorAll('.ch__n span');
+    const a = document.createElement('a'); a.href = '#' + c.id;
+    const n = document.createElement('i'); n.textContent = sp[0] ? sp[0].textContent : '';
+    const t = document.createElement('span'); t.textContent = sp[1] ? sp[1].textContent : '';
+    a.append(n, t); nav.appendChild(a);
+  });
+  document.body.appendChild(nav); document.body.classList.add('has-rail');
+  const links = [...nav.querySelectorAll('a')];
+  const main = document.querySelector('.chapters');
+  const set = () => {
+    const r = main.getBoundingClientRect();
+    nav.classList.toggle('is-on', r.top < innerHeight * .6 && r.bottom > innerHeight * .4);
+    let cur = 0; chs.forEach((c, i) => { if (c.getBoundingClientRect().top < innerHeight * .45) cur = i; });
+    links.forEach((a, i) => a.classList.toggle('is-cur', i === cur));
+  };
+  addEventListener('scroll', set, { passive: true }); addEventListener('resize', set); set();
+})();
+
+// переключатель темы: тёмная по умолчанию, светлая по кнопке, выбор запоминается
+(() => {
+  const btn = document.querySelector('.theme'); if (!btn) return;
+  const lbl = btn.querySelector('span');
+  const sync = () => { const light = document.documentElement.dataset.theme === 'light', en = document.documentElement.lang === 'en'; lbl.textContent = light ? (en ? 'Dark' : 'Тёмная') : (en ? 'Light' : 'Светлая'); };
+  document.addEventListener('click', e => { if (e.target.closest('.lang')) setTimeout(sync, 0); });
+  addEventListener('load', sync);
+  btn.addEventListener('click', () => {
+    const light = document.documentElement.dataset.theme !== 'light';
+    if (light) document.documentElement.dataset.theme = 'light'; else delete document.documentElement.dataset.theme;
+    try { localStorage.setItem('theme', light ? 'light' : 'dark'); } catch (e) {}
+    sync();
+  });
+  sync();
+})();
