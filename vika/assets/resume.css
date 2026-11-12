@@ -149,3 +149,10 @@
   .cv__sec{margin-top:8px}
   .skills li,.proj-list a{padding:2px 0}
 }
+
+/* инструменты плашками в шапке резюме (Вика, 12.11) */
+.cv__tools{margin-top:28px;padding-top:12px;border-top:1px solid var(--line)}
+.cv__tools b{display:block;font-weight:400;font-size:12px;color:var(--dim);margin-bottom:10px}
+.cv__tools ul{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.cv__tools li{padding:7px 12px;border:1px solid var(--line);border-radius:999px;font-size:13px}
+@media print{ .cv__tools{margin-top:8px;padding-top:6px} .cv__tools b{font-size:9.5px;margin-bottom:4px} .cv__tools li{font-size:9.5px;padding:2px 8px;border-color:rgba(0,0,0,.2)} }
