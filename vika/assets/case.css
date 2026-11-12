@@ -291,3 +291,10 @@ html,body{overflow-x:clip}
 .ch__media .bleed{width:100vw;margin-left:calc(-1 * var(--bx,0px));margin-right:0}
 .links-row{display:flex;flex-wrap:wrap;gap:10px}
 .links-row .more{margin-top:24px}
+.stagger{display:flex;flex-direction:column;gap:clamp(24px,4vh,48px)}
+.stagger figure{width:52%;margin:0}
+.stagger figure:nth-child(even){align-self:flex-end}
+.stagger video{display:block;width:100%;border-radius:6px}
+@media (max-width:700px){.stagger figure{width:100%}}
+.mlogo{display:flex;align-items:center;gap:.14em;letter-spacing:-.04em}
+.mlogo__mark{width:.86em;height:.82em;flex:none}
