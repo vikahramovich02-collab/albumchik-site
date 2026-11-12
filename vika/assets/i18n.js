@@ -10,6 +10,7 @@
     "резюме · pdf": "CV · pdf",
     "Резюме": "CV",
     "Минск": "Minsk",
+    "Работаю удалённо": "Working remotely",
     "канал ↗︎": "channel ↗︎",
     "← все работы": "← all work",
     "← портфолио": "← portfolio",
