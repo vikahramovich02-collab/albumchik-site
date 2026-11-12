@@ -114,3 +114,5 @@
 @media (max-width:900px){ .wks{grid-template-columns:1fr 1fr} }
 @media (max-width:560px){ .wks{grid-template-columns:1fr} }
 .meta .cv-link{display:inline-block;margin-top:8px;border-bottom:1px solid var(--line2)}
+/* заголовок по-русски длиннее (Вика, 12.11) */
+.pos h1{font-size:clamp(48px,10.4vw,190px)}
