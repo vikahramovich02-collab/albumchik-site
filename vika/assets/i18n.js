@@ -124,6 +124,7 @@
     "Презентации и питч-деки, моушен и видео, айдентика, вёрстка и печать": "Decks and pitch decks, motion and video, identity, layout and print",
     "Mary AI": "Mary AI"
   };
+  Object.assign(EN, window.I18N_EXTRA || {});
   const norm = s => s.replace(/ /g, " ").replace(/\s+/g, " ").trim();
   const map = new Map(Object.entries(EN).map(([k, v]) => [norm(k), v]));
   let lang = "ru"; try { lang = localStorage.getItem("lang") || "ru"; } catch (e) {}
