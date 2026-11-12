@@ -76,7 +76,9 @@
   const mains = [...document.querySelectorAll('.chapters')];
   const set = () => {
     const top = mains[0].getBoundingClientRect().top, bottom = mains[mains.length - 1].getBoundingClientRect().bottom;
-    nav.classList.toggle('is-on', top < innerHeight * .6 && bottom > innerHeight * .4);
+    const nr = nav.getBoundingClientRect();
+    const covered = [...document.querySelectorAll('.bleed,.flowwide')].some(b => { const r = b.getBoundingClientRect(); return r.left < nr.right && r.top < nr.bottom && r.bottom > nr.top; });
+    nav.classList.toggle('is-on', top < innerHeight * .6 && bottom > innerHeight * .4 && !covered);
     let cur = 0; chs.forEach((c, i) => { if (c.getBoundingClientRect().top < innerHeight * .45) cur = i; });
     links.forEach((a, i) => a.classList.toggle('is-cur', i === cur));
   };
