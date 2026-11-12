@@ -57,3 +57,7 @@ footer.foot .dim{color:var(--dim)}
 .lang button:hover{color:var(--fg)}
 .lang button.is-on{display:none}
 @media (max-width:760px){ .meta .contacts{display:none} .meta .end-col{gap:10px} }
+/* шапка, строки кейсов и подвал на одной сетке (Вика, 12.11) */
+.meta,footer.foot,.case__head{grid-template-columns:1fr 1.4fr .6fr .5fr}
+.meta>:last-child,footer.foot>:last-child,.case__head>:last-child{justify-self:end}
+@media (max-width:760px){ .meta,footer.foot,.case__head{grid-template-columns:1fr auto} }
