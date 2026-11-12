@@ -280,5 +280,10 @@ html,body{overflow-x:clip}
 .case-big .ch ul.rows li{font-size:16px;grid-template-columns:200px 1fr}
 .case-big .ch__text>*{max-width:820px}
 /* широкие флоу: листаются вбок */
-.flowfig__scroll{overflow-x:auto;border-radius:6px;background:#e9e9ea;outline:1px solid var(--line);outline-offset:-1px}
-.flowfig__scroll img{display:block;height:clamp(360px,52vh,560px);width:auto;max-width:none;background:none}
+.flowfig__scroll{overflow:hidden;border-radius:6px;background:#e9e9ea;outline:1px solid var(--line);outline-offset:-1px}
+.flowfig__scroll img{display:block;width:100%;height:auto;max-width:100%;background:none}
+
+.flowwide{margin:clamp(24px,4vh,48px) 0;background:#e9e9ea}
+.flowwide img{display:block;width:100%;height:auto;border-radius:0}
+.flowwide figcaption{background:var(--bg);padding-top:12px;text-align:center;font-size:12px;color:var(--dim)}
+.flowwide figcaption a{color:var(--fg);border-bottom:1px solid var(--line2)}
