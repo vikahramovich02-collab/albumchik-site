@@ -156,3 +156,13 @@
 .cv__tools ul{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
 .cv__tools li{padding:7px 12px;border:1px solid var(--line);border-radius:999px;font-size:13px}
 @media print{ .cv__tools{margin-top:8px;padding-top:6px} .cv__tools b{font-size:9.5px;margin-bottom:4px} .cv__tools li{font-size:9.5px;padding:2px 8px;border-color:rgba(0,0,0,.2)} }
+/* аватар (Вика, 13.11) */
+.cv__head{position:relative}
+.cv__ava{display:block;width:96px;height:96px;border-radius:50%;object-fit:cover;margin-bottom:24px}
+@media print{
+  .cv__ava{position:absolute;right:0;top:0;width:66px;height:66px;margin:0}
+  .skills li,.proj-list a{padding:2px 0;font-size:9.5px;line-height:1.35}
+  .cv__sec{margin-top:11px}
+  .job{padding:6px 0}
+}
+@media print{.job__about--keep{display:block!important}}
