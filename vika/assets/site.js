@@ -73,10 +73,10 @@
   });
   document.body.appendChild(nav); document.body.classList.add('has-rail');
   const links = [...nav.querySelectorAll('a')];
-  const main = document.querySelector('.chapters');
+  const mains = [...document.querySelectorAll('.chapters')];
   const set = () => {
-    const r = main.getBoundingClientRect();
-    nav.classList.toggle('is-on', r.top < innerHeight * .6 && r.bottom > innerHeight * .4);
+    const top = mains[0].getBoundingClientRect().top, bottom = mains[mains.length - 1].getBoundingClientRect().bottom;
+    nav.classList.toggle('is-on', top < innerHeight * .6 && bottom > innerHeight * .4);
     let cur = 0; chs.forEach((c, i) => { if (c.getBoundingClientRect().top < innerHeight * .45) cur = i; });
     links.forEach((a, i) => a.classList.toggle('is-cur', i === cur));
   };
