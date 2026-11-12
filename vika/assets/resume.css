@@ -166,3 +166,4 @@
   .job{padding:6px 0}
 }
 @media print{.job__about--keep{display:block!important}}
+@media print{.skills li,.proj-list a{padding:1px 0;line-height:1.3}.cv__sec h2{margin-bottom:2px}.cv__sec{margin-top:9px}}
