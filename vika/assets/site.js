@@ -36,3 +36,25 @@
     requestAnimationFrame(loop);
   })();
 })();
+
+// лид в два тона (как у Dalee): после первого предложения текст абзаца приглушается.
+// DOM не трогаем (иначе сломается перевод), красим через CSS Custom Highlight API.
+(() => {
+  if (!window.CSS || !CSS.highlights || typeof Highlight === 'undefined') return;
+  const run = () => {
+    const ranges = [];
+    document.querySelectorAll('.ch__text > h2 + p').forEach(p => {
+      const text = p.textContent; const m = text.match(/[.!?](\s)/);
+      if (!m) return;
+      let cut = m.index + 1, w = document.createTreeWalker(p, NodeFilter.SHOW_TEXT), n, pos = 0;
+      while ((n = w.nextNode())) {
+        const len = n.nodeValue.length;
+        if (pos + len >= cut) { const r = document.createRange(); r.setStart(n, cut - pos); r.setEndAfter(p.lastChild); ranges.push(r); break; }
+        pos += len;
+      }
+    });
+    CSS.highlights.set('tone', new Highlight(...ranges));
+  };
+  addEventListener('load', run);
+  document.addEventListener('click', e => { if (e.target.closest('.lang')) setTimeout(run, 0); });
+})();

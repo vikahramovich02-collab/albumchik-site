@@ -205,3 +205,34 @@ html,body{overflow-x:clip}
 .intro .intro__cta{grid-column:2;justify-self:end;margin-top:0}
 .intro .factline{display:flex}
 @media (max-width:900px){ .intro{grid-template-columns:1fr} .intro .lead,.intro .intro__cta{grid-column:1;justify-self:start} .intro .intro__cta{margin-top:24px} }
+
+/* ===== Подача как у Dalee (Вика, 12.11) ===== */
+/* 1. Обложка-баннер в цветах клиента: название поверх градиента */
+.intro.banner{margin:0 var(--pad);border-radius:24px;background:var(--grad,#0b0c10);color:#fff;min-height:min(82svh,820px);align-content:end;
+  padding:clamp(96px,16vh,180px) clamp(20px,3.4vw,56px) clamp(24px,4vh,44px);overflow:hidden}
+.intro.banner .kicker{color:rgba(255,255,255,.72)} .intro.banner .kicker::before{background:#fff}
+.intro.banner .lead{color:rgba(255,255,255,.78)}
+.intro.banner .factline{border-top-color:rgba(255,255,255,.22)} .intro.banner .factline span+span{color:rgba(255,255,255,.6)}
+.intro.banner .btn{border-color:rgba(255,255,255,.45);color:#fff} .intro.banner .btn:hover{border-color:#fff}
+.intro.banner .btn--fill{background:#fff;color:#111;border-color:#fff} .intro.banner .btn--fill:hover{background:transparent;color:#fff}
+.intro.banner + .hero-media{margin-top:var(--pad)}
+
+/* 2. Главы в две колонки: подпись слева, текст справа */
+.ch__text{max-width:calc(var(--wide));display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);column-gap:clamp(24px,4vw,72px)}
+.ch__text>*{grid-column:2;max-width:720px}
+.ch__text>.ch__n{grid-column:1;grid-row:1;align-self:start;margin-top:22px;font-size:13px;color:var(--fg)}
+.ch__text>.ch__n span:first-child{color:var(--dim)}
+@media (max-width:900px){ .ch__text{grid-template-columns:1fr} .ch__text>*{grid-column:1} .ch__text>.ch__n{grid-row:auto;margin-top:0} }
+
+/* 3. Лид в два тона: первое предложение светлое и крупное, продолжение приглушённое */
+.ch__text>h2 + p{font-size:clamp(19px,1.6vw,24px);line-height:1.35;letter-spacing:-.015em;color:var(--fg)}
+::highlight(tone){color:#6e7277}
+
+/* 4. Цитата-баннер с главной мыслью */
+.quote{max-width:calc(var(--wide) + var(--pad) * 2);margin:clamp(72px,12vh,140px) auto 0;padding:0 var(--pad)}
+.quote__in{position:relative;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);align-items:center;min-height:clamp(260px,32vw,420px);
+  border-radius:24px;background:var(--grad,#0b0c10);overflow:hidden;color:#fff}
+.quote__in p{position:relative;z-index:1;margin:0;padding:clamp(28px,4vw,64px);font-weight:500;font-size:clamp(24px,2.6vw,42px);line-height:1.12;letter-spacing:-.03em}
+.quote__in img{position:absolute;right:0;top:0;height:100%;width:46%;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,transparent,#000 40%);mask-image:linear-gradient(90deg,transparent,#000 40%)}
+.quote__in img.obj{object-fit:contain;width:40%;padding:4% 4% 4% 0;-webkit-mask-image:none;mask-image:none}
+@media (max-width:760px){ .quote__in{grid-template-columns:1fr;min-height:0} .quote__in img{position:relative;width:100%;height:220px} .quote__in img.obj{width:100%;padding:0 0 24px} }

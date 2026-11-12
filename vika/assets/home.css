@@ -122,3 +122,6 @@
 .case__head{grid-template-columns:1fr 1.4fr .6fr .5fr}
 .case__head>:last-child{justify-self:end}
 @media (max-width:760px){ .case__head{grid-template-columns:1fr auto} }
+
+.wk__type{display:block;margin-top:14px;font-size:12px;letter-spacing:.02em;color:var(--dim)}
+.wk__type + b{margin-top:4px}
