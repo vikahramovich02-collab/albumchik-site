@@ -162,3 +162,6 @@ img.shot{outline:1px solid rgba(17,17,17,.08);outline-offset:-1px}
 /* три телефона в ряд (МТС, лендинг на телефоне) */
 .phones img:nth-child(3){display:block}
 @media (min-width:561px){ .phones:has(img:nth-child(3)) img{width:min(30%,260px)} }
+/* белая тема (12.11): светлые скрины не сливаются со страницей — рамка и мягкая тень */
+.ch__media figure:not(.panel) img.shot,.ch__media figure:not(.panel) video.shot,.hero-media img,.hero-media video{outline:1px solid rgba(17,17,17,.1);outline-offset:-1px;box-shadow:0 1px 2px rgba(0,0,0,.05),0 18px 44px rgba(0,0,0,.10)}
+.ch__media{padding-bottom:24px}

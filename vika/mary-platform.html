@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap">
 <link rel="stylesheet" href="assets/base.css?v=9">
-<link rel="stylesheet" href="assets/case.css?v=9">
+<link rel="stylesheet" href="assets/case.css?v=10">
 </head>
 <body>
   <div class="meta">
@@ -50,7 +50,7 @@
           <li><b>Онбординг</b><span>Диалог вместо формы. Разделы открываются по ходу разговора</span></li>
           <li><b>Автоматизации</b><span>Канвас с узлами, логи сборки, правки словами в том же чате</span></li>
           <li><b>Сотрудники</b><span>Одна ссылка-приглашение, вход через Google, роли повышает директор</span></li>
-          <li><b>Дизайн-система</b><span>Переменные, текстовые стили, 150+ компонентов в Figma и копия в коде</span></li>
+          <li><b>Дизайн-система</b><span>Переменные и текстовые стили в Figma, компоненты кодом с живым гайдом для разработчиков. <a href="https://vikahramovich02-collab.github.io/mary-ui/" target="_blank" rel="noopener">Открыть ↗︎</a></span></li>
           <li><b>Версии</b><span>MVP0 каркас → MVP1 рабочий чат → MVP2 шаблоны сервисов. Версия закрывается событием, а не датой</span></li>
         </ul>
         <div class="tags"><span>Product discovery</span><span>UX/UI</span><span>Дизайн-система</span><span>Прототип = фронт</span><span>Роадмап</span></div>
@@ -70,17 +70,23 @@
       <div class="ch__text">
         <div class="ch__n"><span>02</span><span>Как я работаю</span></div>
         <h2>С ИИ от макета до готового фронта</h2>
-        <p>Рисую в Figma, собираю дизайн-систему и вместе с Claude Code и Codex превращаю её в рабочий прототип. Видео и визуал делаю в Higgsfield. Разработчики получают не картинки, а готовый фронт, к которому остаётся подключить данные. Это экономит им недели.</p>
-        <p>На этом же прототипе удобно собирать варианты для A/B-тестов и смотреть воронку: где люди уходят, что непонятно, что убрать.</p>
+        <p>Я делаю не кликабельные макеты, а интерактивные прототипы, которые уже работают как готовый фронт: настоящий React, настоящие состояния, настоящие данные в полях. Рисую в Figma, собираю дизайн-систему и вместе с Claude Code и Codex превращаю её в рабочий прототип. Видео и визуал делаю в Higgsfield.</p>
+        <p>Так лучше для тестов: гипотезы и A/B-варианты проверяются на живом интерфейсе, а не на картинках, и сразу видно воронку: где люди уходят, что непонятно, что убрать. И понятнее разработчикам: они получают не макеты, а фронт, к которому остаётся подключить данные. Все компоненты дизайн-системы тоже есть кодом, с живыми примерами, размерами, токенами и правилами «так / не так».</p>
         <ul class="rows">
           <li><b>Figma</b><span>Экраны, компоненты, переменные</span></li>
+          <li><b>Дизайн-система</b><span>Компоненты кодом с гайдом: анатомия, токены, состояния, код. <a href="https://vikahramovich02-collab.github.io/mary-ui/" target="_blank" rel="noopener">Открыть ↗︎</a></span></li>
           <li><b>Прототип</b><span>Живой фронт на React через Claude Code и Codex, правки сразу в коде</span></li>
           <li><b>Визуал</b><span>Ролики, мокапы и фото в Higgsfield</span></li>
           <li><b>Разработка</b><span>Забирает готовый фронт и подключает бэкенд</span></li>
           <li><b>Данные</b><span>A/B-варианты, воронка, правки по поведению пользователей</span></li>
         </ul>
+        <a class="more" href="https://vikahramovich02-collab.github.io/mary-ui/" target="_blank" rel="noopener">Открыть дизайн-систему ↗︎</a>
       </div>
       <div class="ch__media">
+        <div class="duo">
+          <figure class="reveal"><img class="shot" src="img/mary/ds-guide.webp" alt="Гайд по попапам: анатомия и размеры" loading="lazy"><figcaption>Дизайн-система кодом: гайд по попапам с анатомией, размерами и токенами</figcaption></figure>
+          <figure class="reveal"><img class="shot" src="img/mary/ds-buttons.webp" alt="Состояния кнопок и полей" loading="lazy"><figcaption>Состояния кнопок и полей: живые компоненты, не картинки</figcaption></figure>
+        </div>
         <figure class="reveal"><img class="shot" src="img/mary/home_4.webp" alt="Блок с интерфейсом на сайте" loading="lazy"><figcaption>Интерфейс из прототипа попадает на сайт без перерисовки</figcaption></figure>
         <figure class="reveal"><img class="shot" src="img/mary/deck-s06.webp" alt="Слайд с интерфейсом Mary" loading="lazy"><figcaption>И в презентацию тоже: один источник для всех экранов</figcaption></figure>
       </div>
