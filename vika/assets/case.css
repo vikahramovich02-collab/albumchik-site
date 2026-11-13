@@ -320,7 +320,7 @@ html,body{overflow-x:clip}
 .others .wk__img,.others .wk__img::after{border-radius:0}
 .others .wk small{display:block;grid-column:1/-1;grid-row:3;margin-top:4px;font-size:13px;color:var(--dim)}
 .stagger--wide figure{width:62%}
-.stagger--wide figure+figure{margin-top:-14%}
+.stagger--wide figure+figure{margin-top:0}
 .stagger--wide video{aspect-ratio:auto;object-fit:contain;height:auto}
 .ch__media .more{align-self:flex-start;justify-self:start;width:auto}
 @media (max-width:700px){.stagger--wide figure{width:100%}}
