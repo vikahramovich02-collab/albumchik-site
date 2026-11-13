@@ -298,7 +298,7 @@ html,body{overflow-x:clip}
 @media (max-width:700px){.stagger figure{width:100%}}
 .mlogo{display:flex;align-items:center;gap:.14em;letter-spacing:-.04em}
 .mlogo__mark{width:.86em;height:.82em;flex:none}
-.intro .back{grid-column:1/-1;justify-self:start;margin:calc(-1 * clamp(20px,5vh,56px)) 0 clamp(28px,6vh,64px);font-size:14px;color:var(--fg)}
+.intro .back{grid-column:1/-1;justify-self:start;margin:calc(-1 * clamp(36px,8vh,92px)) 0 clamp(28px,5vh,56px);font-size:14px;color:var(--fg)}
 .intro .back:hover{opacity:.6}
 .flowbleed{background:#f5f5f4}
 .flowbleed img{height:auto!important;object-fit:contain!important}
