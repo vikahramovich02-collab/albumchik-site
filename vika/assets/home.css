@@ -81,7 +81,8 @@
 .ai__head{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px;align-items:end}
 .ai__k{grid-column:1/-1;display:flex;align-items:center;gap:10px;margin:0;font-size:13px;color:var(--dim)}
 .ai__k::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--fg)}
-.ai h2{margin:0;font-weight:400;font-size:clamp(40px,5.6vw,92px);line-height:.92;letter-spacing:-.05em;max-width:12ch}
+.ai h2{grid-column:1/-1;margin:0;font-weight:400;font-size:clamp(40px,5.6vw,92px);line-height:1;letter-spacing:-.05em;max-width:20ch}
+@media (min-width:901px){.ai__lead{grid-column:2}}
 .ai__lead{margin:0;justify-self:end;max-width:44ch;font-size:16px;line-height:1.55;color:var(--dim)}
 .ai__list{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin:clamp(40px,8vh,80px) 0 0;padding:0;list-style:none}
 .ai__list li{padding-top:14px;border-top:1px solid var(--rule)}
