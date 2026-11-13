@@ -167,6 +167,9 @@
 }
 @media print{.job__about--keep{display:block!important}}
 @media print{.skills li,.proj-list a{padding:1px 0;line-height:1.3}.cv__sec h2{margin-bottom:2px}.cv__sec{margin-top:9px}}
-.cv__back{display:inline-block;margin:calc(-1 * clamp(28px,6vh,72px)) 0 clamp(28px,5vh,56px);font-size:14px;color:var(--fg)}
+.cv__back{display:block;width:max-content;margin:calc(-1 * clamp(40px,9vh,104px)) 0 clamp(16px,2.5vh,28px);font-size:14px;color:var(--fg)}
 .cv__back:hover{opacity:.6}
 @media print{.cv__back{display:none}}
+.cv__head .cv__k{margin-top:0;margin-bottom:0}
+.cv__head .cv__ava{margin-top:10px}
+@media print{.cv__sec:has(.proj-list){display:none}}
