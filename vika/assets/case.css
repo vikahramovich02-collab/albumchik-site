@@ -292,10 +292,11 @@ html,body{overflow-x:clip}
 .links-row{display:flex;flex-wrap:wrap;gap:10px}
 .links-row .more{margin-top:24px}
 .stagger{display:flex;flex-direction:column;gap:clamp(24px,4vh,48px)}
-.stagger figure{width:52%;margin:0}
+.stagger figure{width:48%;margin:0}
+.stagger figure+figure{margin-top:-26%}
 .stagger figure:nth-child(even){align-self:flex-end}
-.stagger video{display:block;width:100%;border-radius:6px}
-@media (max-width:700px){.stagger figure{width:100%}}
+.stagger video{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px}
+@media (max-width:700px){.stagger figure{width:100%}.stagger figure+figure{margin-top:0}}
 .mlogo{display:flex;align-items:center;gap:.14em;letter-spacing:-.04em}
 .mlogo__mark{width:.86em;height:.82em;flex:none}
 .intro .back{grid-column:1/-1;justify-self:start;margin:calc(-1 * clamp(36px,8vh,92px)) 0 clamp(28px,5vh,56px);font-size:14px;color:var(--fg)}
