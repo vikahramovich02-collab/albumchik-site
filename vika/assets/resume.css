@@ -173,3 +173,4 @@
 .cv__head .cv__k{margin-top:0;margin-bottom:0}
 .cv__head .cv__ava{margin-top:10px}
 @media print{.cv__sec:has(.proj-list){display:none}}
+@media print{.job--short ul li:nth-child(n+3){display:none}}
