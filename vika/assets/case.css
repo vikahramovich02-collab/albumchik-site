@@ -311,3 +311,4 @@ html,body{overflow-x:clip}
 .live li a:has(.live__img){grid-template-columns:clamp(96px,12vw,200px) 1.2fr 1fr auto;align-items:center;gap:clamp(16px,3vw,48px)}
 .live__img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-radius:6px;outline:1px solid var(--line);outline-offset:-1px}
 @media (max-width:700px){.live li a:has(.live__img){grid-template-columns:88px 1fr auto}}
+.case-big .ch p.bleed__cap,.case-big .ch p.motion-cap{font-size:12px;line-height:1.45;margin-top:10px}
