@@ -318,3 +318,4 @@ html,body{overflow-x:clip}
 /* низ кейса на всю ширину, карточки без скругления (Вика, 13.11) */
 .others,.outro{max-width:none}
 .others .wk__img,.others .wk__img::after{border-radius:0}
+.others .wk small{display:block;grid-column:1/-1;grid-row:3;margin-top:4px;font-size:13px;color:var(--dim)}

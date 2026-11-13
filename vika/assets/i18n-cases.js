@@ -137,7 +137,7 @@ window.I18N_EXTRA = {
 "Как проверяем: отчёт и решение": "How we inspect: report and decision",
 "«Найдём брак, пока он не стал убытком»": "\"We'll find the defect before it becomes a loss\"",
 "Сайт как часть брендбука: все блоки в одной системе": "The website as part of the brand book: every block in one system",
-"превью hideliv QC": "hideliv QC preview",
+"превью hideliv": "hideliv preview",
 "Сайт, чат-подбор и три кабинета": "Website, chat matching and three accounts",
 "Редизайн подбора и кабинетов": "Matching and accounts redesign",
 "InTreatment · часть 2 · Редизайн подбора": "InTreatment · part 2 · Matching redesign",
