@@ -103,7 +103,7 @@
     "Структура, тексты вместе с заказчиком, дизайн, анимации и мобильная версия. SEO и аналитику закладываю сразу. Могу сама сверстать и выложить.": "Structure, copy together with the client, design, animation and a mobile version. SEO and analytics are built in from day one. I can build and ship it myself.",
     "МТС · лендинг →": "MTS · landing →",
     "Презентации": "Presentations", "питч-деки, продающие, отдельные слайды": "pitch decks, sales decks, single slides",
-    "Собираю историю и цифры в презентацию для инвесторов или клиентов. Делаю PDF, PPTX и веб-версию, могу оживить слайды моушеном.": "I turn the story and numbers into a deck for investors or clients. PDF, PPTX and a web version, with motion if needed.",
+    "Собираю понятные и структурные питч-деки и презентации, которые упаковывают продукт. В моём арсенале три питч-дека, которые получили инвестиции.": "I build clear, well-structured pitch decks and presentations that package the product. Three of my pitch decks have raised investment.",
     "Mary · презентации →": "Mary · presentations →",
     "Моушен и видео": "Motion & video", "промо, мокапы, заставки": "promos, mockups, intros",
     "Промо-ролики продукта, моушен интерфейсов и слайдов, видео-мокапы устройств, заставки и оформление YouTube-канала.": "Product promo videos, interface and slide motion, device video mockups, intros and YouTube channel design.",
