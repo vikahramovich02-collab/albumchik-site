@@ -346,3 +346,19 @@ html,body{overflow-x:clip}
 .itcta:hover .itcta__label{color:#fff}
 @media (max-width:700px){.itbrand__stage{grid-template-columns:1fr;justify-items:center}}
 @media (prefers-reduced-motion:reduce){.itb-dot,.itb-ring,.itcta{animation:none}}
+/* МТС: чем занималась и ссылки по запросу (Вика, 13.11) */
+.nda-what{padding:clamp(72px,12vh,140px) var(--pad) 0}
+.nda-what h2{margin:0 0 clamp(20px,4vh,40px);font-weight:500;font-size:clamp(32px,4.4vw,64px);line-height:.95;letter-spacing:-.045em}
+.nda-what .rows{margin:0;padding:0;list-style:none}
+.nda-what .rows li{display:grid;grid-template-columns:minmax(120px,280px) 1fr;gap:24px;padding:16px 0;border-top:1px solid var(--line);font-size:clamp(16px,1.3vw,20px)}
+.nda-what .rows li:last-child{border-bottom:1px solid var(--line)}
+.nda-what .rows b{font-weight:500}
+.nda-what .rows span{color:var(--dim)}
+.nda-links{display:grid;grid-template-columns:1fr 1fr;gap:var(--pad);margin-top:clamp(40px,7vh,72px)}
+.nda-link{display:grid;grid-template-columns:1fr auto;gap:4px 16px}
+.nda-link__img{grid-column:1/-1;position:relative;display:block;overflow:hidden;background:var(--panel)}
+.nda-link__img img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;transform:scale(1.08)}
+.nda-link__img i{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);padding:8px 16px;border-radius:999px;background:rgba(22,23,24,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;font-style:normal;font-size:13px;white-space:nowrap}
+.nda-link b{margin-top:12px;font-weight:500;font-size:clamp(18px,1.6vw,24px)}
+.nda-link small{grid-column:1;color:var(--dim);font-size:13px}
+@media (max-width:700px){.nda-links{grid-template-columns:1fr}.nda-what .rows li{grid-template-columns:1fr;gap:4px}}

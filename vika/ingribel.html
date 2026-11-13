@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&text=%E2%86%97%E2%86%90%E2%86%92%E2%86%93%E2%86%91&display=swap">
 <link rel="stylesheet" href="assets/base.css?v=19">
-<link rel="stylesheet" href="assets/case.css?v=45">
+<link rel="stylesheet" href="assets/case.css?v=46">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@500&family=IBM+Plex+Mono&display=swap">
 <style>
   .ba2{display:grid;grid-template-columns:1fr 1fr;gap:0}
@@ -50,7 +50,7 @@
   </header>
 
   <figure class="hero-media reveal">
-    <img src="img/ing/hero.webp" alt="Первый экран нового сайта INGRIBEL">
+    <img fetchpriority="high" decoding="async" src="img/ing/hero.webp" alt="Первый экран нового сайта INGRIBEL">
   </figure>
 
   <main class="chapters">
@@ -63,11 +63,11 @@
       </div>
       <div class="ch__media">
         <figure class="reveal"><div class="ba2">
-          <figure><img src="img/ing/old.webp" alt="Старый сайт INGRIBEL" loading="lazy"><figcaption>До</figcaption></figure>
-          <figure><img src="img/ing/hero.webp" alt="Новый сайт INGRIBEL" loading="lazy"><figcaption>После</figcaption></figure>
+          <figure><img decoding="async" src="img/ing/old.webp" alt="Старый сайт INGRIBEL" loading="lazy"><figcaption>До</figcaption></figure>
+          <figure><img decoding="async" src="img/ing/hero.webp" alt="Новый сайт INGRIBEL" loading="lazy"><figcaption>После</figcaption></figure>
         </div><figcaption>Первый экран до и после</figcaption></figure>
-        <figure class="reveal"><img class="shot" src="img/ing/old.webp" alt="Старый сайт INGRIBEL" loading="lazy"><figcaption>Было: фотография специй и золотой логотип</figcaption></figure>
-        <figure class="reveal"><img class="shot" src="img/ing/hero.webp" alt="Новый сайт INGRIBEL" loading="lazy"><figcaption>Стало: что производим, для кого и чем подтверждаем</figcaption></figure>
+        <figure class="reveal"><img decoding="async" class="shot" src="img/ing/old.webp" alt="Старый сайт INGRIBEL" loading="lazy"><figcaption>Было: фотография специй и золотой логотип</figcaption></figure>
+        <figure class="reveal"><img decoding="async" class="shot" src="img/ing/hero.webp" alt="Новый сайт INGRIBEL" loading="lazy"><figcaption>Стало: что производим, для кого и чем подтверждаем</figcaption></figure>
       </div>
     </section>
     <section class="ch" id="screens">
@@ -78,13 +78,13 @@
         <p>Линейки ИНГРИ идут списком с короткой расшифровкой. Производство показано реальными фотографиями цеха и этапами контроля партии.</p>
       </div>
       <div class="ch__media">
-        <figure class="reveal"><img class="shot" src="img/ing/products.webp" alt="Продукция" loading="lazy"><figcaption>Продукция по группам изделий</figcaption></figure>
-        <figure class="reveal"><img class="shot" src="img/ing/catalog.webp" alt="Каталог" loading="lazy"><figcaption>Карточки каталога и запрос рецептуры</figcaption></figure>
-        <figure class="reveal"><img class="shot" src="img/ing/lines.webp" alt="Линейки ИНГРИ" loading="lazy"><figcaption>Линейки ИНГРИ</figcaption></figure>
-        <figure class="reveal"><img class="shot" src="img/ing/production.webp" alt="Производство" loading="lazy"><figcaption>Производство: контроль каждой партии</figcaption></figure>
-        <figure class="reveal"><img class="shot" src="img/ing/photos.webp" alt="Фотографии цеха" loading="lazy"><figcaption>Фотографии цеха</figcaption></figure>
-        <figure class="reveal"><img class="shot" src="img/ing/about.webp" alt="О компании" loading="lazy"><figcaption>О компании в цифрах</figcaption></figure>
-        <figure class="reveal"><img class="shot" src="img/ing/form.webp" alt="Форма заявки" loading="lazy"><figcaption>Форма заявки</figcaption></figure>
+        <figure class="reveal"><img decoding="async" class="shot" src="img/ing/products.webp" alt="Продукция" loading="lazy"><figcaption>Продукция по группам изделий</figcaption></figure>
+        <figure class="reveal"><img decoding="async" class="shot" src="img/ing/catalog.webp" alt="Каталог" loading="lazy"><figcaption>Карточки каталога и запрос рецептуры</figcaption></figure>
+        <figure class="reveal"><img decoding="async" class="shot" src="img/ing/lines.webp" alt="Линейки ИНГРИ" loading="lazy"><figcaption>Линейки ИНГРИ</figcaption></figure>
+        <figure class="reveal"><img decoding="async" class="shot" src="img/ing/production.webp" alt="Производство" loading="lazy"><figcaption>Производство: контроль каждой партии</figcaption></figure>
+        <figure class="reveal"><img decoding="async" class="shot" src="img/ing/photos.webp" alt="Фотографии цеха" loading="lazy"><figcaption>Фотографии цеха</figcaption></figure>
+        <figure class="reveal"><img decoding="async" class="shot" src="img/ing/about.webp" alt="О компании" loading="lazy"><figcaption>О компании в цифрах</figcaption></figure>
+        <figure class="reveal"><img decoding="async" class="shot" src="img/ing/form.webp" alt="Форма заявки" loading="lazy"><figcaption>Форма заявки</figcaption></figure>
       </div>
     </section>
     <section class="ch" id="mobile">
@@ -94,8 +94,8 @@
         <p>Первый экран, каталог и форма пересобраны под узкий экран, а не просто сжаты. Карточки идут в одну колонку, кнопка заявки всегда под рукой.</p>
       </div>
       <div class="ch__media">
-        <figure class="reveal panel panel--light"><div class="phones"><img src="img/ing/m-hero.webp" alt="Первый экран на телефоне" loading="lazy"><img src="img/ing/m-products.webp" alt="Продукция на телефоне" loading="lazy"><img src="img/ing/m-lines.webp" alt="Линейки на телефоне" loading="lazy"></div><figcaption style="color:#5d6166">Первый экран, продукция и линейки</figcaption></figure>
-        <figure class="reveal panel panel--light"><div class="phones"><img src="img/ing/m-about.webp" alt="О компании на телефоне" loading="lazy"><img src="img/ing/m-form.webp" alt="Форма на телефоне" loading="lazy"></div><figcaption style="color:#5d6166">О компании и форма заявки</figcaption></figure>
+        <figure class="reveal panel panel--light"><div class="phones"><img decoding="async" src="img/ing/m-hero.webp" alt="Первый экран на телефоне" loading="lazy"><img decoding="async" src="img/ing/m-products.webp" alt="Продукция на телефоне" loading="lazy"><img decoding="async" src="img/ing/m-lines.webp" alt="Линейки на телефоне" loading="lazy"></div><figcaption style="color:#5d6166">Первый экран, продукция и линейки</figcaption></figure>
+        <figure class="reveal panel panel--light"><div class="phones"><img decoding="async" src="img/ing/m-about.webp" alt="О компании на телефоне" loading="lazy"><img decoding="async" src="img/ing/m-form.webp" alt="Форма на телефоне" loading="lazy"></div><figcaption style="color:#5d6166">О компании и форма заявки</figcaption></figure>
       </div>
     </section>
     <section class="ch" id="brand">
@@ -106,7 +106,7 @@
         <p>Палитра: белый, графит и один красный акцент. Заголовки набраны Onest, подписи и метки моноширинным IBM Plex Mono, как на маркировке.</p>
       </div>
       <div class="ch__media">
-        <figure class="reveal"><div class="lg"><div><img src="img/ing/logo-horizontal.svg" alt="Логотип INGRIBEL, горизонтальная версия"></div><div><img src="img/ing/logo-vertical.svg" alt="Логотип INGRIBEL, вертикальная версия"></div><div class="tl"><img src="img/ing/mark.svg" alt="Знак INGRIBEL"></div><div class="tl"><img src="img/ing/mark-mono.svg" alt="Знак INGRIBEL, одноцветный"></div></div>
+        <figure class="reveal"><div class="lg"><div><img loading="lazy" decoding="async" src="img/ing/logo-horizontal.svg" alt="Логотип INGRIBEL, горизонтальная версия"></div><div><img loading="lazy" decoding="async" src="img/ing/logo-vertical.svg" alt="Логотип INGRIBEL, вертикальная версия"></div><div class="tl"><img loading="lazy" decoding="async" src="img/ing/mark.svg" alt="Знак INGRIBEL"></div><div class="tl"><img loading="lazy" decoding="async" src="img/ing/mark-mono.svg" alt="Знак INGRIBEL, одноцветный"></div></div>
         <div class="sw"><i style="background:#fff;color:#141414">#FFFFFF</i><i style="background:#F2F2F0;color:#141414">#F2F2F0</i><i style="background:#8C8C88;color:#fff">#8C8C88</i><i style="background:#141414;color:#fff">#141414</i><i style="background:#D7261E;color:#fff">#D7261E</i></div>
         <div class="tp"><b>ингредиенты для мясной промышленности</b><span>Onest · IBM Plex Mono</span></div><figcaption>Знак, палитра и шрифты</figcaption></figure>
       </div>
@@ -116,8 +116,8 @@
   <section class="others" id="others">
     <div class="others__head"><h2 class="reveal">Другие работы</h2><a class="reveal" href="index.html#all">все работы →</a></div>
     <div class="wks">
-      <a class="wk reveal" href="mary.html" data-cursor="Смотреть"><span class="wk__img"><img src="img/mary/v-platform.webp" alt="Mary AI" loading="lazy"></span><b>Mary AI</b><small>B2B · AI-продукт · платформа · дизайн-система · сайты</small></a>
-      <a class="wk reveal" href="intreatment.html" data-cursor="Смотреть"><span class="wk__img"><img src="img/it/cover.webp?v=2" alt="InTreatment" loading="lazy"></span><b>InTreatment</b><small>B2C · маркетплейс · сайт · чат-подбор · кабинеты</small></a>
+      <a class="wk reveal" href="mary.html" data-cursor="Смотреть"><span class="wk__img"><img decoding="async" src="img/mary/v-platform.webp" alt="Mary AI" loading="lazy"></span><b>Mary AI</b><small>B2B · AI-продукт · платформа · дизайн-система · сайты</small></a>
+      <a class="wk reveal" href="intreatment.html" data-cursor="Смотреть"><span class="wk__img"><img decoding="async" src="img/it/cover.webp?v=2" alt="InTreatment" loading="lazy"></span><b>InTreatment</b><small>B2C · маркетплейс · сайт · чат-подбор · кабинеты</small></a>
     </div>
   </section>
 
