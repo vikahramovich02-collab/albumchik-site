@@ -325,3 +325,24 @@ html,body{overflow-x:clip}
 .ch__media .more{align-self:flex-start;justify-self:start;width:auto}
 @media (max-width:700px){.stagger--wide figure{width:100%}}
 .ch__media .duo{align-items:start}
+/* бренд InTreatment: логотип и кнопка с орбитой (Вика, 13.11) */
+@property --itang{syntax:"<angle>";initial-value:0deg;inherits:true}
+.itbrand__stage{display:grid;grid-template-columns:1.4fr 1fr;align-items:center;gap:clamp(24px,4vw,64px);padding:clamp(40px,7vw,110px) clamp(24px,5vw,80px);background:#f6f5f2;border-radius:6px;color:#2d2c2a}
+.itbrand__logo{display:flex;align-items:center;gap:clamp(12px,1.6vw,24px)}
+.itbrand__logo svg{width:clamp(80px,9vw,150px);height:auto;overflow:visible}
+.itbrand__logo span{font-family:"Playfair Display",Georgia,serif;font-size:clamp(26px,3.4vw,54px);letter-spacing:.02em;line-height:1}
+.itb-dot,.itb-ring{transform-box:fill-box;transform-origin:center}
+.itb-dot{animation:itbOrbit 2.4s linear infinite}
+.itb-ring{animation:itbPulse 2.4s ease-in-out infinite}
+@keyframes itbOrbit{0%,100%{transform:translate(0,0)}25%{transform:translate(5px,-2px)}50%{transform:translate(10px,0)}75%{transform:translate(5px,2px)}}
+@keyframes itbPulse{0%,100%{transform:scale(1)}50%{transform:scale(.9)}}
+.itcta{--orb:38%;position:relative;justify-self:center;width:clamp(140px,14vw,210px);aspect-ratio:1;display:block;animation:itSpin 6s linear infinite;color:#000}
+@keyframes itSpin{to{--itang:360deg}}
+.itcta__dashed{position:absolute;inset:0;width:100%;height:100%}
+.itcta__solid{position:absolute;top:50%;left:50%;width:76%;height:76%;border-radius:50%;background:#e9e7e2;transform:translate(-50%,-50%) translate(calc(cos(var(--itang)) * var(--orb)),calc(sin(var(--itang)) * var(--orb)));transition:transform .6s cubic-bezier(.22,1,.36,1),background .25s}
+.itcta__label{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-size:clamp(12px,.9vw,15px);line-height:1.15;text-transform:uppercase;letter-spacing:.02em;transition:color .25s}
+.itcta:hover{animation-play-state:paused}
+.itcta:hover .itcta__solid{transform:translate(-50%,-50%);background:#2d2c2a}
+.itcta:hover .itcta__label{color:#fff}
+@media (max-width:700px){.itbrand__stage{grid-template-columns:1fr;justify-items:center}}
+@media (prefers-reduced-motion:reduce){.itb-dot,.itb-ring,.itcta{animation:none}}
