@@ -139,3 +139,17 @@
   const fit = () => rows.forEach(r => { const p = r.parentElement.getBoundingClientRect(); r.style.setProperty('--bx', p.left + 'px'); });
   fit(); addEventListener('resize', fit); addEventListener('load', fit);
 })();
+
+// картинка всплывает у курсора при наведении на строку ссылки (Вика, 13.11)
+(() => {
+  const links = [...document.querySelectorAll('a[data-img]')];
+  if (!links.length || !matchMedia('(hover:hover)').matches) return;
+  const pop = document.createElement('img'); pop.className = 'hover-pop'; pop.alt = ''; document.body.appendChild(pop);
+  let x = 0, y = 0, cx = 0, cy = 0, raf = 0;
+  const loop = () => { cx += (x - cx) * .18; cy += (y - cy) * .18; pop.style.transform = `translate(${cx + 28}px, ${cy - 110}px)`; raf = requestAnimationFrame(loop); };
+  links.forEach(a => {
+    a.addEventListener('mouseenter', e => { pop.src = a.dataset.img; x = cx = e.clientX; y = cy = e.clientY; pop.classList.add('is-on'); if (!raf) loop(); });
+    a.addEventListener('mousemove', e => { x = e.clientX; y = e.clientY; });
+    a.addEventListener('mouseleave', () => { pop.classList.remove('is-on'); cancelAnimationFrame(raf); raf = 0; });
+  });
+})();
