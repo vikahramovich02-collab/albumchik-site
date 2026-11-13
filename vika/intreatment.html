@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&text=%E2%86%97%E2%86%90%E2%86%92%E2%86%93%E2%86%91&display=swap">
 <link rel="stylesheet" href="assets/base.css?v=19">
-<link rel="stylesheet" href="assets/case.css?v=48">
+<link rel="stylesheet" href="assets/case.css?v=50">
 <style>
   .ba { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
   .ba p { margin: 0; padding: 12px 14px; border-radius: 12px; background: rgba(255,255,255,.06); font-size: 14px; line-height: 1.5; }
@@ -49,38 +49,14 @@
     <figcaption>Главная на ноутбуке и чат-подбор на телефоне</figcaption>
   </figure>
 
-  <section class="nums">
-    <div class="reveal"><b>95%</b><span>заходят с телефона, поэтому каждый экран сначала собирался на 390 px</span></div>
-    <div class="reveal"><b>15</b><span>шагов в чат-подборе от приветствия до оплаты</span></div>
+  <section class="nums nums--row">
+    <div class="reveal"><b>95%</b><span>заходят с телефона — экраны сначала на 390 px</span></div>
+    <div class="reveal"><b>12</b><span>шагов воронки от согласия до первой сессии, у каждого своя метрика</span></div>
+    <div class="reveal"><b>16</b><span>правок от клиенток сведены в 4 продуктовые проблемы</span></div>
     <div class="reveal"><b>3</b><span>продукта: сайт, чат-подбор и кабинеты</span></div>
-    <div class="reveal"><b>14</b><span>страниц сайта: главная, психологам, журнал, статьи, тесты, подбор, юридические</span></div>
   </section>
 
 
-  <nav class="toc" aria-label="Главы кейса">
-    <h2>Что внутри</h2>
-    <ol>
-      <li><a href="#context">Контекст <span>платформа подбора психологов</span></a></li>
-      <li><a href="#tasks">Задачи <span>три продукта</span></a></li>
-      <li><a href="#team">Команда и связка <span>Figma + Claude Code</span></a></li>
-      <li><a href="#style">Поиск стилистики <span>с первого раза не зашло</span></a></li>
-      <li><a href="#rhythm">Ритм работы <span>созвоны и протоколы</span></a></li>
-      <li><a href="#map">Путь клиента <span>картирование в Miro</span></a></li>
-      <li><a href="#site">Сайт <span>14 страниц в журнальном стиле</span></a></li>
-      <li><a href="#data">Данные и прототип <span>сначала заказчицам, потом по данным</span></a></li>
-      <li><a href="#feedback">Правки клиенток <span>16 пунктов → 4 проблемы</span></a></li>
-      <li><a href="#funnel">Воронка как каркас <span>где люди уходят</span></a></li>
-      <li><a href="#consent">Согласие и начало <span>кнопка вместо чекбокса</span></a></li>
-      <li><a href="#topics">Темы и варианты <span>у каждой темы свой психолог</span></a></li>
-      <li><a href="#card">Карточка психолога <span>в один экран</span></a></li>
-      <li><a href="#duty">Дежурный и самопомощь <span>не оставлять в тупике</span></a></li>
-      <li><a href="#mascot">Маскот и тон <span>мягкий проводник</span></a></li>
-      <li><a href="#after">После оплаты <span>«Вы записаны» и кабинет</span></a></li>
-      <li><a href="#system">Система и платформа <span>три кабинета</span></a></li>
-      <li><a href="#next">Что меряем дальше</a></li>
-      <li><a href="#result">Итоги</a></li>
-    </ol>
-  </nav>
 
   <main class="chapters">
 
@@ -88,9 +64,14 @@
       <div class="ch__text">
         <div class="ch__n"><span>01</span><span>Контекст</span></div>
         <h2>Платформа подбора психологов</h2>
-        <p>С весны работаю с двумя основательницами. Они строят платформу подбора психологов, примерно как «Ясно».</p>
+        <p>С весны работаю с двумя основательницами над платформой подбора психологов. Работала в связке с продуктовым лидом и разработчиками: вели продуктовый процесс — исследование клиентского флоу, гипотезы и тесты.</p>
         <p>До меня подбор шёл через Telegram-бота: он задавал вопросы и по дереву запросов приводил человека к психологу. Сайт был визиткой, и записаться через него было сложно.</p>
         <p><b>95% людей заходят с телефона</b>, часто вечером, когда им тяжело. Листать каталог из сотни анкет в таком состоянии никто не будет. Поэтому подбор мы строили как разговор.</p>
+        <ul class="rows">
+          <li><b>Команда</b><span>Продуктовый лид, разработчики, основательницы; я на продукте и дизайне</span></li>
+          <li><b>Процесс</b><span>Исследование клиентского флоу → гипотезы → прототип → тесты → правки по данным</span></li>
+          <li><b>Метрики</b><span>Воронка подбора по шагам: от согласия до записи и оплаты первой сессии</span></li>
+        </ul>
       </div>
       <div class="ch__media">
         <figure class="reveal"><img decoding="async" class="shot" src="img/it/home_0.webp" alt="Первый экран сайта" loading="lazy"><figcaption>Первый экран: «Найдите своего психолога с первой встречи» и одна кнопка, которая запускает подбор</figcaption></figure>
@@ -116,34 +97,18 @@
       </div>
     </section>
 
-    <section class="ch" id="team">
-      <div class="ch__text">
-        <div class="ch__n"><span>03</span><span>Команда и связка</span></div>
-        <h2>Проджект и связка Figma + Claude Code</h2>
-        <p>Работала в паре с сильным проджектом. Процесс вели вместе, и в управлении я многое у неё переняла.</p>
-        <ul class="rows">
-          <li><b>Figma</b><span>Дизайн экранов</span></li>
-          <li><b>Дизайн-система</b><span>Собирала через Claude Code</span></li>
-          <li><b>Фронт</b><span>Целостный рабочий прототип</span></li>
-          <li><b>Разработка</b><span>Передавала готовый фронт разработчику</span></li>
-        </ul>
-      </div>
-      <div class="ch__media">
-        <figure class="reveal panel panel--light"><img decoding="async" src="img/it/design-system.webp" alt="Дизайн-система InTreatment" loading="lazy"><figcaption style="color:#5d6166">Дизайн-система: цвета, отступы, радиусы, текстовые стили и компоненты</figcaption></figure>
-      </div>
-    </section>
 
     <section class="ch" id="style">
       <div class="ch__text">
-        <div class="ch__n"><span>04</span><span>Поиск стилистики</span></div>
+        <div class="ch__n"><span>03</span><span>Поиск стилистики</span></div>
         <h2>С первого раза стиль не зашёл</h2>
-        <p>Сначала отталкивалась от старого брендинга. Собрала мудборды, кучу референсов, накидала новый вижн бренда. Не зашло, такое бывает.</p>
-        <p>Собрали новый бриф. Стало понятно, что основательницы хотят журнальный и лаконичный стиль. А ещё у них был свой шрифт, под который нужно было подстроиться.</p>
-        <p>Тут я немного стрессанула, но собралась и за день сделала концепт первой страницы. Его утвердили.</p>
+        <p>Сначала отталкивалась от старого брендинга: собрала мудборды, референсы, новый вижн бренда. Дизайн заказчицам не понравился.</p>
+        <p>Я собрала новый бриф и уточнила, что именно не нравится. Стало понятно, что основательницы хотят журнальный и лаконичный стиль под их собственный шрифт. Подобрала новые референсы.</p>
+        <p>На свежем взгляде за день собрала быстрый прототип сайта — живой, а не картинку в Figma. Когда заказчицы смогли сразу посмотреть сайт в браузере, стало понятно, что это оно. С тех пор показываю решения прототипом: макеты неудобно презентовать заказчикам.</p>
         <ul class="rows">
-          <li><b>Попытка 1</b><span>Старый брендинг, мудборды, новый вижн. Не зашло</span></li>
-          <li><b>Новый бриф</b><span>Журнальный стиль, лаконично, их шрифт</span></li>
-          <li><b>Попытка 2</b><span>Концепт первой страницы за день. Утвердили</span></li>
+          <li><b>Попытка 1</b><span>Мудборды и новый вижн по старому брендингу. Не понравилось</span></li>
+          <li><b>Новый бриф</b><span>Что не нравится, журнальный стиль, их шрифт, новые референсы</span></li>
+          <li><b>Попытка 2</b><span>Живой прототип сайта за день вместо макета. Утвердили</span></li>
         </ul>
         <blockquote>Самым сложным было понять, чего человек хочет, когда он сам не может это сформулировать.</blockquote>
       </div>
@@ -167,28 +132,10 @@
       </div>
     </section>
 
-    <section class="ch" id="rhythm">
-      <div class="ch__text">
-        <div class="ch__n"><span>05</span><span>Ритм работы</span></div>
-        <h2>Много созвонов</h2>
-        <p>Согласовывали, обсуждали, защищали решения. Разбирали каждый блок, докручивали, переделывали и снова созванивались.</p>
-        <ul class="rows">
-          <li><b>Встреча</b><span>Основательницы проходят страницу и говорят, что не так</span></li>
-          <li><b>Протокол</b><span>Записываю каждую правку по экранам</span></li>
-          <li><b>Правки</b><span>Сразу в прототипе</span></li>
-          <li><b>Телефон</b><span>Команда проверяет на своих телефонах</span></li>
-          <li><b>Новый круг</b><span>Новый список правок</span></li>
-        </ul>
-        <p>Дальше стало легче: следующие страницы собирались в той же стилистике.</p>
-      </div>
-      <div class="ch__media">
-        <figure class="reveal"><img decoding="async" class="shot" src="img/it/home_4.webp" alt="Как психологи попадают в проект" loading="lazy"><figcaption>«Как психологи попадают в проект»: формулировки шагов дословно от основательниц</figcaption></figure>
-      </div>
-    </section>
 
     <section class="ch" id="map">
       <div class="ch__text">
-        <div class="ch__n"><span>06</span><span>Картирование</span></div>
+        <div class="ch__n"><span>04</span><span>Картирование</span></div>
         <h2>Путь клиента в Miro</h2>
         <p>Перед кабинетом разложили в Miro весь путь клиента: воронку сайта, воронку бота и схему, где отвечает ИИ, а живой дежурный проверяет. Красным отмечены места, где клиенты уходят: регистрация, оплата, покупка пакета.</p>
         <p>По этим схемам потом сверяли всё, что рисовали в Figma и собирали в прототипе.</p>
@@ -202,8 +149,8 @@
 
     <section class="ch" id="site">
       <div class="ch__text">
-        <div class="ch__n"><span>07</span><span>Сайт</span></div>
-        <h2>14 страниц в одной стилистике</h2>
+        <div class="ch__n"><span>05</span><span>Сайт</span></div>
+        <h2>Многостраничный сайт: блог, статьи, тесты</h2>
         <p>После утверждённой главной все страницы собирались в той же системе. Главная ведёт в подбор, страница для психологов собирает заявки в команду, журнал пишут сами психологи, а тесты помогают человеку понять свой запрос и тоже приводят в подбор.</p>
         <ul class="rows">
           <li><b>Подбор и вход</b><span>Главная с кнопкой подбора, «Давайте начнём», вход в кабинет</span></li>
@@ -214,10 +161,7 @@
         <p>Мобильную версию проверяли по скринам команды: карточки статей кликаются целиком, нижняя панель прячется при открытом меню, кнопки одной ширины.</p>
       </div>
       <div class="ch__media">
-        <figure class="reveal"><img decoding="async" class="shot" src="img/it/journal_0.webp" alt="Журнал InTreatment Live" loading="lazy"><figcaption>Журнал «InTreatment live»: свежая статья, рубрики, популярное</figcaption></figure>
-        <figure class="reveal"><img decoding="async" class="shot" src="img/it/journal_1.webp" alt="Журнал, лента статей" loading="lazy"><figcaption>Лента статей и рубрики-чипсы</figcaption></figure>
-        <figure class="reveal"><img decoding="async" class="shot" src="img/it/podbor.webp" alt="Страница подбора" loading="lazy"><figcaption>«Давайте начнём»: вход в подбор через сайт, Telegram или ВКонтакте</figcaption></figure>
-        <figure class="reveal panel"><div class="phones"><img decoding="async" src="img/it/home_m.webp" alt="Главная на телефоне" loading="lazy"><img decoding="async" src="img/it/journal_m.webp" alt="Журнал на телефоне" loading="lazy"></div><figcaption>Мобильная версия: главная и журнал</figcaption></figure>
+        <figure class="reveal flowfig"><div class="flowfig__scroll"><img decoding="async" src="img/it/figma-site.webp" alt="Сайт InTreatment в Figma: десктоп, мобильная версия, тесты" loading="lazy"></div><figcaption>Многостраничный сайт в Figma: главная, подбор, для психологов, журнал и статьи, тесты, юридические страницы — десктоп и мобильная версия</figcaption></figure>
       </div>
     </section>
 
@@ -225,7 +169,7 @@
 
     <section class="ch" id="data">
       <div class="ch__text">
-        <div class="ch__n"><span>08</span><span>Данные и прототип</span></div>
+        <div class="ch__n"><span>06</span><span>Данные и прототип</span></div>
         <h2>Сначала для заказчиц, потом по данным</h2>
         <p>Сайт и чат собраны как рабочие прототипы. Разработчик получил готовый фронт и подключил данные, верстать с нуля не пришлось. На этом же фронте удобно собирать варианты для A/B-тестов.</p>
         <p>Уже пришли первые результаты аналитики. Видно, как пользователи ходят по сайту и что можно убрать и упростить.</p>
@@ -249,18 +193,12 @@
     <figcaption>Запись прототипа: от согласия до записи к психологу за полминуты</figcaption>
   </figure>
 
-  <section class="nums">
-    <div class="reveal"><b>16</b><span>правок от клиенток, которые я свела в 4 проблемы</span></div>
-    <div class="reveal"><b>12</b><span>шагов воронки от согласия до первой сессии, у каждого своя метрика</span></div>
-    <div class="reveal"><b>1</b><span>экран на карточку психолога вместо прокрутки</span></div>
-    <div class="reveal"><b>3</b><span>кабинета на одном языке: клиент, психолог, администратор</span></div>
-  </section>
 
   <main class="chapters">
 
     <section class="ch" id="feedback">
       <div class="ch__text">
-        <div class="ch__n"><span>09</span><span>Правки клиенток</span></div>
+        <div class="ch__n"><span>07</span><span>Правки клиенток</span></div>
         <h2>16 пунктов, 4 проблемы</h2>
         <p>Первую версию подбора разработчик перенёс к себе, и в его сборке появились тени, желтоватые серые и зелёные наведения. Клиентки прошли подбор сами и прислали документ на 16 пунктов.</p>
         <p class="quote">«Всё же не готовы выпускать в люди платформу с данным дизайном, он смотрится топорно, не стильно»</p>
@@ -280,7 +218,7 @@
 
     <section class="ch" id="funnel">
       <div class="ch__text">
-        <div class="ch__n"><span>10</span><span>Воронка</span></div>
+        <div class="ch__n"><span>08</span><span>Воронка</span></div>
         <h2>Каркас кейса — шаги, на которых уходят</h2>
         <p>Подбор психолога проходят вечером, с телефона и часто в тревоге. Любая лишняя секунда на шаге — повод закрыть вкладку. Поэтому каждое решение я привязывала к конкретному шагу и к тому, что на нём меряем.</p>
         <ul class="rows">
@@ -298,24 +236,10 @@
       </div>
     </section>
 
-    <section class="ch" id="consent">
-      <div class="ch__text">
-        <div class="ch__n"><span>11</span><span>Согласие и начало</span></div>
-        <h2>Сначала согласие, потом знакомство</h2>
-        <p>Клиентки попросили начинать с их текста про персональные данные. Я поставила его первым сообщением, а согласие сделала понятной кнопкой «Даю согласие» на месте поля ввода. Пока согласия нет, писать некуда, поэтому вопрос «почему не работает» не возникает.</p>
-        <p>После согласия ассистент знакомится коротко и по структуре: заголовок, одна строка, три пункта и вопрос «Как к вам можно обращаться?».</p>
-        <div class="ba"><p><b>Было</b>Чекбокс под полем, ввод заблокирован без объяснения</p><p><b>Стало</b>Текст клиенток и одна кнопка, потом приветствие</p></div>
-        <p>A/B: кнопка против чекбокса, метрика — доля дошедших до имени.</p>
-      </div>
-      <div class="ch__media">
-        <figure class="reveal"><img decoding="async" class="shot" src="img/it2/v2-consent.webp" alt="Согласие первым сообщением" loading="lazy"><figcaption>Первое сообщение — текст клиенток, внизу одна кнопка</figcaption></figure>
-        <figure class="reveal"><img decoding="async" class="shot" src="img/it2/v2-welcome.webp" alt="Приветствие после согласия" loading="lazy"><figcaption>После согласия: короткое приветствие по структуре</figcaption></figure>
-      </div>
-    </section>
 
     <section class="ch" id="topics">
       <div class="ch__text">
-        <div class="ch__n"><span>12</span><span>Темы и варианты</span></div>
+        <div class="ch__n"><span>09</span><span>Темы и варианты</span></div>
         <h2>Варианты строками, у каждой темы свой психолог</h2>
         <p>Варианты ответа больше не серые плашки, а строки со стрелкой и тонкими разделителями. Длинные списки встают в две колонки, мелкие действия — «Другой специалист», «Другая тема» — стали небольшими кнопками.</p>
         <p>Слева появилось меню. Человек часто приходит с несколькими запросами, и раньше вернуться к первой теме было неудобно. Теперь каждая тема — карточка со сферой, подтемой и подобранным психологом, и к любой можно вернуться в один клик.</p>
@@ -329,7 +253,7 @@
 
     <section class="ch" id="card">
       <div class="ch__text">
-        <div class="ch__n"><span>13</span><span>Карточка психолога</span></div>
+        <div class="ch__n"><span>10</span><span>Карточка психолога</span></div>
         <h2>Вся карточка в одном экране</h2>
         <p>Главная жалоба была на карточку: она не помещалась, и половину экрана занимали кнопки под ней. Я собрала её в одну компактную карточку: видео-кружок, имя, цена, ближайшая дата, три строки о себе и два действия прямо внутри.</p>
         <p>«Знакомство с психологом» теперь кнопка, как просили клиентки. Она открывает окно из двух половин: слева профиль и расписание, справа видео-визитка крупным кружком.</p>
@@ -341,34 +265,11 @@
       </div>
     </section>
 
-    <section class="ch" id="duty">
-      <div class="ch__text">
-        <div class="ch__n"><span>14</span><span>Дежурный и самопомощь</span></div>
-        <h2>Не оставлять человека в тупике</h2>
-        <p>Если человек пишет своими словами, сообщение уходит дежурному психологу. Раньше после этого был тупик. Теперь под сообщением три ответа из текста клиенток: продолжить с ИИ-дежурным, дождаться человека или вернуться к подбору.</p>
-        <p>Самопомощь живёт в меню карточкой и открывается окном: сверху бесплатные экстренные номера, ниже практики, которые можно забрать сразу. Человеку в кризисе мы сначала даём помощь и только потом что-то предлагаем.</p>
-      </div>
-      <div class="ch__media">
-        <figure class="reveal"><img decoding="async" class="shot" src="img/it2/v2-duty.webp" alt="Ответ дежурного психолога" loading="lazy"><figcaption>Дежурный: подпись серым в одну строку и три ответа</figcaption></figure>
-        <figure class="reveal"><img decoding="async" class="shot" src="img/it2/v2-help.webp" alt="Окно самопомощи" loading="lazy"><figcaption>Самопомощь: экстренные номера первыми, справа спокойная сцена</figcaption></figure>
-      </div>
-    </section>
 
-    <section class="ch" id="mascot">
-      <div class="ch__text">
-        <div class="ch__n"><span>15</span><span>Маскот и тон</span></div>
-        <h2>Мягкий проводник вместо иконки</h2>
-        <p>Психологический сервис открывают в тревоге, и голый логотип в чате ощущается холодно. Я нарисовала маскота кодом: круглая голова, мятные крылья, а глаза взяты из логотипа InTreatment — точка и пунктирное колечко.</p>
-        <p>Он живой только у последней реплики: парит, машет крыльями, моргает. Пока ассистент печатает, глаза бегают. При наведении появляется подпись «ИИ-ассистент InTreatment», чтобы было честно, кто отвечает.</p>
-      </div>
-      <div class="ch__media">
-        <figure class="reveal panel panel--light mascot-fig"><img decoding="async" src="img/it2/mascot.webp" alt="Маскот InTreatment" loading="lazy"><figcaption style="color:#5d6166">Маскот: глаза «●◌» из логотипа, анимирован в чате</figcaption></figure>
-      </div>
-    </section>
 
     <section class="ch" id="after">
       <div class="ch__text">
-        <div class="ch__n"><span>16</span><span>После оплаты</span></div>
+        <div class="ch__n"><span>11</span><span>После оплаты</span></div>
         <h2>«Вы записаны» без лишних шагов</h2>
         <p>Экран после оплаты я собрала по правкам клиенток:</p>
         <ul class="rows">
@@ -388,7 +289,7 @@
 
     <section class="ch" id="system">
       <div class="ch__text">
-        <div class="ch__n"><span>17</span><span>Система и платформа</span></div>
+        <div class="ch__n"><span>12</span><span>Система и платформа</span></div>
         <h2>Один язык для подбора и трёх кабинетов</h2>
         <p>Цвета я сняла с референса пипеткой, а не подбирала на глаз: светлый фон без желтизны, холодный графитовый текст, нейтральные тёмные кнопки и один мятный акцент. Playfair остался только в крупных заголовках.</p>
         <p>На этой системе пересобраны все три кабинета. У каждого своя ссылка, и в каждом сверху один следующий шаг.</p>
@@ -407,7 +308,7 @@
 
     <section class="ch" id="next">
       <div class="ch__text">
-        <div class="ch__n"><span>18</span><span>Что дальше</span></div>
+        <div class="ch__n"><span>13</span><span>Что дальше</span></div>
         <h2>Что меряем дальше</h2>
         <p>Красиво — это только начало. Дальше нужно проверить, что новые решения правда держат людей в воронке.</p>
         <ul class="rows">
@@ -424,7 +325,7 @@
 
     <section class="ch" id="result">
       <div class="ch__text">
-        <div class="ch__n"><span>19</span><span>Итоги</span></div>
+        <div class="ch__n"><span>14</span><span>Итоги</span></div>
         <h2>Итоги</h2>
         <p>Заказчицы теперь не могут налюбоваться сайтом. А муж одной из основательниц отдельно сказал, что ему очень нравятся страницы. Честно, это мой любимый отзыв.</p>
         <p>Каждая новая ниша это новая логическая задачка. Если что-то не получилось с первого раза, со второго получится.</p>
@@ -437,11 +338,11 @@
 
   <section class="live live--wide" id="live">
     <h2 class="reveal">Ссылки</h2>
-    <p class="sub reveal">Прототипы собраны мной и по сути являются готовым фронтом, который забрала разработка.</p>
+    <p class="sub reveal">Сайт, прототип и Figma показываю по запросу.</p>
     <ul>
-      <li class="reveal"><a data-img="img/it/home_0.webp" href="https://intreatment.online" target="_blank" rel="noopener"><b>Сайт</b><span>intreatment.online</span><i>↗︎</i></a></li>
-      <li class="reveal"><a data-img="img/it2/v2-cabinet.webp" href="https://vikahramovich02-collab.github.io/intreatment-podbor/v2/" target="_blank" rel="noopener"><b>Личный кабинет</b><span>прототип: чат-подбор, запись, кабинет</span><i>↗︎</i></a></li>
-      <li class="reveal"><a data-img="img/it/tests-board.webp" href="https://t.me/viksaaaaaa_a" target="_blank" rel="noopener"><b>Figma</b><span>по запросу · @viksaaaaaa_a</span><i>↗︎</i></a></li>
+      <li class="reveal"><a data-img="img/it/home_0.webp" href="https://t.me/viksaaaaaa_a" target="_blank" rel="noopener"><b>Сайт</b><span>по запросу · @viksaaaaaa_a</span><i>↗︎</i></a></li>
+      <li class="reveal"><a data-img="img/it2/v2-cabinet.webp" href="https://t.me/viksaaaaaa_a" target="_blank" rel="noopener"><b>Личный кабинет</b><span>прототип чат-подбора и кабинета · по запросу</span><i>↗︎</i></a></li>
+      <li class="reveal"><a data-img="img/it/figma-site.webp" href="https://t.me/viksaaaaaa_a" target="_blank" rel="noopener"><b>Figma</b><span>по запросу · @viksaaaaaa_a</span><i>↗︎</i></a></li>
     </ul>
   </section>
 
@@ -463,7 +364,7 @@
       <a href="https://t.me/viksaaaaaa_a" target="_blank" rel="noopener">@viksaaaaaa_a</a>
     </footer>
   </section>
-<script src="assets/site.js?v=17"></script>
+<script src="assets/site.js?v=18"></script>
 <script src="assets/i18n-cases.js?v=1"></script>
 <script src="assets/i18n.js?v=9"></script>
 </body>

@@ -364,3 +364,5 @@ html,body{overflow-x:clip}
 @media (max-width:700px){.nda-links{grid-template-columns:1fr}.nda-what .rows li{grid-template-columns:1fr;gap:4px}}
 .lg img{width:82%!important;height:82%!important;object-fit:contain;max-height:none;background:none!important;padding:0!important;border:0!important;border-radius:0!important;outline:0!important;box-shadow:none!important}
 .lg div{overflow:hidden}
+.nums--row{grid-template-columns:repeat(4,1fr)!important;max-width:none!important;padding-left:var(--pad)!important;padding-right:var(--pad)!important;gap:clamp(16px,2vw,32px)!important}
+@media (max-width:900px){.nums--row{grid-template-columns:1fr 1fr!important}}
