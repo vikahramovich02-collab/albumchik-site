@@ -46,7 +46,7 @@
 <p class="factline reveal"><span>Структура, дизайн, тексты, вёрстка и запуск</span><span>2026</span></p>
 </header>
 <figure class="hero-media reveal">
-<img fetchpriority="high" decoding="async" src="img/cb/cover.webp" alt="Первый экран сайта Creative Bus">
+<img fetchpriority="high" decoding="async" src="img/cb/cover-mock.webp" alt="Первый экран сайта Creative Bus на ноутбуке">
 <figcaption>Первый экран: четыре кадра с реальной рекламой на бортах, цифры парка и маршрутов</figcaption>
 </figure>
 <section class="nums done">
@@ -62,6 +62,7 @@
 <li><a href="#site">Сайт <span>14 страниц</span></a></li>
 <li><a href="#price">Прайс и калькулятор <span>схемы вместо описаний</span></a></li>
 <li><a href="#ai">Фото и ИИ <span>архив заказчика в порядок</span></a></li>
+<li><a href="#seo">SEO <span>чтобы находили в Таганроге</span></a></li>
 <li><a href="#launch">Запуск <span>домен, почта, заявки</span></a></li>
 </ol>
 </nav>
@@ -157,9 +158,26 @@
 <figure class="reveal panel panel--light"><img decoding="async" src="img/cb/renders.webp" alt="3D-рендеры форматов размещения" loading="lazy"><figcaption style="color:#5d6166">Промежуточный шаг: 3D-рендеры форматов. Их заменили векторные схемы из прайса заказчика</figcaption></figure>
 </div>
 </section>
+<section class="ch" id="seo">
+<div class="ch__text">
+<div class="ch__n"><span>06</span><span>SEO</span></div>
+<h2>Чтобы находили в Таганроге</h2>
+<p>Рекламу на транспорте ищут по конкретному формату и городу: «бортовая реклама Таганрог», «реклама на маршрутках». Поэтому у каждого формата своя страница со своим текстом, а не один общий раздел «Услуги».</p>
+<p>Для поисковиков у каждой страницы свой заголовок, описание и адрес, а для карточек в мессенджерах — превью. В разметке schema.org компания описана как местный бизнес: адрес, часы работы, город и пригороды, все восемь услуг с ценами.</p>
+<ul class="rows">
+<li><b>Страницы услуг</b><span>бортовая, наклейки, листовки, спинки сидений — со своими SEO-текстами</span></li>
+<li><b>Мета-теги</b><span>title, description, canonical и Open Graph на всех 14 страницах</span></li>
+<li><b>Разметка</b><span>schema.org: LocalBusiness, зона обслуживания, 8 услуг с ценами</span></li>
+<li><b>Индексация</b><span>sitemap.xml на 13 страниц и robots.txt, версия прайса для печати закрыта</span></li>
+</ul>
+</div>
+<div class="ch__media">
+<figure class="reveal"><img decoding="async" class="shot" src="img/cb/seo.webp" alt="Страница услуги «Широкоформатная бортовая реклама»" loading="lazy"><figcaption>У каждого формата своя страница: заголовок и описание под поисковый запрос, цена и схема размещения.</figcaption></figure>
+</div>
+</section>
 <section class="ch" id="launch">
 <div class="ch__text">
-<div class="ch__n"><span>06</span><span>Запуск</span></div>
+<div class="ch__n"><span>07</span><span>Запуск</span></div>
 <h2>От макета до домена</h2>
 <p>Сайт я не передала архивом, а подняла сама на хостинге заказчика: перевела домен на его NS, создала сайт, выпустила сертификат, включила переадресацию на HTTPS.</p>
 <p>Заявки принимает PHP-обработчик и шлёт письмо на почту компании. Чтобы письма не падали в спам, завела почтовый домен и прописала SPF, DKIM и DMARC. Форма сделана по 152-ФЗ: галочка согласия не проставлена заранее, иначе согласие недействительно.</p>
@@ -200,7 +218,7 @@
 </footer>
 </section>
 <script src="assets/site.js?v=20"></script>
-<script src="assets/i18n-cases.js?v=2"></script>
+<script src="assets/i18n-cases.js?v=3"></script>
 <script src="assets/i18n.js?v=10"></script>
 </body>
 </html>
